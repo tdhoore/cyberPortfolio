@@ -1,11 +1,11 @@
-import nav from "./nav";
-import navReducer from "./navReducer";
+import NavMain from "./navMain";
+import navMainReducer from "./navMainReducer";
 import * as types from "./types";
 
 const navComp = {
   components: {
-    nav,
-    navReducer,
+    NavMain,
+    navMainReducer,
   },
   types,
 };

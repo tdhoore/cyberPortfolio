@@ -1,7 +1,25 @@
 import { AnyAction } from "redux";
 import { ActionTypes, navState } from "./types";
 
-const initState: navState = {};
+const initState: navState = {
+  navLinks: [
+    {
+      title: "Work",
+      link: "/work",
+      isActive: false,
+    },
+    {
+      title: "About",
+      link: "/about",
+      isActive: false,
+    },
+    {
+      title: "Contact",
+      link: "/contact",
+      isActive: false,
+    },
+  ],
+};
 
 export default (state = initState, action: AnyAction) => {
   switch (action.type) {

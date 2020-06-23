@@ -1,0 +1,21 @@
+import React from "react";
+import { Link } from "react-router-dom";
+import { props } from "./types";
+
+const NavMain = (props: props) => {
+  return (
+    <nav>
+      <ul>
+        {props.links?.map((link) => {
+          return (
+            <li>
+              <Link to={link.link}>{link.title}</Link>
+            </li>
+          );
+        })}
+      </ul>
+    </nav>
+  );
+};
+
+export default NavMain;
