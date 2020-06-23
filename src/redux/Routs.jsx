@@ -2,7 +2,7 @@ import React from "react";
 import { Route, Switch, withRouter } from "react-router-dom";
 import { ConnectedRouter } from "connected-react-router";
 import { history } from "./configureStore";
-import PageBase from "../components/core/PageBase";
+import PageBase from "../components/_core/PageBase";
 
 export default function () {
   //date

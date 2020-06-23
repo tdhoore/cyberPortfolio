@@ -1,8 +1,8 @@
 import React from "react";
 import { props } from "./types";
 
-const contact = (props: props) => {
-  <div></div>;
+const Contact = (props: props) => {
+  return <div>Contact</div>;
 };
 
-export default contact;
+export default Contact;

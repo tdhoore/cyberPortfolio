@@ -1,10 +1,10 @@
-import about from "./about";
+import About from "./About";
 import aboutReducer from "./aboutReducer";
 import * as types from "./types";
 
 const aboutComp = {
   components: {
-    about,
+    About,
     aboutReducer,
   },
   types,

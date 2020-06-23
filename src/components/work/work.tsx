@@ -1,8 +1,8 @@
 import React from "react";
 import { props } from "./types";
 
-const work = (props: props) => {
-  <div></div>;
+const Work = (props: props) => {
+  return <div>Work</div>;
 };
 
-export default work;
+export default Work;

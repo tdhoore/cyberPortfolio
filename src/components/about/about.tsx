@@ -1,8 +1,8 @@
 import React from "react";
 import { props } from "./types";
 
-const about = (props: props) => {
-  <div></div>;
+const About = (props: props) => {
+  return <div>About</div>;
 };
 
-export default about;
+export default About;

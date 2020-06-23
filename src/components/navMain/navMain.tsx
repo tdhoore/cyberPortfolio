@@ -8,7 +8,7 @@ const NavMain = (props: props) => {
       <ul>
         {props.links?.map((link) => {
           return (
-            <li>
+            <li key={`mainNavLinks${link.title}`}>
               <Link to={link.link}>{link.title}</Link>
             </li>
           );

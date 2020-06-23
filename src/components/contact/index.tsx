@@ -1,10 +1,10 @@
-import contact from "./contact";
+import Contact from "./Contact";
 import contactReducer from "./contactReducer";
 import * as types from "./types";
 
 const contactComp = {
   components: {
-    contact,
+    Contact,
     contactReducer,
   },
   types,

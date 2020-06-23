@@ -1,10 +1,10 @@
-import work from "./work";
+import Work from "./Work";
 import workReducer from "./workReducer";
 import * as types from "./types";
 
 const workComp = {
   components: {
-    work,
+    Work,
     workReducer,
   },
   types,
