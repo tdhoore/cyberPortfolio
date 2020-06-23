@@ -11,27 +11,16 @@ const PageBase = (props: any) => {
   );
 
   const getActivePage = () => {
-    let result = <div></div>;
-
-    navMainLinks.forEach((link: any) => {
-      if (link.isActive) {
-        switch (link.title) {
-          case "Work":
-            result = <Work />;
-            break;
-          case "About":
-            result = <About />;
-            break;
-          case "Contact":
-            result = <Contact />;
-            break;
-          default:
-            result = <Contact />;
-        }
-      }
-    });
-
-    return result;
+    switch (props.pageCompName) {
+      case "Work":
+        return <Work />;
+      case "About":
+        return <About />;
+      case "Contact":
+        return <Contact />;
+      default:
+        return <Contact />;
+    }
   };
 
   return (

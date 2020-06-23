@@ -12,9 +12,31 @@ export default function () {
     <ConnectedRouter history={history}>
       <Switch>
         <Route
+          exact
           path="/"
           component={withRouter((props) => (
-            <PageBase {...props} />
+            <PageBase {...props} pageCompName="Work" />
+          ))}
+        />
+        <Route
+          exact
+          path="/Work"
+          component={withRouter((props) => (
+            <PageBase {...props} pageCompName="Work" />
+          ))}
+        />
+        <Route
+          exact
+          path="/about"
+          component={withRouter((props) => (
+            <PageBase {...props} pageCompName="About" />
+          ))}
+        />
+        <Route
+          exact
+          path="/contact"
+          component={withRouter((props) => (
+            <PageBase {...props} pageCompName="Contact" />
           ))}
         />
       </Switch>
