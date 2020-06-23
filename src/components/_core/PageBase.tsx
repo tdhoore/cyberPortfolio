@@ -1,11 +1,12 @@
 import React from "react";
 import NavMain from "../navMain/navMain";
 import { useSelector } from "react-redux";
+import { pageBase } from "./types";
 import Work from "../work/Work";
 import About from "../about/About";
 import Contact from "../contact/Contact";
 
-const PageBase = (props: any) => {
+const PageBase = (props: pageBase) => {
   const navMainLinks = useSelector(
     (state: any) => state.navMainReducer.navLinks
   );
