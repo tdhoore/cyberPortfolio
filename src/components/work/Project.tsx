@@ -8,7 +8,15 @@ const Project = (props: ProjectProps) => {
       <header>
         <h3>Lorem ipsum</h3>
       </header>
-      <img src="" alt="" />
+      <div>
+        <img src="" alt="" />
+        <div>
+          <div>541</div>
+          <div>541</div>
+          <div>541</div>
+          <div>541</div>
+        </div>
+      </div>
       <div>
         <span>
           oteisizhbqhtumhiweunowesmwyhaplxjsojmvoqvvrbqhvgbbuffkmbptnqznlimdtvcnwpiwoinjiqryldxgkslbjzsxshaqpaplxjsojmvoqvvrtestertagbqhvgbbuffkmbptnqzoteisizhbqhtumhiweunowesmwyhaplxjsojmvoqvvrbqhvgbbuffkmbptnqznlimdtvcnwpiwoinjiqryldxgkslbjzsxshaqpaplxjsojmvoqvvrbqhvgbbuffkmbptnqzcnwpiwoinjiqryldxgkslbjzsxshaqpaplxjsojmvoqvvrbqhvgbbuffkmbptnqzoteisizhbqhtumhiweunowesmwyhaplxjsojmvoqvvrbqhvgbbuffkmbptnqznlimdshaqpaplxjsojmvoqvvrbqhvgbbuffkmbptnqzoteisizhbqhtumhiweunowesmwyhaplxjsojmvoqvvrbqhvgbbuffkmbptnqznlimdtvcnwpiwoinjiqryldxgkslbjzsxshaqpaplxjsojmvoqvvrbqhvgbbuffkmbptnqzcnwpiwoinjiqryldxgkslbjzsxsmwyhaplxjsojmvoqvvrbqhvgbbuffkmbptnqznlimdtvcnwpiwoinjiqryldxgkslbjzsxshaqpaplxjsojmvoqvvrbqhvgbbuffkmbptnqzcnwpiwoinjiqryldxgkslbjzsxshaqpaplxjsojmvoqvvrbqhvgbbuffkmbptnqzoteisizhbqhtumhiweunowesmwyhaplxjsojmvoqvvrbqhvgbbuffkmbptnqznlimdshaqpaplxjsojmvoqvvrbqhvgbbuffkmbptnqzoteisizhbqhtumhiweunowesmwyhaplxjsojmvoqvvrbqhvgbbuffkmbptnqznlimdtvcnw
@@ -16,12 +24,6 @@ const Project = (props: ProjectProps) => {
         <Link to="">Have a look</Link>
         <div>*___</div>
         <div>*___</div>
-      </div>
-      <div>
-        <div>541</div>
-        <div>541</div>
-        <div>541</div>
-        <div>541</div>
       </div>
     </article>
   );

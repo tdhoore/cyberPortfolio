@@ -1,4 +1,14 @@
+@import "fonts.scss";
 @import "vars.scss";
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "pix Chicago", Arial, Helvetica, sans-serif;
+  font-weight: normal;
+  margin: 0;
+}
 
 /* HIDE */
 .hide {
