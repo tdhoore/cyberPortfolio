@@ -27,7 +27,7 @@ const PageBase = (props: pageBase) => {
   return (
     <div>
       <header>
-        <h1>cyberportfolio</h1>
+        <h1 className="hide">Tim D'hoore</h1>
         <NavMain links={navMainLinks} />
       </header>
       <main>{getActivePage()}</main>

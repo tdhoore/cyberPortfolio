@@ -5,7 +5,7 @@ const ProjectCounter = (props: any) => {
   return (
     <div>
       <Link to=""></Link>
-      <div>*___</div>
+      <div className="pixFont">*___</div>
       <Link to=""></Link>
     </div>
   );

@@ -7,10 +7,13 @@ const Project = (props: ProjectProps) => {
     <article>
       <header>
         <h3>Lorem ipsum</h3>
+        <span className="pixFont">
+          oteisizhbqhtumhiweunowesmwyhaplxjsojmvoqvvrbqhvgbbuffkmbptnqznlimdtvcnwpiwoinjiqryldxgkslbjzsxshaqpaplxjsojmvoqvvrtestertagbqhvgbbuffkmbptnqzoteisizhbqhtumhiweunowesmwyhaplxjsojmvoqvvrbqhvgbbuffkmbptnqznlimdtvcnwpiwoinjiqryldxgkslbjzsxshaqpaplxjsojmvoqvvrbqhvgbbuffkmbptnqzcnwpiwoinjiqryldxgkslbjzsxshaqpaplxjsojmvoqvvrbqhvgbbuffkmbptnqzoteisizhbqhtumhiweunowesmwyhaplxjsojmvoqvvrbqhvgbbuffkmbptnqznlimdshaqpaplxjsojmvoqvvrbqhvgbbuffkmbptnqzoteisizhbqhtumhiweunowesmwyhaplxjsojmvoqvvrbqhvgbbuffkmbptnqznlimdtvcnwpiwoinjiqryldxgkslbjzsxshaqpaplxjsojmvoqvvrbqhvgbbuffkmbptnqzcnwpiwoinjiqryldxgkslbjzsxsmwyhaplxjsojmvoqvvrbqhvgbbuffkmbptnqznlimdtvcnwpiwoinjiqryldxgkslbjzsxshaqpaplxjsojmvoqvvrbqhvgbbuffkmbptnqzcnwpiwoinjiqryldxgkslbjzsxshaqpaplxjsojmvoqvvrbqhvgbbuffkmbptnqzoteisizhbqhtumhiweunowesmwyhaplxjsojmvoqvvrbqhvgbbuffkmbptnqznlimdshaqpaplxjsojmvoqvvrbqhvgbbuffkmbptnqzoteisizhbqhtumhiweunowesmwyhaplxjsojmvoqvvrbqhvgbbuffkmbptnqznlimdtvcnw
+        </span>
       </header>
       <div>
-        <img src="" alt="" />
-        <div>
+        <img src="https://via.placeholder.com/217x336" alt="" />
+        <div className="pixFont">
           <div>541</div>
           <div>541</div>
           <div>541</div>
@@ -18,12 +21,9 @@ const Project = (props: ProjectProps) => {
         </div>
       </div>
       <div>
-        <span>
-          oteisizhbqhtumhiweunowesmwyhaplxjsojmvoqvvrbqhvgbbuffkmbptnqznlimdtvcnwpiwoinjiqryldxgkslbjzsxshaqpaplxjsojmvoqvvrtestertagbqhvgbbuffkmbptnqzoteisizhbqhtumhiweunowesmwyhaplxjsojmvoqvvrbqhvgbbuffkmbptnqznlimdtvcnwpiwoinjiqryldxgkslbjzsxshaqpaplxjsojmvoqvvrbqhvgbbuffkmbptnqzcnwpiwoinjiqryldxgkslbjzsxshaqpaplxjsojmvoqvvrbqhvgbbuffkmbptnqzoteisizhbqhtumhiweunowesmwyhaplxjsojmvoqvvrbqhvgbbuffkmbptnqznlimdshaqpaplxjsojmvoqvvrbqhvgbbuffkmbptnqzoteisizhbqhtumhiweunowesmwyhaplxjsojmvoqvvrbqhvgbbuffkmbptnqznlimdtvcnwpiwoinjiqryldxgkslbjzsxshaqpaplxjsojmvoqvvrbqhvgbbuffkmbptnqzcnwpiwoinjiqryldxgkslbjzsxsmwyhaplxjsojmvoqvvrbqhvgbbuffkmbptnqznlimdtvcnwpiwoinjiqryldxgkslbjzsxshaqpaplxjsojmvoqvvrbqhvgbbuffkmbptnqzcnwpiwoinjiqryldxgkslbjzsxshaqpaplxjsojmvoqvvrbqhvgbbuffkmbptnqzoteisizhbqhtumhiweunowesmwyhaplxjsojmvoqvvrbqhvgbbuffkmbptnqznlimdshaqpaplxjsojmvoqvvrbqhvgbbuffkmbptnqzoteisizhbqhtumhiweunowesmwyhaplxjsojmvoqvvrbqhvgbbuffkmbptnqznlimdtvcnw
-        </span>
         <Link to="">Have a look</Link>
-        <div>*___</div>
-        <div>*___</div>
+        <div className="pixFont">*___</div>
+        <div className="pixFont">*___</div>
       </div>
     </article>
   );

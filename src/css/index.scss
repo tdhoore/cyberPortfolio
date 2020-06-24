@@ -1,6 +1,19 @@
 @import "fonts.scss";
 @import "vars.scss";
 
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  color: $textColor;
+}
+
+*,
+*:after,
+*:before {
+  box-sizing: inherit;
+}
+
 h1,
 h2,
 h3,
@@ -8,6 +21,30 @@ h4 {
   font-family: "pix Chicago", Arial, Helvetica, sans-serif;
   font-weight: normal;
   margin: 0;
+}
+
+body {
+  height: 100vh;
+  overflow: hidden;
+  width: 100vw;
+  background-color: $bgColor;
+}
+
+.pixFont {
+  font-family: "pix Chicago", Arial, Helvetica, sans-serif;
+  font-weight: normal;
+}
+
+.blurEffect {
+  box-shadow: 0.1rem 0.1rem 0 0 $blue, -0.1rem -0.1rem 0 0 $pink;
+  opacity: 0.5;
+  background-color: $textColor;
+}
+
+.blurEffectText {
+  text-shadow: 0.1rem 0.1rem $blue, -0.1rem -0.1rem $pink;
+  opacity: 0.5;
+  color: $textColor;
 }
 
 /* HIDE */
