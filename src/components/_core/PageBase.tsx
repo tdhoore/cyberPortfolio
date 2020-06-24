@@ -25,7 +25,7 @@ const PageBase = (props: pageBase) => {
   };
 
   return (
-    <div>
+    <div className="basePage">
       <header>
         <h1 className="hide">Tim D'hoore</h1>
         <NavMain links={navMainLinks} />

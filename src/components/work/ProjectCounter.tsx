@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 
 const ProjectCounter = (props: any) => {
   return (
-    <div>
-      <Link to=""></Link>
-      <div className="pixFont">*___</div>
-      <Link to=""></Link>
+    <div className="projectCounter">
+      <Link to="" className="diamondButton"></Link>
+      <div className="pixFont counter blurEffectText">*___</div>
+      <Link to="" className="diamondButton"></Link>
     </div>
   );
 };

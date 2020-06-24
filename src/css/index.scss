@@ -1,5 +1,6 @@
 @import "fonts.scss";
 @import "vars.scss";
+@import "work.scss";
 
 html {
   font-size: 62.5%;
@@ -21,6 +22,11 @@ h4 {
   font-family: "pix Chicago", Arial, Helvetica, sans-serif;
   font-weight: normal;
   margin: 0;
+  letter-spacing: 0.2rem;
+}
+
+h3 {
+  font-size: $pad * 3;
 }
 
 body {
@@ -28,11 +34,26 @@ body {
   overflow: hidden;
   width: 100vw;
   background-color: $bgColor;
+  margin: 0;
+}
+
+.basePage {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+main {
+  order: -1;
+  flex: 2;
+  overflow: auto;
 }
 
 .pixFont {
   font-family: "pix Chicago", Arial, Helvetica, sans-serif;
   font-weight: normal;
+  letter-spacing: 0.2rem;
 }
 
 .blurEffect {
@@ -46,7 +67,11 @@ body {
   opacity: 0.5;
   color: $textColor;
 }
-
+.diamondButton {
+  display: block;
+  transform: rotate(45deg);
+  background-color: $textColor;
+}
 /* HIDE */
 .hide {
   display: none;

@@ -1,0 +1,100 @@
+.workSection {
+  display: flex;
+  height: 100%;
+}
+
+.projectCounter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  & .diamondButton {
+    width: $pad * 4;
+    height: $pad * 4;
+  }
+
+  & .counter {
+    display: block;
+    transform: rotate(90deg);
+    font-size: $pad * 2;
+    margin: $pad * 6 0;
+  }
+}
+
+.project {
+  flex: 2;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: stretch;
+  padding: $pad * 2 0;
+}
+
+.projectImage {
+  flex: 2;
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin: $pad * 2 0;
+  padding-left: $pad * 2;
+
+  & .image {
+    background-color: red;
+    height: 100%;
+    width: 100%;
+    position: relative;
+  }
+
+  & img {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+
+  & .image::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -$pad * 2;
+    left: -$pad * 2;
+    width: $pad * 4;
+    height: calc(100% + 3.2rem);
+    border-top: solid $line;
+    border-bottom: solid $line;
+    border-left: solid $line;
+    filter: drop-shadow(0.1rem 0.1rem 0 $blue)
+      drop-shadow(-0.1rem -0.1rem 0 $pink);
+    opacity: 0.5;
+  }
+
+  & .decoNumbers {
+    flex: 3;
+    padding: 0 $pad * 2;
+
+    & div {
+      margin: $pad 0;
+    }
+  }
+}
+
+.projectTitle {
+  display: flex;
+  flex-direction: column;
+  padding: $pad * 2 0;
+
+  & .decoText {
+    width: 100%;
+    height: 100px;
+    overflow: hidden;
+    word-wrap: break-word;
+    display: none;
+  }
+
+  & .counter {
+    display: none;
+  }
+}

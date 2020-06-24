@@ -40,7 +40,7 @@ export default function () {
           ))}
         />
       </Switch>
-      <footer> &copy; {date.getFullYear()}</footer>
+      <footer className="hide"> &copy; {date.getFullYear()}</footer>
     </ConnectedRouter>
   );
 }

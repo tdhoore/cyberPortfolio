@@ -5,7 +5,7 @@ import { props } from "./types";
 
 const Work = (props: props) => {
   return (
-    <section>
+    <section className="workSection">
       <header className="hide">
         <h2>Work</h2>
       </header>
