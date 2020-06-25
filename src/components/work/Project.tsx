@@ -12,7 +12,9 @@ const Project = (props: ProjectProps) => {
             oteisizhbqhtumhiweunowesmwyhaplxjsojmvoqvvrbqhvgbbuffkmbptnqznlimdtvcnwpiwoinjiqryldxgkslbjzsxshaqpaplxjsojmvoqvvrtestertagbqhvgbbuffkmbptnqzoteisizhbqhtumhiweunowesmwyhaplxjsojmvoqvvrbqhvgbbuffkmbptnqznlimdtvcnwpiwoinjiqryldxgkslbjzsxshaqpaplxjsojmvoqvvrbqhvgbbuffkmbptnqzcnwpiwoinjiqryldxgkslbjzsxshaqpaplxjsojmvoqvvrbqhvgbbuffkmbptnqzoteisizhbqhtumhiweunowesmwyhaplxjsojmvoqvvrbqhvgbbuffkmbptnqznlimdshaqpaplxjsojmvoqvvrbqhvgbbuffkmbptnqzoteisizhbqhtumhiweunowesmwyhaplxjsojmvoqvvrbqhvgbbuffkmbptnqznlimdtvcnwpiwoinjiqryldxgkslbjzsxshaqpaplxjsojmvoqvvrbqhvgbbuffkmbptnqzcnwpiwoinjiqryldxgkslbjzsxsmwyhaplxjsojmvoqvvrbqhvgbbuffkmbptnqznlimdtvcnwpiwoinjiqryldxgkslbjzsxshaqpaplxjsojmvoqvvrbqhvgbbuffkmbptnqzcnwpiwoinjiqryldxgkslbjzsxshaqpaplxjsojmvoqvvrbqhvgbbuffkmbptnqzoteisizhbqhtumhiweunowesmwyhaplxjsojmvoqvvrbqhvgbbuffkmbptnqznlimdshaqpaplxjsojmvoqvvrbqhvgbbuffkmbptnqzoteisizhbqhtumhiweunowesmwyhaplxjsojmvoqvvrbqhvgbbuffkmbptnqznlimdtvcnw
           </div>
         </header>
-        <Link to="">Have a look</Link>
+        <Link to="" className="defaultButton">
+          Show me more!
+        </Link>
         <div className="pixFont counter">*___</div>
         <div className="pixFont counter">*___</div>
       </div>

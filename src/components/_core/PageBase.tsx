@@ -5,6 +5,7 @@ import { pageBase } from "./types";
 import Work from "../work/Work";
 import About from "../about/About";
 import Contact from "../contact/Contact";
+import Forground from "./Forground";
 
 const PageBase = (props: pageBase) => {
   const navMainLinks = useSelector(
@@ -31,6 +32,7 @@ const PageBase = (props: pageBase) => {
         <NavMain links={navMainLinks} />
       </header>
       <main>{getActivePage()}</main>
+      <Forground />
     </div>
   );
 };

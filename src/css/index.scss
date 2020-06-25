@@ -38,6 +38,7 @@ body {
 }
 
 .basePage {
+  position: relative;
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -72,6 +73,83 @@ main {
   transform: rotate(45deg);
   background-color: $textColor;
 }
+
+.defaultButton {
+  display: block;
+  background-color: $textColor;
+  font-family: "pix Chicago", Arial, Helvetica, sans-serif;
+  font-weight: normal;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  text-decoration: none;
+  color: $bgColor;
+  padding: $pad;
+  text-align: center;
+}
+
+.forground {
+  pointer-events: none;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  & div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  & .noiseAnimated {
+    z-index: 1;
+    background-image: url("../assets/img/noiseTexture.png");
+    opacity: 0.06;
+    animation: test 1s steps(10) forwards infinite;
+  }
+
+  & .noise {
+    z-index: 1;
+    background-image: url("../assets/img/noiseTexture.png");
+    opacity: 0.1;
+  }
+
+  & .brightness {
+    z-index: 2;
+    background-color: #000;
+    opacity: 0;
+  }
+
+  & .scanLines {
+    z-index: 3;
+    background-image: url("../assets/img/scanLineTexture.png");
+    opacity: 0.3;
+    mix-blend-mode: overlay;
+    //display: none;
+  }
+}
+
+@keyframes test {
+  0% {
+    background-position: 0;
+  }
+
+  50% {
+    background-position: 10rem 10rem;
+  }
+
+  50% {
+    background-position: -10rem 7rem;
+  }
+
+  100% {
+    background-position: 0;
+  }
+}
+
 /* HIDE */
 .hide {
   display: none;

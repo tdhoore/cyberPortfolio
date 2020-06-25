@@ -10,8 +10,8 @@
   align-items: center;
 
   & .diamondButton {
-    width: $pad * 4;
-    height: $pad * 4;
+    width: $pad * 3;
+    height: $pad * 3;
   }
 
   & .counter {
@@ -84,10 +84,14 @@
 .projectTitle {
   display: flex;
   flex-direction: column;
-  padding: $pad * 2 0;
+  padding: $pad * 2 0 0;
+  margin-right: $pad * 2;
+
+  & header {
+    margin-bottom: $pad * 6;
+  }
 
   & .decoText {
-    width: 100%;
     height: 100px;
     overflow: hidden;
     word-wrap: break-word;
