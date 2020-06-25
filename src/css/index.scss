@@ -108,7 +108,7 @@ main {
     z-index: 1;
     background-image: url("../assets/img/noiseTexture.png");
     opacity: 0.06;
-    animation: test 1s steps(10) forwards infinite;
+    animation: noiseAnim 1s steps(10) forwards infinite;
   }
 
   & .noise {
@@ -127,12 +127,13 @@ main {
     z-index: 3;
     background-image: url("../assets/img/scanLineTexture.png");
     opacity: 0.3;
+
     mix-blend-mode: overlay;
-    //display: none;
+    animation: scanLineAnim 40s linear infinite;
   }
 }
 
-@keyframes test {
+@keyframes noiseAnim {
   0% {
     background-position: 0;
   }
@@ -141,12 +142,22 @@ main {
     background-position: 10rem 10rem;
   }
 
-  50% {
+  70% {
     background-position: -10rem 7rem;
   }
 
   100% {
     background-position: 0;
+  }
+}
+
+@keyframes scanLineAnim {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 0 100px;
   }
 }
 
