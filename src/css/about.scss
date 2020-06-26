@@ -1,0 +1,51 @@
+.aboutArticle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  overflow-y: auto;
+  padding: $pad * 3 0;
+  gap: $pad * 2;
+
+  & header {
+    margin-bottom: $pad;
+    padding: 0 $pad * 3;
+  }
+
+  & p {
+    padding: 0 $pad * 3;
+    margin-bottom: $pad * 2;
+  }
+
+  & p:last-of-type {
+    margin-bottom: 0;
+  }
+
+  & .imageHolder {
+    display: flex;
+    align-items: center;
+    object-fit: cover;
+    width: 100%;
+    order: -1;
+    align-self: center;
+    margin-bottom: $pad * 5;
+  }
+
+  & .imageHolder img {
+    width: 40vw;
+    margin: 0 $pad * 3;
+  }
+
+  & .imageHolder::after,
+  & .imageHolder::before {
+    content: "";
+    display: block;
+    flex: 2;
+    height: 50%;
+    filter: drop-shadow(0.1rem 0.1rem 0 $blue)
+      drop-shadow(-0.1rem -0.1rem 0 $pink);
+    opacity: 0.5;
+    border-top: solid $line $textColor;
+    border-bottom: solid $line $textColor;
+  }
+}
