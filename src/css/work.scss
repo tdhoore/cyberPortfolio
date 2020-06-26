@@ -88,7 +88,23 @@
   margin-right: $pad * 2;
 
   & header {
-    margin-bottom: $pad * 6;
+    padding-bottom: $pad * 2;
+    min-height: 20vh;
+    position: relative;
+    z-index: 2;
+  }
+
+  & header::after {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: -1;
+    top: $pad * 3;
+    left: 0;
+    bottom: $pad * 2;
+    width: 100%;
+    opacity: 0.3;
+    background-image: url("../assets/img/crossPatern.png");
   }
 
   & .decoText {
