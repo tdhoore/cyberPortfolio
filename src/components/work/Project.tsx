@@ -8,9 +8,6 @@ const Project = (props: ProjectProps) => {
       <div className="projectTitle">
         <header>
           <h3>Lorem ipsum</h3>
-          <div className="pixFont decoText">
-            oteisizhbqhtumhiweunowesmwyhaplxjsojmvoqvvrbqhvgbbuffkmbptnqznlimdtvcnwpiwoinjiqryldxgkslbjzsxshaqpaplxjsojmvoqvvrtestertagbqhvgbbuffkmbptnqzoteisizhbqhtumhiweunowesmwyhaplxjsojmvoqvvrbqhvgbbuffkmbptnqznlimdtvcnwpiwoinjiqryldxgkslbjzsxshaqpaplxjsojmvoqvvrbqhvgbbuffkmbptnqzcnwpiwoinjiqryldxgkslbjzsxshaqpaplxjsojmvoqvvrbqhvgbbuffkmbptnqzoteisizhbqhtumhiweunowesmwyhaplxjsojmvoqvvrbqhvgbbuffkmbptnqznlimdshaqpaplxjsojmvoqvvrbqhvgbbuffkmbptnqzoteisizhbqhtumhiweunowesmwyhaplxjsojmvoqvvrbqhvgbbuffkmbptnqznlimdtvcnwpiwoinjiqryldxgkslbjzsxshaqpaplxjsojmvoqvvrbqhvgbbuffkmbptnqzcnwpiwoinjiqryldxgkslbjzsxsmwyhaplxjsojmvoqvvrbqhvgbbuffkmbptnqznlimdtvcnwpiwoinjiqryldxgkslbjzsxshaqpaplxjsojmvoqvvrbqhvgbbuffkmbptnqzcnwpiwoinjiqryldxgkslbjzsxshaqpaplxjsojmvoqvvrbqhvgbbuffkmbptnqzoteisizhbqhtumhiweunowesmwyhaplxjsojmvoqvvrbqhvgbbuffkmbptnqznlimdshaqpaplxjsojmvoqvvrbqhvgbbuffkmbptnqzoteisizhbqhtumhiweunowesmwyhaplxjsojmvoqvvrbqhvgbbuffkmbptnqznlimdtvcnw
-          </div>
         </header>
         <Link to="" className="defaultButton">
           Show me more!
