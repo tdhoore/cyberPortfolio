@@ -17,12 +17,18 @@ const Contact = (props: props) => {
           <a href="" target="_blank">
             <span>Link</span>
           </a>
+        </li>
+        <li>
           <a href="" target="_blank">
             <span>Link</span>
           </a>
+        </li>
+        <li>
           <a href="" target="_blank">
             <span>Link</span>
           </a>
+        </li>
+        <li>
           <a href="" target="_blank">
             <span>Link</span>
           </a>
