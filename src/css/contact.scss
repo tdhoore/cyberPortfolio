@@ -1,0 +1,15 @@
+.contactArticle {
+  padding: $pad * 3;
+
+  & header {
+    font-family: "pix Chicago", Arial, Helvetica, sans-serif;
+    font-weight: normal;
+  }
+
+  & header span {
+    font-size: $pad * 3;
+  }
+
+  & .socialLinks {
+  }
+}
