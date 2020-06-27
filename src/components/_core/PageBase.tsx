@@ -5,6 +5,7 @@ import { pageBase } from "./types";
 import Work from "../work/Work";
 import About from "../about/About";
 import Contact from "../contact/Contact";
+import WorkDetails from "../workDetails/WorkDetails";
 import Forground from "./Forground";
 
 const PageBase = (props: pageBase) => {
@@ -20,6 +21,8 @@ const PageBase = (props: pageBase) => {
         return <About />;
       case "Contact":
         return <Contact />;
+      case "WorkDetail":
+        return <WorkDetails />;
       default:
         return <Contact />;
     }

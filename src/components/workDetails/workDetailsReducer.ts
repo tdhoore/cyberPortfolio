@@ -1,7 +1,7 @@
 import { AnyAction } from "redux";
-import { ActionTypes, workDetailState } from "./types";
+import { ActionTypes, workDetailsState } from "./types";
 
-const initState: workDetailState = {};
+const initState: workDetailsState = {};
 
 export default (state = initState, action: AnyAction) => {
   switch (action.type) {

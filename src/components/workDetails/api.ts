@@ -1,5 +1,5 @@
 import { store } from "../../redux/configureStore";
-//import {} from "./workDetailActions";
+//import {} from "./workDetailsActions";
 
 /*export const func = () => {
   store.dispatch();

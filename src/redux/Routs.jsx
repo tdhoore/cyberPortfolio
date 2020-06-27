@@ -19,9 +19,16 @@ export default function () {
           ))}
         />
         <Route
+          exact
           path="/Work"
           component={withRouter((props) => (
             <PageBase {...props} pageCompName="Work" />
+          ))}
+        />
+        <Route
+          path="/Work/:id"
+          component={withRouter((props) => (
+            <PageBase {...props} pageCompName="WorkDetail" />
           ))}
         />
         <Route
