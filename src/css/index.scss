@@ -3,6 +3,7 @@
 @import "work.scss";
 @import "about.scss";
 @import "contact.scss";
+@import "workDetails.scss";
 
 html {
   font-size: 62.5%;
@@ -20,11 +21,16 @@ html {
 h1,
 h2,
 h3,
-h4 {
+h4,
+dt {
   font-family: "pix Chicago", Arial, Helvetica, sans-serif;
   font-weight: normal;
   margin: 0;
   letter-spacing: 0.2rem;
+}
+
+dd {
+  margin: 0;
 }
 
 h2,

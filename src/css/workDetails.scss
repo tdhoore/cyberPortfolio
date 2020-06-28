@@ -9,8 +9,33 @@
   height: 100vh;
 }
 
+.rollInformation {
+  font-size: $pad * 2;
+  display: flex;
+  order: 2;
+}
+
+.workDetailContent {
+}
+
 .projectInfoSection {
 }
 
 .screenshotSection {
+}
+
+.projectDetailCounter {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+
+  & .counter {
+    margin: 0 $pad * 2;
+    font-size: $pad * 2;
+  }
+
+  & .diamondButton {
+    width: $pad * 4;
+    height: $pad * 4;
+  }
 }
