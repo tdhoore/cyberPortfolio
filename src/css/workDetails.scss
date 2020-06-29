@@ -6,28 +6,75 @@
   overflow-x: hidden;
   overflow-y: auto;
   width: 100vw;
-  height: 100vh;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  & header h2 {
+    text-align: center;
+    margin: $pad * 3;
+    font-size: $pad * 2;
+  }
+}
+
+.workDetailContentHolder {
+  position: relative;
+  flex: 2;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.workDetailContent {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  display: flex;
+}
+
+.projectInfoSection {
+  width: 100vw;
+  padding: 0 $pad * 3;
+  display: flex;
+  flex-direction: column;
+
+  & img {
+    display: block;
+    order: -1;
+    width: 100%;
+    height: 20vh;
+    object-fit: cover;
+    margin-bottom: $pad * 2;
+  }
+}
+
+.rollInformationSection {
+  order: -1;
 }
 
 .rollInformation {
   font-size: $pad * 2;
   display: flex;
-  order: 2;
-}
+  margin-bottom: $pad * 2;
 
-.workDetailContent {
-}
-
-.projectInfoSection {
+  & div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    flex: 2;
+  }
 }
 
 .screenshotSection {
+  width: 100vw;
+  padding: 0 $pad * 3;
 }
 
 .projectDetailCounter {
   display: flex;
   justify-content: center;
   width: 100vw;
+  padding: $pad * 2;
 
   & .counter {
     margin: 0 $pad * 2;
