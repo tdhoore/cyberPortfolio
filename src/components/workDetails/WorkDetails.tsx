@@ -38,10 +38,10 @@ const WorkDetails = (props: props) => {
             </section>
           </section>
           <section className="screenshotSection">
-            <header>
+            <header className="hide">
               <h3>screenshot</h3>
             </header>
-            <img src="" alt="" />
+            <img src="https://via.placeholder.com/236x438" alt="" />
           </section>
         </div>
       </div>

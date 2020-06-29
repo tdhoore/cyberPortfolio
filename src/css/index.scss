@@ -4,6 +4,7 @@
 @import "about.scss";
 @import "contact.scss";
 @import "workDetails.scss";
+@import "nav.scss";
 
 html {
   font-size: 62.5%;
@@ -22,7 +23,8 @@ h1,
 h2,
 h3,
 h4,
-dt {
+dt,
+nav {
   font-family: "pix Chicago", Arial, Helvetica, sans-serif;
   font-weight: normal;
   margin: 0;

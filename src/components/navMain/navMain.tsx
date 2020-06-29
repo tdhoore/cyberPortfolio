@@ -9,7 +9,12 @@ const NavMain = (props: props) => {
         {props.links?.map((link) => {
           return (
             <li key={`mainNavLinks${link.title}`}>
-              <Link to={link.link}>{link.title}</Link>
+              <Link
+                to={link.link}
+                className={link.title === "Work" ? `activeElement` : ""}
+              >
+                {link.title}
+              </Link>
             </li>
           );
         })}

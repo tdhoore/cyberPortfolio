@@ -12,7 +12,7 @@
 
   & header h2 {
     text-align: center;
-    margin: $pad * 3;
+    margin: $pad * 2;
     font-size: $pad * 2;
   }
 }
@@ -29,11 +29,12 @@
   top: 0;
   bottom: 0;
   display: flex;
+  transform: translateX(-50%);
 }
 
 .projectInfoSection {
   width: 100vw;
-  padding: 0 $pad * 3;
+  padding: 0 $pad * 3 $pad * 2;
   display: flex;
   flex-direction: column;
 
@@ -67,7 +68,13 @@
 
 .screenshotSection {
   width: 100vw;
-  padding: 0 $pad * 3;
+  padding: 0 $pad * 3 $pad * 2;
+
+  & img {
+    object-fit: cover;
+    width: 100%;
+    max-height: 100%;
+  }
 }
 
 .projectDetailCounter {
