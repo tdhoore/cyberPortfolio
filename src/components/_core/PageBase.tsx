@@ -2,6 +2,7 @@ import React from "react";
 import NavMain from "../navMain/navMain";
 import { useSelector } from "react-redux";
 import { pageBase } from "./types";
+import Home from "../home/Home";
 import Work from "../work/Work";
 import About from "../about/About";
 import Contact from "../contact/Contact";
@@ -15,6 +16,8 @@ const PageBase = (props: pageBase) => {
 
   const getActivePage = () => {
     switch (props.pageCompName) {
+      case "Home":
+        return <Home />;
       case "Work":
         return <Work />;
       case "About":
@@ -24,7 +27,7 @@ const PageBase = (props: pageBase) => {
       case "WorkDetail":
         return <WorkDetails />;
       default:
-        return <Contact />;
+        return <Home />;
     }
   };
 

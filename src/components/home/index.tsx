@@ -1,10 +1,10 @@
-import home from "./home";
+import Home from "./Home";
 import homeReducer from "./homeReducer";
 import * as types from "./types";
 
 const homeComp = {
   components: {
-    home,
+    Home,
     homeReducer,
   },
   types,

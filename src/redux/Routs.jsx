@@ -15,7 +15,7 @@ export default function () {
           exact
           path="/"
           component={withRouter((props) => (
-            <PageBase {...props} pageCompName="Work" />
+            <PageBase {...props} pageCompName="Home" />
           ))}
         />
         <Route

@@ -1,0 +1,19 @@
+.homeArticle {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  & header {
+    text-align: center;
+  }
+
+  & img {
+    order: -1;
+    width: 40vw;
+    height: 40vw;
+    background-color: red;
+    margin-bottom: $pad * 3;
+  }
+}

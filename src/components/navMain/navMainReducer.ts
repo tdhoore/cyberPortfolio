@@ -4,9 +4,14 @@ import { ActionTypes, navState } from "./types";
 const initState: navState = {
   navLinks: [
     {
+      title: "Home",
+      link: "/",
+      isActive: true,
+    },
+    {
       title: "Work",
       link: "/work",
-      isActive: true,
+      isActive: false,
     },
     {
       title: "About",

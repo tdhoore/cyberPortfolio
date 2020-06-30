@@ -18,11 +18,11 @@ nav {
   & li:before {
     content: "";
     position: relative;
-    right: $pad * 2.5;
+    right: $pad * 3;
     display: block;
     box-shadow: 0.1rem 0.1rem 0 0 $blue, -0.1rem -0.1rem 0 0 $pink;
     background-color: $textColor;
-    width: $pad * 2;
+    width: $pad;
     height: $line;
     transform-origin: center right;
     transform: scaleX(0);
@@ -31,7 +31,7 @@ nav {
 
   & li:before {
     transform-origin: center left;
-    left: $pad * 2.5;
+    left: $pad * 3;
   }
 
   & li:hover:after,
@@ -42,9 +42,9 @@ nav {
   & li a {
     text-decoration: none;
     color: $textColor;
-    font-size: $pad * 2;
+    font-size: 1rem;
     display: block;
-    margin: 0 $pad;
+    margin: 0 $pad * 2;
     padding: $pad * 4 0;
   }
 
