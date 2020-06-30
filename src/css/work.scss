@@ -1,6 +1,8 @@
 .workSection {
   display: flex;
   height: 100%;
+  max-width: $pad * 128;
+  margin: 0 auto;
 }
 
 .projectCounter {
@@ -28,8 +30,6 @@
   flex-direction: column-reverse;
   justify-content: stretch;
   padding: $pad * 2 0;
-  max-width: $pad * 128;
-  margin: 0 auto;
 }
 
 .projectImage {
@@ -89,13 +89,19 @@
   margin-right: $pad * 2;
 
   & header {
+    display: flex;
     padding-bottom: $pad * 2;
     min-height: 20vh;
-    position: relative;
-    z-index: 2;
+    align-content: stretch;
   }
 
-  & header::after {
+  & header h3 {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+  }
+
+  & header h3::after {
     content: "";
     display: block;
     position: absolute;
@@ -121,6 +127,18 @@
 }
 
 @media only screen and (min-width: 600px) {
+  .workSection {
+    position: relative;
+    //overflow: hidden;
+  }
+
+  .projectCounter {
+    & .diamondButton {
+      width: $pad * 4;
+      height: $pad * 4;
+    }
+  }
+
   .project {
     flex-direction: row-reverse;
     justify-content: center;
@@ -153,6 +171,59 @@
       & div {
         margin: $pad * 3 0;
       }
+    }
+  }
+
+  .projectTitle {
+    justify-content: center;
+
+    & header {
+      position: relative;
+      justify-content: flex-start;
+    }
+
+    & header h3 {
+      font-size: $pad * 6;
+      width: auto;
+    }
+
+    & header h3::after {
+      top: $pad * 6;
+      width: 110%;
+    }
+
+    & header::before {
+      content: "";
+      display: block;
+      position: absolute;
+      z-index: -1;
+      top: -$pad * 6;
+      bottom: -$pad * 12;
+      left: 0;
+      width: 100vw;
+      filter: drop-shadow(0.1rem 0.1rem 0 $blue)
+        drop-shadow(-0.1rem -0.1rem 0 $pink);
+      opacity: 0.5;
+      border-top: solid $textColor $line;
+      border-bottom: solid $textColor $line;
+      pointer-events: none;
+    }
+
+    & .defaultButton {
+      align-self: flex-start;
+    }
+
+    & .counter {
+      display: block;
+      margin-top: $pad * 8;
+      align-self: center;
+      font-size: $pad * 2;
+    }
+
+    & .counter:first-of-type {
+      order: -2;
+      margin-top: 0;
+      margin-bottom: $pad * 8;
     }
   }
 }

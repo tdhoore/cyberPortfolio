@@ -12,8 +12,8 @@ const Project = (props: ProjectProps) => {
         <Link to="" className="defaultButton">
           Show me more!
         </Link>
-        <div className="pixFont counter">*___</div>
-        <div className="pixFont counter">*___</div>
+        <div className="pixFont counter blurEffectText">*___</div>
+        <div className="pixFont counter blurEffectText">*___</div>
       </div>
       <div className="projectImage">
         <div className="image">
