@@ -28,6 +28,8 @@
   flex-direction: column-reverse;
   justify-content: stretch;
   padding: $pad * 2 0;
+  max-width: $pad * 128;
+  margin: 0 auto;
 }
 
 .projectImage {
@@ -115,5 +117,42 @@
 
   & .counter {
     display: none;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .project {
+    flex-direction: row-reverse;
+    justify-content: center;
+  }
+
+  .projectImage {
+    margin: 0;
+    padding: 0;
+    flex: 0;
+    margin-right: $pad * 10;
+
+    & .image {
+      width: auto;
+      height: auto;
+      max-height: 100%;
+
+      & img {
+        position: relative;
+        object-fit: cover;
+        width: auto;
+        height: auto;
+      }
+    }
+
+    & .decoNumbers {
+      order: -1;
+      flex: 1;
+      margin-right: $pad * 3;
+
+      & div {
+        margin: $pad * 3 0;
+      }
+    }
   }
 }
