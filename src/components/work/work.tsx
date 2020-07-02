@@ -11,6 +11,7 @@ const Work = (props: props) => {
       </header>
       <ProjectCounter />
       <Project />
+      <div className="spacer"></div>
     </section>
   );
 };

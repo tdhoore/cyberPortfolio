@@ -10,7 +10,7 @@ const Project = (props: ProjectProps) => {
           <h3>Lorem ipsum</h3>
         </header>
         <Link to="" className="defaultButton">
-          Show me more!
+          Show me more
         </Link>
         <div className="pixFont counter blurEffectText">*___</div>
         <div className="pixFont counter blurEffectText">*___</div>
