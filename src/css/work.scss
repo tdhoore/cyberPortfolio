@@ -125,17 +125,16 @@
   }
 }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 1070px) {
   .workSection {
     position: relative;
-    //overflow: hidden;
-
     & .spacer {
       flex: 2;
     }
   }
 
   .projectCounter {
+    position: relative;
     flex: 2;
     align-items: flex-end;
     margin-right: $pad * 2;
@@ -143,6 +142,24 @@
     & .diamondButton {
       width: $pad * 4;
       height: $pad * 4;
+    }
+
+    & .counter {
+      transform: rotate(90deg) translateY(-$pad * 3);
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 50%;
+      right: $pad * 9;
+      height: $line;
+      width: 100vw;
+      background-color: $textColor;
+      filter: drop-shadow(0.1rem 0.1rem 0 $blue)
+        drop-shadow(-0.1rem -0.1rem 0 $pink);
+      opacity: 0.5;
     }
   }
 
@@ -181,7 +198,7 @@
     & .decoNumbers {
       order: -1;
       flex: 1;
-      margin-right: $pad * 3;
+      margin-right: $pad * 5;
 
       & div {
         margin: $pad * 3 0;

@@ -6,14 +6,13 @@
   padding: $pad * 3;
   height: 100%;
 
-  & header {
+  & .letter {
     font-family: "pix Chicago", Arial, Helvetica, sans-serif;
     font-weight: normal;
     text-align: center;
-    margin-bottom: $pad * 3;
   }
 
-  & header span {
+  & .letter span {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -21,13 +20,23 @@
     letter-spacing: 0.2rem;
   }
 
-  & header span::before {
+  & .letter span::before {
     content: "";
     display: block;
     width: 40vw;
     height: 25vw;
     margin-bottom: $pad * 2;
     background-color: red;
+  }
+
+  & p {
+    margin-bottom: $pad * 3;
+  }
+}
+
+.contactInfo {
+  & .decoNumbers {
+    display: none;
   }
 }
 
@@ -53,5 +62,118 @@
 
   & li a span {
     display: none;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .contactArticle {
+    flex-direction: row;
+
+    & .letter span::before {
+      width: $pad * 32;
+      height: $pad * 20;
+    }
+
+    & .letter {
+      position: relative;
+    }
+
+    & .letter::before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: calc(-100vw - 8.8rem);
+      height: $line;
+      width: 100vw;
+      background-color: $textColor;
+      filter: drop-shadow(0.1rem 0.1rem 0 $blue)
+        drop-shadow(-0.1rem -0.1rem 0 $pink);
+      opacity: 0.5;
+    }
+  }
+
+  .contactInfo {
+    position: relative;
+    margin-left: $pad * 10;
+
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: -$pad * 4;
+      right: -$pad * 4;
+      width: $pad * 6;
+      height: calc(100% + 6.4rem);
+      border-top: solid $line;
+      border-bottom: solid $line;
+      border-right: solid $line;
+      filter: drop-shadow(0.1rem 0.1rem 0 $blue)
+        drop-shadow(-0.1rem -0.1rem 0 $pink);
+      opacity: 0.5;
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 50%;
+      right: calc(-100vw - 8.8rem);
+      height: $line;
+      width: 100vw;
+      background-color: $textColor;
+      filter: drop-shadow(0.1rem 0.1rem 0 $blue)
+        drop-shadow(-0.1rem -0.1rem 0 $pink);
+      opacity: 0.5;
+    }
+
+    & .decoNumbers {
+      position: absolute;
+      top: 50%;
+      right: -$pad * 9;
+      display: block;
+      transform: translateY(-50%);
+
+      & div {
+        margin: $pad * 3 0;
+      }
+    }
+  }
+
+  .socialLinks {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-width: $pad * 40;
+
+    & li {
+      margin-left: 0;
+      margin-bottom: $pad * 2;
+    }
+
+    & li a {
+      display: flex;
+      align-items: center;
+      width: auto;
+      height: $pad * 6;
+      font-size: $pad * 2;
+      color: $textColor;
+      text-decoration: none;
+      background: none;
+      border: solid $line $textColor;
+    }
+
+    & li a::before {
+      content: "";
+      display: block;
+      height: 100%;
+      width: $pad * 6;
+      background-color: $textColor;
+    }
+
+    & li a span {
+      display: block;
+      margin-left: $pad * 2;
+    }
   }
 }

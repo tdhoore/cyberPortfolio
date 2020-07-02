@@ -62,9 +62,24 @@
     align-content: center;
 
     & .titleAndInfo {
+      position: relative;
       grid-row: 1 / -1;
       grid-column: 2 / -1;
       align-self: center;
+    }
+
+    & .titleAndInfo::before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 50%;
+      right: calc(-100vw - 2.4rem);
+      height: $line;
+      width: 100vw;
+      background-color: $textColor;
+      filter: drop-shadow(0.1rem 0.1rem 0 $blue)
+        drop-shadow(-0.1rem -0.1rem 0 $pink);
+      opacity: 0.5;
     }
 
     & header {
