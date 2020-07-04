@@ -94,6 +94,8 @@
   }
 
   .contactInfo {
+    display: flex;
+    flex-direction: column-reverse;
     position: relative;
     margin-left: $pad * 10;
 
@@ -145,10 +147,11 @@
     flex-direction: column;
     justify-content: flex-start;
     min-width: $pad * 40;
+    margin-top: 0;
 
     & li {
       margin-left: 0;
-      margin-bottom: $pad * 2;
+      margin-bottom: $pad * 3;
     }
 
     & li a {
