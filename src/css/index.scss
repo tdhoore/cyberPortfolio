@@ -120,7 +120,8 @@ main {
   font-size: 1.2rem;
 }
 
-.forground {
+.forground,
+.background {
   pointer-events: none;
   position: absolute;
   z-index: -1;
@@ -161,6 +162,42 @@ main {
     background-image: url("../assets/img/scanLineTexture.png");
     opacity: 0.4;
     animation: scanLineAnim 40s linear infinite;
+  }
+}
+
+.background {
+  & .bgRect {
+    border: solid $blue $line;
+    opacity: 0.15;
+    filter: drop-shadow(0 0 $pad rgba($color: $blue, $alpha: 0.5));
+  }
+
+  & .rect1 {
+    top: -$line;
+    left: 10%;
+    bottom: 60%;
+    right: 60%;
+  }
+
+  & .rect2 {
+    top: 30%;
+    left: 20%;
+    bottom: -$line;
+    right: 48%;
+  }
+
+  & .rect3 {
+    top: -$line;
+    left: 60%;
+    bottom: 70%;
+    right: -$line;
+  }
+
+  & .rect4 {
+    top: 60%;
+    left: 45%;
+    bottom: 10%;
+    right: -$line;
   }
 }
 

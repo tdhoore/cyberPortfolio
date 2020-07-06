@@ -8,6 +8,7 @@ import About from "../about/About";
 import Contact from "../contact/Contact";
 import WorkDetails from "../workDetails/WorkDetails";
 import Forground from "./Forground";
+import Background from "./Background";
 
 const PageBase = (props: pageBase) => {
   const navMainLinks = useSelector(
@@ -39,6 +40,7 @@ const PageBase = (props: pageBase) => {
       </header>
       <main>{getActivePage()}</main>
       <Forground />
+      <Background />
     </div>
   );
 };
