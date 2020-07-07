@@ -104,6 +104,40 @@ main {
   display: block;
   transform: rotate(45deg);
   background-color: $accentColor;
+  border: solid $line $accentColor;
+  overflow: hidden;
+  transition: all 150ms;
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: $pad/2;
+    left: $pad/2;
+    right: $pad/2;
+    bottom: $pad/2;
+    border: solid $line $accentColor;
+    transform: scale(1.2, 1.2);
+    transition: all 300ms;
+  }
+
+  &:hover {
+    background-color: $accentTextColor;
+    color: $accentColor;
+    animation: flickerButtonBg 150ms forwards;
+  }
+
+  &:hover::after {
+    transform: scale(1);
+  }
+
+  &:active {
+    transform: rotate(45deg) scale(0.95);
+  }
+
+  &:active::after {
+    transform: scale(1.5, 1.5);
+  }
 }
 
 .defaultButton {
