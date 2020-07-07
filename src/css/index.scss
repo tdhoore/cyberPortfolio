@@ -103,19 +103,19 @@ main {
 .diamondButton {
   display: block;
   transform: rotate(45deg);
-  background-color: $textColor;
+  background-color: $accentColor;
 }
 
 .defaultButton {
   display: block;
-  background-color: $textColor;
+  background-color: $accentColor;
   font-family: "pix Chicago", Arial, Helvetica, sans-serif;
   font-weight: normal;
   letter-spacing: 0.2rem;
   text-transform: uppercase;
   text-decoration: none;
-  color: $bgColor;
-  padding: $pad $pad * 2;
+  color: $accentTextColor;
+  padding: $pad * 2;
   text-align: center;
   font-size: 1.2rem;
 }
@@ -153,8 +153,8 @@ main {
 
   & .brightness {
     z-index: 2;
-    background-color: #000;
-    opacity: 0;
+    background-color: #fff;
+    opacity: 0.7;
   }
 
   & .scanLines {

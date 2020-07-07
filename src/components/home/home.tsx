@@ -9,6 +9,10 @@ const Home = (props: props) => {
         <p>Creative frontend developer</p>
       </header>
       <img src="" alt="" />
+      <p>
+        Delectus reiciendis impedit possimus dolor esse vitae itaque ratione
+        natus labore voluptatibus!
+      </p>
     </article>
   );
 };

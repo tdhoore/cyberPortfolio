@@ -1,12 +1,18 @@
 .aboutArticle {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  width: 100%;
   height: 100%;
   overflow-y: auto;
   overflow-x: hidden;
-  padding: $pad * 3 0;
-  gap: $pad * 2;
+
+  & .wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    padding: $pad * 3 0;
+    max-width: $pad * 120;
+    margin: 0 auto;
+  }
 
   & header {
     margin-bottom: $pad;
@@ -53,20 +59,14 @@
 
 @media only screen and (min-width: 1070px) {
   .aboutArticle {
-    display: grid;
-    grid-template-columns: $pad * 40 $pad * 60;
-    grid-template-rows: repeat(2, 25vh);
-    padding: 0;
-    row-gap: $pad;
-    column-gap: $pad * 10;
-    justify-content: center;
-    align-content: center;
+    & .wrapper {
+      flex-direction: row;
+    }
 
     & .titleAndInfo {
       position: relative;
-      grid-row: 1 / -1;
-      grid-column: 2 / -1;
       align-self: center;
+      flex: 3;
     }
 
     & .titleAndInfo::before {
@@ -95,11 +95,12 @@
 
     & .imageHolder {
       position: relative;
-      grid-row: 1 / -1;
-      grid-column: 1 / 2;
       margin: 0;
-      height: 100%;
+      height: 70%;
+      max-height: 100%;
       width: 100%;
+      margin-right: $pad * 10;
+      flex: 2;
 
       & img {
         height: 100%;

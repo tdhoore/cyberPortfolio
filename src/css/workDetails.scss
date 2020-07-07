@@ -29,7 +29,7 @@
   top: 0;
   bottom: 0;
   display: flex;
-  transform: translateX(-50%);
+  //transform: translateX(-50%);
 }
 
 .projectInfoSection {
@@ -67,6 +67,9 @@
 }
 
 .screenshotSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100vw;
   padding: 0 $pad * 3 $pad * 2;
 
@@ -74,6 +77,7 @@
     object-fit: cover;
     width: 100%;
     max-height: 100%;
+    max-width: $pad * 128;
   }
 }
 
