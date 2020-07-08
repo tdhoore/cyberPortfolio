@@ -7,17 +7,30 @@
   min-height: 100%;
 
   & .letter {
+    position: relative;
     font-family: "pix Chicago", Arial, Helvetica, sans-serif;
     font-weight: normal;
     text-align: center;
   }
 
   & .letter span {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     font-size: $pad * 3;
     letter-spacing: 0.2rem;
+
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      bottom: -$pad * 2;
+      height: $pad * 5;
+      width: 100%;
+      opacity: 0.3;
+      background-image: url("../assets/img/crossPatern.png");
+    }
   }
 
   & .letter span::before {
@@ -26,7 +39,7 @@
     width: 40vw;
     height: 25vw;
     margin-bottom: $pad * 2;
-    background-color: red;
+    background-color: $accentColor;
   }
 
   & p {
@@ -57,7 +70,7 @@
     display: block;
     width: $pad * 5;
     height: $pad * 5;
-    background-color: red;
+    background-color: $accentColor;
   }
 
   & li a span {
@@ -76,6 +89,19 @@
 
     & .letter {
       position: relative;
+
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 50%;
+        right: -$pad * 6;
+        font-size: $pad * 2;
+        width: $pad * 2;
+        height: $pad * 2;
+        background-color: $accentColor;
+        transform: translateY(-$pad);
+      }
     }
 
     & .letter::before {
@@ -148,6 +174,26 @@
     justify-content: flex-start;
     min-width: $pad * 40;
     margin-top: 0;
+
+    &::after,
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 30%;
+      left: -$pad * 6;
+      font-size: $pad * 2;
+      width: $pad * 2;
+      height: $pad * 2;
+      background-color: $accentColor;
+      transform: translateY(-$pad * 3);
+    }
+
+    &::before {
+      top: auto;
+      bottom: 30%;
+      transform: translateY($pad * 3);
+    }
 
     & li {
       margin-left: 0;
