@@ -39,7 +39,10 @@
     width: 40vw;
     height: 25vw;
     margin-bottom: $pad * 2;
-    background-color: $accentColor;
+    background-image: url("../assets/img/inbox.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
   }
 
   & p {
