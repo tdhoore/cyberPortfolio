@@ -18,4 +18,3 @@ const Work = (props: props) => {
 };
 
 export default Work;
-// <div className="spacer"></div>

@@ -11,31 +11,35 @@ const WorkDetails = (props: props) => {
       <div className="workDetailContentHolder">
         <div className="workDetailContent">
           <section className="projectInfoSection">
-            <header>
-              <h3>Project info</h3>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit
-                maiores aliquam quam voluptate sapiente mollitia corrupti quas
-                aut tempora nesciunt? Qui ullam voluptatem molestias alias
-                officiis sit pariatur culpa animi.
-              </p>
-            </header>
-            <img src="https://via.placeholder.com/236x438" alt="" />
-            <section className="rollInformationSection">
-              <header className="hide">
-                <h4>client and roll</h4>
+            <div className="wrapper">
+              <header>
+                <h3>Project info</h3>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit
+                  maiores aliquam quam voluptate sapiente mollitia corrupti quas
+                  aut tempora nesciunt? Qui ullam voluptatem molestias alias
+                  officiis sit pariatur culpa animi.
+                </p>
               </header>
-              <dl className="rollInformation">
-                <div>
-                  <dt>Roll</dt>
-                  <dd>roll</dd>
-                </div>
-                <div>
-                  <dt>Client</dt>
-                  <dd>Awsome corp</dd>
-                </div>
-              </dl>
-            </section>
+              <div className="image">
+                <img src="https://via.placeholder.com/236x438" alt="" />
+              </div>
+              <section className="rollInformationSection">
+                <header className="hide">
+                  <h4>client and roll</h4>
+                </header>
+                <dl className="rollInformation">
+                  <div>
+                    <dt>Roll</dt>
+                    <dd>roll</dd>
+                  </div>
+                  <div>
+                    <dt>Client</dt>
+                    <dd>Awsome corp</dd>
+                  </div>
+                </dl>
+              </section>
+            </div>
           </section>
           <section className="screenshotSection">
             <header className="hide">
