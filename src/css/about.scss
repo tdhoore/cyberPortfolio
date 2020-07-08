@@ -85,8 +85,16 @@
 
     & header {
       padding: 0;
-      margin: 0 0 $pad;
+      margin: 0 0 $pad * 4;
       align-self: flex-end;
+
+      & h2 {
+        font-size: $pad * 5;
+      }
+
+      & p {
+        font-size: $pad * 3;
+      }
     }
 
     & p {

@@ -7,7 +7,12 @@ const About = (props: props) => {
       <div className="wrapper">
         <div className="titleAndInfo">
           <header>
-            <h2>I'm Tim D'hoore</h2>
+            <h2>
+              Hi, I'm
+              <br />
+              Tim D'hoore
+            </h2>
+            <p>sub title</p>
           </header>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit.

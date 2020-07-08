@@ -1,12 +1,32 @@
 .homeArticle {
   height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+
+  & .wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
 
   & header {
     text-align: center;
+
+    & h2 {
+      position: relative;
+      display: inline-block;
+    }
+
+    & h2::after {
+      content: "";
+      display: block;
+      position: absolute;
+      bottom: -15%;
+      height: 60%;
+      width: 100%;
+      opacity: 0.3;
+      background-image: url("../assets/img/crossPatern.png");
+    }
   }
 
   & img {
@@ -15,7 +35,60 @@
     height: 40vw;
     max-width: $pad * 25;
     max-height: $pad * 25;
-    background-color: red;
     margin-bottom: $pad * 3;
+  }
+
+  & p {
+    margin: 0 $pad * 3;
+    text-align: center;
+  }
+
+  & .shortInfo {
+    margin-top: $pad * 2;
+    max-width: $pad * 65;
+  }
+}
+
+@media only screen and (min-width: 1070px) {
+  .homeArticle {
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+
+    & .wrapper {
+      flex-direction: row;
+      height: auto;
+    }
+
+    & .intro {
+      margin-left: $pad * 3;
+      max-width: $pad * 65;
+    }
+
+    & header {
+      text-align: left;
+
+      & h2 {
+        font-size: $pad * 5;
+      }
+
+      & p {
+        font-size: $pad * 3;
+      }
+    }
+
+    & img {
+      margin-bottom: 0;
+    }
+
+    & p {
+      margin: 0;
+      text-align: left;
+    }
+
+    & .shortInfo {
+      margin-top: $pad * 4;
+    }
   }
 }
