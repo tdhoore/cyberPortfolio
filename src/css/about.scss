@@ -17,6 +17,22 @@
   & header {
     margin-bottom: $pad * 2;
     padding: 0 $pad * 3;
+
+    & h2 {
+      position: relative;
+      display: inline-block;
+    }
+
+    & h2::after {
+      content: "";
+      display: block;
+      position: absolute;
+      bottom: -10%;
+      height: 30%;
+      width: 100%;
+      opacity: 0.3;
+      background-image: url("../assets/img/crossPatern.png");
+    }
   }
 
   & p {
