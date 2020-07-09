@@ -42,6 +42,8 @@ nav {
 
 @media only screen and (min-width: 1070px) {
   nav {
+    position: relative;
+    z-index: 999;
     display: flex;
     justify-content: flex-end;
     border: none;
@@ -54,6 +56,10 @@ nav {
       margin: 0;
       padding: $pad * 3 $pad $pad * 2;
     }
+  }
+
+  main {
+    margin-top: -$pad * 7;
   }
 }
 
