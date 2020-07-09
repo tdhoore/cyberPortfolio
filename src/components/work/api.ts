@@ -1,6 +1,6 @@
 import { store } from "../../redux/configureStore";
 //import {} from "./workActions";
 
-/*export const func = () => {
-  store.dispatch();
-};*/
+export const getWork = () => {
+  store.dispatch({ type: "WORK_FETCH_REQUESTED" });
+};

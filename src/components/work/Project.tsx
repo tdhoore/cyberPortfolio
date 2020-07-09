@@ -3,11 +3,11 @@ import { Link } from "react-router-dom";
 import { ProjectProps } from "./types";
 
 const Project = (props: ProjectProps) => {
-  return (
+  return props.data !== undefined ? (
     <article className="project">
       <div className="projectTitle">
         <header>
-          <h3>Lorem ipsum</h3>
+          <h3>{props.data.title}</h3>
         </header>
         <Link to="" className="defaultButton">
           Show me more
@@ -27,6 +27,8 @@ const Project = (props: ProjectProps) => {
         </div>
       </div>
     </article>
+  ) : (
+    <div></div>
   );
 };
 

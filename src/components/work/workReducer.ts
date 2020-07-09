@@ -1,15 +1,18 @@
 import { AnyAction } from "redux";
 import { ActionTypes, workState } from "./types";
 
-const initState: workState = {};
+const initState: workState = {
+  currentItem: 0,
+  workItems: [],
+};
 
 export default (state = initState, action: AnyAction) => {
   switch (action.type) {
-    /*case ActionTypes.example:
+    case ActionTypes.gotWork:
       return {
         ...state,
-        example: action.payload,
-      };*/
+        workItems: action.payload,
+      };
     default:
       return state;
   }
