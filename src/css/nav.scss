@@ -11,32 +11,6 @@ nav {
     position: relative;
     display: flex;
     align-items: center;
-    margin: 0 -$pad * 2.5;
-  }
-
-  & li:after,
-  & li:before {
-    content: "";
-    position: relative;
-    right: $pad * 3;
-    display: block;
-    box-shadow: 0.1rem 0.1rem 0 0 $blue, -0.1rem -0.1rem 0 0 $pink;
-    background-color: $textColor;
-    width: $pad;
-    height: $line;
-    transform-origin: center right;
-    transform: scaleX(0);
-    transition: all 150ms;
-  }
-
-  & li:before {
-    transform-origin: center left;
-    left: $pad * 3;
-  }
-
-  & li:hover:after,
-  & li:hover:before {
-    transform: scaleX(1);
   }
 
   & li a {
@@ -44,8 +18,7 @@ nav {
     color: $textColor;
     font-size: 1rem;
     display: block;
-    margin: 0 $pad * 2;
-    padding: $pad * 4 0;
+    padding: $pad * 2 $pad/2;
   }
 
   & li a::after,
@@ -67,7 +40,21 @@ nav {
   }
 }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 1070px) {
+  nav {
+    display: flex;
+    justify-content: flex-end;
+    border: none;
+
+    & li {
+      margin: 0;
+    }
+
+    & li a {
+      margin: 0;
+      padding: $pad * 3 $pad $pad * 2;
+    }
+  }
 }
 
 @keyframes fadeElem {
