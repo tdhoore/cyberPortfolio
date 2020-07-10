@@ -161,6 +161,7 @@ main {
   border: solid $line $accentColor;
   overflow: hidden;
   transition: all 150ms;
+  cursor: pointer;
 
   &::after {
     content: "";
@@ -324,6 +325,7 @@ main {
 @media only screen and (min-width: 1070px) {
   main {
     order: 1;
+    margin-top: -$pad * 7;
   }
 }
 

@@ -110,6 +110,19 @@
 }
 
 @media only screen and (min-width: 1070px) {
+  .mainHeader {
+    display: flex;
+    justify-content: center;
+  }
+
+  .workDetailArticle header h2 {
+    position: relative;
+    z-index: 1000;
+    font-size: $pad * 3;
+    margin-top: $pad;
+    display: inline-block;
+  }
+
   .projectInfoSection {
     overflow-x: hidden;
 

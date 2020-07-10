@@ -40,6 +40,15 @@ nav {
   }
 }
 
+.returnToWork {
+  display: block;
+  background-color: $accentColor;
+  color: $accentTextColor;
+  font-size: $pad * 2;
+  text-align: center;
+  padding: $pad * 2;
+}
+
 @media only screen and (min-width: 1070px) {
   nav {
     position: relative;
@@ -58,8 +67,8 @@ nav {
     }
   }
 
-  main {
-    margin-top: -$pad * 7;
+  .returnToWork {
+    margin: $pad * 4 $pad * 2 0;
   }
 }
 

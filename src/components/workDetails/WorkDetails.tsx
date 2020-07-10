@@ -5,7 +5,7 @@ import ProjectDetailCounter from "./ProjectDetailCounter";
 const WorkDetails = (props: props) => {
   return (
     <article className="workDetailArticle">
-      <header>
+      <header className="mainHeader">
         <h2>title</h2>
       </header>
       <div className="workDetailContentHolder">
