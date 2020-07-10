@@ -10,6 +10,9 @@ const Work = (props: props) => {
   const currentItem = useSelector(
     (state: any) => state.workReducer.currentItem
   );
+  const lengthWorkArray = useSelector(
+    (state: any) => state.workReducer.workItems.length
+  );
 
   useEffect(() => {
     //if there is no work here get it
@@ -18,14 +21,28 @@ const Work = (props: props) => {
     }
   });
 
+  const setCounter = () => {
+    let counter = "";
+
+    for (let i = 0; i < lengthWorkArray; i++) {
+      if (i === currentItem) {
+        counter += "*";
+      } else {
+        counter += "_";
+      }
+    }
+
+    return counter;
+  };
+
   return (
     <section className="workSection">
       <div className="wrapper">
         <header className="hide">
           <h2>Work</h2>
         </header>
-        <ProjectCounter />
-        <Project data={work[currentItem]} />
+        <ProjectCounter counter={setCounter()} />
+        <Project data={work[currentItem]} counter={setCounter()} />
       </div>
     </section>
   );

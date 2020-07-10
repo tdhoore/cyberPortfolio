@@ -24,7 +24,9 @@ const NavMain = (props: props) => {
           })}
         </ul>
       ) : (
-        <a className="returnToWork defaultButton">Back to work</a>
+        <Link to="/work" className="returnToWork defaultButton">
+          Back to work
+        </Link>
       )}
     </nav>
   );

@@ -13,6 +13,12 @@ export default (state = initState, action: AnyAction) => {
         ...state,
         workItems: action.payload,
       };
+
+    case ActionTypes.updateCurrentItem:
+      return {
+        ...state,
+        currentItem: action.payload,
+      };
     default:
       return state;
   }

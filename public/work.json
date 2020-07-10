@@ -1,14 +1,65 @@
 [
   {
     "title": "tester1",
-    "image": "tester"
+    "image": "https://via.placeholder.com/236x438",
+    "roll": "roll1",
+    "Client": "Awsome corp",
+    "projectInfo": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit maiores aliquam quam voluptate sapiente mollitia corrupti quas aut tempora nesciunt? Qui ullam voluptatem molestias alias officiis sit pariatur culpa animi.",
+    "sliderimages": [
+      {
+        "title": "tester1",
+        "image": "https://via.placeholder.com/236x438"
+      },
+      {
+        "title": "tester1",
+        "image": "https://via.placeholder.com/236x438"
+      },
+      {
+        "title": "tester1",
+        "image": "https://via.placeholder.com/236x438"
+      }
+    ]
   },
   {
     "title": "tester2",
-    "image": "tester"
+    "image": "https://via.placeholder.com/236x438",
+    "roll": "roll1",
+    "Client": "Awsome corp",
+    "projectInfo": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit maiores aliquam quam voluptate sapiente mollitia corrupti quas aut tempora nesciunt? Qui ullam voluptatem molestias alias officiis sit pariatur culpa animi.",
+    "sliderimages": [
+      {
+        "title": "tester1",
+        "image": "https://via.placeholder.com/236x438"
+      },
+      {
+        "title": "tester1",
+        "image": "https://via.placeholder.com/236x438"
+      },
+      {
+        "title": "tester1",
+        "image": "https://via.placeholder.com/236x438"
+      }
+    ]
   },
   {
     "title": "tester3",
-    "image": "tester"
+    "image": "https://via.placeholder.com/236x438",
+    "roll": "roll1",
+    "Client": "Awsome corp",
+    "projectInfo": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit maiores aliquam quam voluptate sapiente mollitia corrupti quas aut tempora nesciunt? Qui ullam voluptatem molestias alias officiis sit pariatur culpa animi.",
+    "sliderimages": [
+      {
+        "title": "tester1",
+        "image": "https://via.placeholder.com/236x438"
+      },
+      {
+        "title": "tester1",
+        "image": "https://via.placeholder.com/236x438"
+      },
+      {
+        "title": "tester1",
+        "image": "https://via.placeholder.com/236x438"
+      }
+    ]
   }
 ]

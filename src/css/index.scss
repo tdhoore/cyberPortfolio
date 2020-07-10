@@ -64,6 +64,15 @@ li {
   margin: 0;
 }
 
+button {
+  display: block;
+  cursor: pointer;
+}
+
+button:focus {
+  outline: none;
+}
+
 body {
   height: 100vh;
   overflow: hidden;
@@ -112,6 +121,7 @@ main {
   border: solid $line $accentColor;
   overflow: hidden;
   transition: all 150ms;
+  cursor: pointer;
 
   &::after {
     content: "";

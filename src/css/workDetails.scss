@@ -45,6 +45,10 @@
     margin: 0 auto;
   }
 
+  & header h3 {
+    margin-bottom: $pad;
+  }
+
   & .image {
     order: -1;
     margin-bottom: $pad * 2;

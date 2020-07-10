@@ -1,5 +1,5 @@
 import { ActionTypes } from "./types";
 
-/*export const funcAction = () => {
-    return {ActionTypes.example,payload:example}
-};*/
+export const updateCurrentItem = (newCurrentItem: number) => {
+  return { type: ActionTypes.updateCurrentItem, payload: newCurrentItem };
+};

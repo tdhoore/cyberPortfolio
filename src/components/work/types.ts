@@ -4,6 +4,10 @@ export interface props {}
 
 export interface ProjectProps {
   data: any;
+  counter?: string;
+}
+export interface ProjectCounterProps {
+  counter?: string;
 }
 
 export interface data {
@@ -13,4 +17,5 @@ export interface data {
 
 export enum ActionTypes {
   gotWork = "WORK_FETCH_SUCCEEDED",
+  updateCurrentItem = "WORK_UPDATE_CURRENTITEM",
 }

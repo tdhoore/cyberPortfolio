@@ -1,13 +1,27 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { getNextProject } from "./api";
+import { useSelector } from "react-redux";
 
 const ProjectCounter = (props: any) => {
   //gebruik push url
+
+  const handleNextProject = (e: any, dir: number) => {
+    getNextProject(dir);
+  };
+
   return (
     <div className="projectCounter">
-      <Link to="" className="diamondButton"></Link>
-      <div className="pixFont counter blurEffectText">*___</div>
-      <Link to="" className="diamondButton"></Link>
+      <div className="rorator">
+        <button
+          className="diamondButton"
+          onClick={(e) => handleNextProject(e, -1)}
+        ></button>
+        <div className="pixFont counter blurEffectText">{props.counter}</div>
+        <button
+          className="diamondButton"
+          onClick={(e) => handleNextProject(e, 1)}
+        ></button>
+      </div>
     </div>
   );
 };
