@@ -11,7 +11,9 @@ const NavMain = (props: props) => {
             <li key={`mainNavLinks${link.title}`}>
               <Link
                 to={link.link}
-                className={link.title === "Home" ? `activeElement` : ""}
+                className={
+                  link.title === props.activeLink ? `activeElement` : ""
+                }
               >
                 {link.title}
               </Link>

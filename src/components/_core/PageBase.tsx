@@ -36,7 +36,7 @@ const PageBase = (props: pageBase) => {
     <div className="basePage">
       <header>
         <h1 className="hide">Tim D'hoore</h1>
-        <NavMain links={navMainLinks} />
+        <NavMain links={navMainLinks} activeLink={props.pageCompName} />
       </header>
       <main>{getActivePage()}</main>
       <Forground />

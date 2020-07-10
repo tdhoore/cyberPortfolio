@@ -6,22 +6,18 @@ const initState: navState = {
     {
       title: "Home",
       link: "/",
-      isActive: true,
     },
     {
       title: "Work",
       link: "/work",
-      isActive: false,
     },
     {
       title: "About",
       link: "/about",
-      isActive: false,
     },
     {
       title: "Contact",
       link: "/contact",
-      isActive: false,
     },
   ],
 };

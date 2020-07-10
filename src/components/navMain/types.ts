@@ -4,12 +4,12 @@ export interface navState {
 
 export interface props {
   links?: link[];
+  activeLink?: string;
 }
 
 export interface link {
   title: string;
   link: string;
-  isActive: boolean;
 }
 
 export enum ActionTypes {
