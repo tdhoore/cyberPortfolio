@@ -3,7 +3,7 @@
     "title": "tester1",
     "image": "https://via.placeholder.com/236x438",
     "roll": "roll1",
-    "Client": "Awsome corp",
+    "client": "Awsome corp",
     "projectInfo": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit maiores aliquam quam voluptate sapiente mollitia corrupti quas aut tempora nesciunt? Qui ullam voluptatem molestias alias officiis sit pariatur culpa animi.",
     "sliderimages": [
       {
@@ -24,7 +24,7 @@
     "title": "tester2",
     "image": "https://via.placeholder.com/236x438",
     "roll": "roll1",
-    "Client": "Awsome corp",
+    "client": "Awsome corp",
     "projectInfo": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit maiores aliquam quam voluptate sapiente mollitia corrupti quas aut tempora nesciunt? Qui ullam voluptatem molestias alias officiis sit pariatur culpa animi.",
     "sliderimages": [
       {
@@ -45,7 +45,7 @@
     "title": "tester3",
     "image": "https://via.placeholder.com/236x438",
     "roll": "roll1",
-    "Client": "Awsome corp",
+    "client": "Awsome corp",
     "projectInfo": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit maiores aliquam quam voluptate sapiente mollitia corrupti quas aut tempora nesciunt? Qui ullam voluptatem molestias alias officiis sit pariatur culpa animi.",
     "sliderimages": [
       {

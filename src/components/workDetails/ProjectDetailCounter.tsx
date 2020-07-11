@@ -1,13 +1,49 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
-const ProjectDetailCounter = (props: any) => {
-  //gebruik push url
+import { projectDetailCounterProps } from "./types";
+
+const ProjectDetailCounter = (props: projectDetailCounterProps) => {
+  const setCounter = () => {
+    let counter = "";
+
+    for (let i = 0; i < props.length; i++) {
+      if (i === props.pageIndex) {
+        counter += "*";
+      } else {
+        counter += "_";
+      }
+    }
+
+    return counter;
+  };
+
+  const handleSetPageIndex = (e: any, dir: number) => {
+    let newIndex = props.pageIndex + dir;
+
+    if (newIndex < 0) {
+      newIndex = 0;
+    }
+
+    if (newIndex > props.length - 1) {
+      newIndex = props.length - 1;
+    }
+
+    props.setPageIndex(newIndex);
+  };
+
   return (
     <div className="projectDetailCounter">
-      <Link to="" className="diamondButton"></Link>
-      <div className="pixFont counter blurEffectText">*___</div>
-      <Link to="" className="diamondButton"></Link>
+      <button
+        className="diamondButton"
+        onClick={(e) => handleSetPageIndex(e, -1)}
+        disabled={props.pageIndex <= 0}
+      ></button>
+      <div className="pixFont counter blurEffectText">{setCounter()}</div>
+      <button
+        className="diamondButton"
+        onClick={(e) => handleSetPageIndex(e, 1)}
+        disabled={props.pageIndex >= props.length - 1}
+      ></button>
     </div>
   );
 };

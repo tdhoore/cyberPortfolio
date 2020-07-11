@@ -1,7 +1,9 @@
-export interface workDetailsState {}
+export interface props {
+  title: string;
+}
 
-export interface props {}
-
-export enum ActionTypes {
-  example = "workDetails_EXAMPLE",
+export interface projectDetailCounterProps {
+  length: number;
+  pageIndex: number;
+  setPageIndex: any;
 }

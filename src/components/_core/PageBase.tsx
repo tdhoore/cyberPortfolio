@@ -15,6 +15,8 @@ const PageBase = (props: pageBase) => {
     (state: any) => state.navMainReducer.navLinks
   );
 
+  console.log();
+
   const getActivePage = () => {
     switch (props.pageCompName) {
       case "Home":
@@ -26,7 +28,7 @@ const PageBase = (props: pageBase) => {
       case "Contact":
         return <Contact />;
       case "WorkDetail":
-        return <WorkDetails />;
+        return <WorkDetails title={props.match.params.id} />;
       default:
         return <Home />;
     }

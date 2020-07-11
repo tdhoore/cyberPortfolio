@@ -13,6 +13,15 @@ export interface ProjectCounterProps {
 export interface data {
   title: string;
   image: string;
+  roll: string;
+  Client: string;
+  projectInfo: string;
+  sliderimages: sliderimages;
+}
+
+export interface sliderimages {
+  title: string;
+  image: string;
 }
 
 export enum ActionTypes {

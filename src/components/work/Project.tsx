@@ -3,12 +3,6 @@ import { Link } from "react-router-dom";
 import { ProjectProps } from "./types";
 
 const Project = (props: ProjectProps) => {
-  const getRandomInt = (min: number, max: number) => {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-  };
-
   return props.data !== undefined ? (
     <article className="project">
       <div className="projectTitle">
