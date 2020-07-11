@@ -1,6 +1,7 @@
 import React from "react";
 import { props } from "./types";
 import logo from "../../assets/img/logo.svg";
+import { Link } from "react-router-dom";
 
 const Home = (props: props) => {
   return (
@@ -20,7 +21,9 @@ const Home = (props: props) => {
           <img src={logo} alt="Tim D'hoore logo" />
         </div>
         <div className="scrollNextPage">
-          <a className="pixFont">Scroll for more</a>
+          <Link to="/work" className="pixFont">
+            Scroll for more
+          </Link>
         </div>
       </div>
     </article>
