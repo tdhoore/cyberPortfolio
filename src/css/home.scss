@@ -15,6 +15,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: $pad * 6;
   }
 
   & header {
@@ -61,13 +62,14 @@
     bottom: $pad * 3;
     display: flex;
     justify-content: center;
+    //color: transparent;
 
     & a {
       display: flex;
       flex-direction: column;
       align-items: center;
       text-align: center;
-      font-size: $pad * 2;
+      font-size: 1rem;
       cursor: pointer;
     }
 

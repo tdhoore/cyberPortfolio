@@ -20,7 +20,7 @@ const Home = (props: props) => {
           <img src={logo} alt="Tim D'hoore logo" />
         </div>
         <div className="scrollNextPage">
-          <a className="">Scroll for more</a>
+          <a className="pixFont">Scroll for more</a>
         </div>
       </div>
     </article>
