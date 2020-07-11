@@ -42,7 +42,14 @@ const WorkDetails = (props: props) => {
         <h2>{currentProject.title}</h2>
       </header>
       <div className="workDetailContentHolder">
-        <div className="workDetailContent">
+        <div
+          className="workDetailContent"
+          style={{
+            transform: `translateX(${
+              (100 / calcMinAndMaxForCounter()) * -pageIndex
+            }%)`,
+          }}
+        >
           <section className="projectInfoSection">
             <div className="wrapper">
               <header>
