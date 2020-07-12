@@ -1,6 +1,5 @@
 import React from "react";
 import { getNextProject } from "./api";
-import { useSelector } from "react-redux";
 
 const ProjectCounter = (props: any) => {
   //gebruik push url

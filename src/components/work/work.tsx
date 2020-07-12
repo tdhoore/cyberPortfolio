@@ -4,6 +4,8 @@ import ProjectCounter from "./ProjectCounter";
 import { props } from "./types";
 import { getWork } from "./api";
 import { useSelector } from "react-redux";
+import ScrollDetector from "../_core/ScrollDetector";
+import { getNextProject } from "./api";
 
 const Work = (props: props) => {
   const work = useSelector((state: any) => state.workReducer.workItems);
@@ -19,6 +21,21 @@ const Work = (props: props) => {
     if (work.length === 0) {
       getWork();
     }
+
+    //setup scroll support
+    const scrollDetector = new ScrollDetector();
+
+    const handleScroll = (e: Event) => {
+      getNextProject(scrollDetector.dir);
+    };
+
+    //listen for updates
+    window.addEventListener("updateScroll", handleScroll);
+
+    return () => {
+      scrollDetector.remove();
+      window.removeEventListener("updateScroll", handleScroll);
+    };
   });
 
   const setCounter = () => {

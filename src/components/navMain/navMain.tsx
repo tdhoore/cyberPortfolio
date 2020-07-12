@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { props } from "./types";
 
 const NavMain = (props: props) => {
-  console.log(props.activeLink);
   return (
     <nav>
       {props.activeLink !== "WorkDetail" ? (

@@ -15,8 +15,6 @@ const PageBase = (props: pageBase) => {
     (state: any) => state.navMainReducer.navLinks
   );
 
-  console.log();
-
   const getActivePage = () => {
     switch (props.pageCompName) {
       case "Home":
