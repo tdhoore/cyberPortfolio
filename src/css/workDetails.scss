@@ -81,17 +81,25 @@
 }
 
 .screenshotSection {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   width: 100vw;
-  padding: 0 $pad * 3 $pad * 2;
+  overflow-x: hidden;
+
+  & .wrapper {
+    position: relative;
+    padding: 0 $pad * 3 $pad * 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    max-width: $pad * 128;
+    margin: 0 auto;
+  }
 
   & img {
+    display: block;
     object-fit: cover;
     width: 100%;
     max-height: 100%;
-    max-width: $pad * 128;
   }
 }
 
@@ -110,6 +118,30 @@
   & .diamondButton {
     width: $pad * 4;
     height: $pad * 4;
+  }
+}
+
+.screenshotSectionWithDescription {
+  width: 100vw;
+
+  & .wrapper {
+    display: flex;
+    flex-direction: column-reverse;
+    max-width: $pad * 160;
+    padding: 0 $pad * 3;
+    margin: 0 auto;
+    height: 100%;
+  }
+
+  & header {
+    margin-bottom: $pad;
+  }
+
+  & img {
+    width: 100%;
+    height: 20vh;
+    object-fit: cover;
+    margin-bottom: $pad * 2;
   }
 }
 
@@ -247,19 +279,74 @@
       max-height: 70%;
     }
 
-    &::after {
+    & .wrapper {
+      padding: 0;
+    }
+
+    & .wrapper::before,
+    & .wrapper::after {
       content: "";
       display: block;
       position: absolute;
       top: 50%;
-      left: 0;
-      width: 100vw;
+      left: calc(100% + 6.4rem);
       height: $line;
-      background-color: $accentColor;
+      width: 100vw;
+      background-color: $textColor;
       filter: drop-shadow(0.1rem 0.1rem 0 $blue)
         drop-shadow(-0.1rem -0.1rem 0 $pink);
       opacity: 0.5;
       pointer-events: none;
+    }
+
+    & .wrapper::before {
+      left: auto;
+      right: calc(100% + 6.4rem);
+    }
+  }
+
+  .screenshotSectionWithDescription {
+    overflow-x: hidden;
+
+    & .wrapper {
+      position: relative;
+      flex-direction: row-reverse;
+      justify-content: center;
+      align-items: center;
+      flex: 2;
+
+      &::before,
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: calc(100% + 6.4rem);
+        height: $line;
+        width: 100vw;
+        background-color: $textColor;
+        filter: drop-shadow(0.1rem 0.1rem 0 $blue)
+          drop-shadow(-0.1rem -0.1rem 0 $pink);
+        opacity: 0.5;
+        pointer-events: none;
+      }
+
+      &::before {
+        left: auto;
+        right: calc(100% + 6.4rem);
+      }
+    }
+
+    & img {
+      width: 100%;
+      height: 70%;
+      max-height: 100%;
+      margin: 0 $pad * 7 0 0;
+    }
+
+    & header {
+      margin: $pad * 3 0;
+      max-width: $pad * 70;
     }
   }
 }

@@ -8,7 +8,8 @@
     "sliderimages": [
       {
         "title": "tester1",
-        "image": "https://via.placeholder.com/236x438"
+        "image": "https://via.placeholder.com/236x438",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit maiores aliquam quam voluptate sapiente mollitia corrupti quas aut tempora nesciunt? Qui ullam voluptatem molestias alias officiis sit pariatur culpa animi."
       },
       {
         "title": "tester1",

@@ -78,12 +78,27 @@ const WorkDetails = (props: props) => {
           </section>
           {currentProject.sliderimages ? (
             currentProject.sliderimages.map((item: any, index: number) => {
-              return (
+              return item.description ? (
+                <section
+                  className="screenshotSectionWithDescription"
+                  key={item.title + index}
+                >
+                  <div className="wrapper">
+                    <header>
+                      <h3>{item.title}</h3>
+                      <p>{item.description}</p>
+                    </header>
+                    <img src={item.image} alt={item.title} />
+                  </div>
+                </section>
+              ) : (
                 <section className="screenshotSection" key={item.title + index}>
-                  <header className="hide">
-                    <h3>{item.title}</h3>
-                  </header>
-                  <img src={item.image} alt={item.title} />
+                  <div className="wrapper">
+                    <header className="hide">
+                      <h3>{item.title}</h3>
+                    </header>
+                    <img src={item.image} alt={item.title} />
+                  </div>
                 </section>
               );
             })
