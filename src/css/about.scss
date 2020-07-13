@@ -61,6 +61,8 @@
   & .imageHolder img {
     height: auto;
     width: 40vw;
+    max-height: 50vh;
+    object-fit: cover;
     margin: 0 $pad * 3;
   }
 
@@ -69,12 +71,24 @@
     content: "";
     display: block;
     flex: 2;
-    height: $pad * 10;
+    height: 10vh;
     filter: drop-shadow(0.1rem 0.1rem 0 $blue)
       drop-shadow(-0.1rem -0.1rem 0 $pink);
     opacity: 0.5;
     border-top: solid $line $textColor;
     border-bottom: solid $line $textColor;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .aboutArticle {
+    & .wrapper {
+      align-items: center;
+    }
+
+    & .titleAndInfo {
+      max-width: $pad * 70;
+    }
   }
 }
 
@@ -88,6 +102,7 @@
       position: relative;
       align-self: center;
       flex: 3;
+      max-width: auto;
     }
 
     & .titleAndInfo::before {
@@ -153,6 +168,7 @@
       width: 100vw;
       margin-right: $pad * 5;
       transform: translateY(-50%);
+      height: 20vh;
     }
   }
 }

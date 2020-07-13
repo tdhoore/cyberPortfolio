@@ -44,6 +44,8 @@
   flex-direction: column-reverse;
   justify-content: stretch;
   padding: $pad * 2 0;
+  max-width: 100%;
+  transition: all 300ms ease;
 }
 
 .projectImage {
@@ -58,6 +60,7 @@
     height: 100%;
     width: 100%;
     position: relative;
+    margin-right: $pad * 3;
   }
 
   & img {
@@ -87,12 +90,7 @@
   }
 
   & .decoNumbers {
-    flex: 3;
-    padding: 0 $pad * 2;
-
-    & div {
-      margin: $pad 0;
-    }
+    display: none;
   }
 }
 
@@ -113,6 +111,7 @@
     position: relative;
     z-index: 2;
     width: 100%;
+    //font-size: 6.65vw;
   }
 
   & header h3::after {
@@ -133,6 +132,24 @@
   }
 }
 
+@media only screen and (min-width: 768px) {
+  .projectCounter {
+    & .diamondButton {
+      width: $pad * 4;
+      height: $pad * 4;
+    }
+  }
+
+  .projectTitle h3 {
+    //font-size: $pad * 5;
+  }
+
+  .project {
+    max-width: 70%;
+    margin: 0 auto;
+  }
+}
+
 @media only screen and (min-width: 1070px) {
   .workSection {
     & .wrapper {
@@ -143,11 +160,6 @@
   .projectCounter {
     position: relative;
     align-items: flex-end;
-
-    & .diamondButton {
-      width: $pad * 4;
-      height: $pad * 4;
-    }
 
     &::before {
       content: "";
@@ -168,6 +180,8 @@
     flex-direction: row-reverse;
     justify-content: center;
     flex: 2;
+    margin: 0;
+    max-width: 100%;
   }
 
   .projectImage {
@@ -197,8 +211,10 @@
     }
 
     & .decoNumbers {
+      display: block;
       order: -1;
       flex: 1;
+      padding: 0 $pad * 2;
       margin-right: $pad * 5;
 
       & div {
