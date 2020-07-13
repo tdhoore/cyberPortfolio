@@ -15,17 +15,24 @@ const PageBase = (props: pageBase) => {
     (state: any) => state.navMainReducer.navLinks
   );
 
+  let title = "Tim D'hoore - ";
+
   const getActivePage = () => {
     switch (props.pageCompName) {
       case "Home":
+        document.title = `${title}Portfolio`;
         return <Home />;
       case "Work":
+        document.title = `${title}Work`;
         return <Work />;
       case "About":
+        document.title = `${title}About`;
         return <About />;
       case "Contact":
+        document.title = `${title}Contact`;
         return <Contact />;
       case "WorkDetail":
+        document.title = `${title}${props.match.params.id}`;
         return <WorkDetails title={props.match.params.id} />;
       default:
         return <Home />;
