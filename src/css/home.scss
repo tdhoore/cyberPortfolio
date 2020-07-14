@@ -35,7 +35,13 @@
       width: 100%;
       opacity: 0.3;
       background-image: url("../assets/img/crossPatern.png");
+      animation: glitchIn 0.5s ease;
     }
+  }
+
+  & h2 span {
+    display: block;
+    animation: glitchIn 0.5s ease;
   }
 
   & img {
@@ -45,11 +51,13 @@
     max-width: $pad * 25;
     max-height: $pad * 25;
     margin-bottom: $pad * 3;
+    animation: glitchFadeIn 0.5s ease, glitchIn 0.5s ease;
   }
 
   & p {
     margin: 0 $pad * 3;
     text-align: center;
+    animation: glitchIn 0.5s ease;
   }
 
   & .shortInfo {

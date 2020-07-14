@@ -4,6 +4,8 @@ import logo from "../../assets/img/logo.svg";
 import { Link } from "react-router-dom";
 import ScrollDetector from "../_core/ScrollDetector";
 import { gotToWork } from "./api";
+import { motion } from "framer-motion";
+import { fadeIn3D, fadeInFlicker, fadeIn } from "../anim/animationPresets";
 
 const Home = (props: props) => {
   useEffect(() => {
@@ -26,28 +28,43 @@ const Home = (props: props) => {
   });
 
   return (
-    <article className="homeArticle">
+    <motion.article className="homeArticle">
       <div className="wrapper">
         <div className="content">
           <div className="intro">
             <header>
-              <h2>Tim D'hoore</h2>
-              <p>Creative frontend developer</p>
+              <motion.h2 {...fadeInFlicker}>
+                <span>Tim D'hoore</span>
+              </motion.h2>
+              <motion.p
+                {...fadeInFlicker}
+                transition={{ ...fadeInFlicker.transition, delay: 0.2 }}
+              >
+                Creative frontend developer
+              </motion.p>
             </header>
-            <p className="shortInfo">
+            <motion.p
+              className="shortInfo"
+              {...fadeInFlicker}
+              transition={{ ...fadeInFlicker.transition, delay: 0.4 }}
+            >
               Delectus reiciendis impedit possimus dolor esse vitae itaque
               ratione natus labore voluptatibus!
-            </p>
+            </motion.p>
           </div>
           <img src={logo} alt="Tim D'hoore logo" />
         </div>
-        <div className="scrollNextPage">
+        <motion.div
+          className="scrollNextPage"
+          {...fadeInFlicker}
+          transition={{ ...fadeInFlicker.transition, delay: 0.5 }}
+        >
           <Link to="/work" className="pixFont">
             Scroll for more
           </Link>
-        </div>
+        </motion.div>
       </div>
-    </article>
+    </motion.article>
   );
 };
 
