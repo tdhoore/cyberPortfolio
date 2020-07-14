@@ -1,0 +1,231 @@
+.contactArticle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: $pad * 3;
+  min-height: 100%;
+
+  & .letter {
+    position: relative;
+    font-family: "pix Chicago", Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    text-align: center;
+  }
+
+  & .letter span {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: $pad * 3;
+    letter-spacing: 0.2rem;
+
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      bottom: -$pad * 2;
+      height: $pad * 5;
+      width: 100%;
+      opacity: 0.3;
+      background-image: url("../assets/img/crossPatern.png");
+    }
+  }
+
+  & .letter span::before {
+    content: "";
+    display: block;
+    width: 40vw;
+    height: 25vw;
+    margin-bottom: $pad * 2;
+    background-image: url("../assets/img/inbox.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+
+  & p {
+    margin-bottom: $pad * 3;
+  }
+}
+
+.contactInfo {
+  & .decoNumbers {
+    display: none;
+  }
+}
+
+.socialLinks {
+  display: flex;
+  justify-content: center;
+  margin-top: $pad * 2;
+
+  & li {
+    margin-left: $pad;
+  }
+
+  & li:first-of-type {
+    margin-left: 0;
+  }
+
+  & li a {
+    display: block;
+    width: $pad * 6;
+    height: $pad * 6;
+    background-color: $accentColor;
+  }
+
+  & li a span {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .contactArticle {
+    flex-direction: row;
+
+    & .letter span::before {
+      width: $pad * 32;
+      height: $pad * 20;
+    }
+
+    & .letter {
+      position: relative;
+
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 50%;
+        right: -$pad * 6;
+        font-size: $pad * 2;
+        width: $pad * 2;
+        height: $pad * 2;
+        background-color: $accentColor;
+        transform: translateY(-$pad);
+      }
+    }
+
+    & .letter::before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: calc(-100vw - 8.8rem);
+      height: $line;
+      width: 100vw;
+      background-color: $textColor;
+      filter: drop-shadow(0.1rem 0.1rem 0 $blue)
+        drop-shadow(-0.1rem -0.1rem 0 $pink);
+      opacity: 0.5;
+    }
+  }
+
+  .contactInfo {
+    display: flex;
+    flex-direction: column-reverse;
+    position: relative;
+    margin-left: $pad * 10;
+
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: -$pad * 4;
+      right: -$pad * 4;
+      width: $pad * 6;
+      height: calc(100% + 6.4rem);
+      border-top: solid $line;
+      border-bottom: solid $line;
+      border-right: solid $line;
+      filter: drop-shadow(0.1rem 0.1rem 0 $blue)
+        drop-shadow(-0.1rem -0.1rem 0 $pink);
+      opacity: 0.5;
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 50%;
+      right: calc(-100vw - 8.8rem);
+      height: $line;
+      width: 100vw;
+      background-color: $textColor;
+      filter: drop-shadow(0.1rem 0.1rem 0 $blue)
+        drop-shadow(-0.1rem -0.1rem 0 $pink);
+      opacity: 0.5;
+    }
+
+    & .decoNumbers {
+      position: absolute;
+      top: 50%;
+      right: -$pad * 9;
+      display: block;
+      transform: translateY(-50%);
+
+      & div {
+        margin: $pad * 3 0;
+      }
+    }
+  }
+
+  .socialLinks {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-width: $pad * 40;
+    margin-top: 0;
+
+    &::after,
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 30%;
+      left: -$pad * 6;
+      font-size: $pad * 2;
+      width: $pad * 2;
+      height: $pad * 2;
+      background-color: $accentColor;
+      transform: translateY(-$pad * 3);
+    }
+
+    &::before {
+      top: auto;
+      bottom: 30%;
+      transform: translateY($pad * 3);
+    }
+
+    & li {
+      margin-left: 0;
+      margin-bottom: $pad * 3;
+    }
+
+    & li a {
+      display: flex;
+      align-items: center;
+      width: auto;
+      height: $pad * 6;
+      font-size: $pad * 2;
+      color: $textColor;
+      text-decoration: none;
+      background: none;
+      border: solid $line $textColor;
+    }
+
+    & li a::before {
+      content: "";
+      display: block;
+      height: 100%;
+      width: $pad * 6;
+      background-color: $textColor;
+    }
+
+    & li a span {
+      display: block;
+      margin-left: $pad * 2;
+    }
+  }
+}

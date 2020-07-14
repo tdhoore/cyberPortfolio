@@ -1,4 +1,345 @@
+@import "fonts.scss";
 @import "vars.scss";
+@import "home.scss";
+@import "work.scss";
+@import "about.scss";
+@import "contact.scss";
+@import "workDetails.scss";
+@import "nav.scss";
+
+::selection {
+  color: $accentTextColor;
+  background: $accentColor;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  color: $textColor;
+}
+
+*,
+*:after,
+*:before {
+  box-sizing: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+dt,
+nav {
+  font-family: "pix Chicago", Arial, Helvetica, sans-serif;
+  font-weight: normal;
+  margin: 0;
+  letter-spacing: 0.2rem;
+}
+
+dd,
+dl {
+  margin: 0;
+}
+
+h2,
+h3 {
+  font-size: $pad * 3;
+}
+
+p {
+  font-family: "Roboto Mono", Arial, Helvetica, sans-serif;
+  margin: 0;
+  font-size: $pad * 2;
+  line-height: 2.8rem;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  margin: 0;
+}
+
+button {
+  display: block;
+  cursor: pointer;
+}
+
+button:focus {
+  outline: none;
+}
+
+body {
+  height: 100vh;
+  overflow: hidden;
+  width: 100vw;
+  background-color: $bgColor;
+  margin: 0;
+  font-family: "Roboto Mono", Arial, Helvetica, sans-serif;
+}
+
+.basePage {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+main {
+  order: -1;
+  flex: 2;
+  overflow: auto;
+  overflow-x: hidden;
+}
+
+.pixFont {
+  font-family: "pix Chicago", Arial, Helvetica, sans-serif;
+  font-weight: normal;
+  letter-spacing: 0.2rem;
+  text-decoration: none;
+  color: $textColor;
+}
+
+.blurEffect {
+  box-shadow: 0.1rem 0.1rem 0 0 $blue, -0.1rem -0.1rem 0 0 $pink;
+  opacity: 0.5;
+  background-color: $textColor;
+}
+
+.blurEffectText {
+  text-shadow: 0.1rem 0.1rem $blue, -0.1rem -0.1rem $pink;
+  opacity: 0.5;
+  color: $textColor;
+}
+.diamondButton {
+  display: block;
+  transform: rotate(45deg);
+  background-color: $accentColor;
+  border: solid $line $accentColor;
+  overflow: hidden;
+  transition: all 150ms;
+  cursor: pointer;
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: $pad/2;
+    left: $pad/2;
+    right: $pad/2;
+    bottom: $pad/2;
+    border: solid $line $accentColor;
+    transform: scale(1.2, 1.2);
+    transition: all 300ms;
+  }
+
+  &:hover {
+    background-color: $accentTextColor;
+    color: $accentColor;
+    animation: flickerButtonBg 150ms forwards;
+  }
+
+  &:hover::after {
+    transform: scale(1);
+  }
+
+  &:active {
+    transform: rotate(45deg) scale(0.95);
+  }
+
+  &:active::after {
+    transform: scale(1.5, 1.5);
+  }
+}
+
+.defaultButton {
+  position: relative;
+  display: block;
+  background-color: $accentColor;
+  font-family: "pix Chicago", Arial, Helvetica, sans-serif;
+  font-weight: normal;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: $accentTextColor;
+  padding: $pad * 2;
+  text-align: center;
+  font-size: 1.2rem;
+  border: solid $line $accentColor;
+  overflow: hidden;
+  transition: all 150ms;
+  cursor: pointer;
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: $pad/2;
+    left: $pad/2;
+    right: $pad/2;
+    bottom: $pad/2;
+    border: solid $line $accentColor;
+    transform: scale(1.2, 1.2);
+    transition: all 300ms;
+  }
+
+  &:hover {
+    background-color: $accentTextColor;
+    color: $accentColor;
+    animation: flickerButtonBg 150ms forwards;
+  }
+
+  &:hover::after {
+    transform: scale(1);
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+
+  &:active::after {
+    transform: scale(1.5, 1.5);
+  }
+}
+
+.forground,
+.background {
+  pointer-events: none;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  & div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  & .noiseAnimated {
+    z-index: 1;
+    background-image: url("../assets/img/noiseTexture.png");
+    opacity: 0.06;
+    animation: noiseAnim 1s steps(10) forwards infinite;
+  }
+
+  & .noise {
+    z-index: 1;
+    background-image: url("../assets/img/noiseTexture.png");
+    opacity: 0.15;
+  }
+
+  & .brightness {
+    z-index: 2;
+    background-color: #fff;
+    opacity: 0.7;
+  }
+
+  & .scanLines {
+    z-index: 3;
+    background-image: url("../assets/img/scanLineTexture.png");
+    opacity: 0.4;
+    animation: scanLineAnim 40s linear infinite;
+  }
+}
+
+.background {
+  & .bgRect {
+    border: solid $blue $line;
+    opacity: 0.15;
+    filter: drop-shadow(0 0 $pad rgba($color: $blue, $alpha: 0.5));
+  }
+
+  & .rect1 {
+    top: -$line;
+    left: 10%;
+    bottom: 60%;
+    right: 60%;
+  }
+
+  & .rect2 {
+    top: 30%;
+    left: 20%;
+    bottom: -$line;
+    right: 48%;
+  }
+
+  & .rect3 {
+    top: -$line;
+    left: 60%;
+    bottom: 70%;
+    right: -$line;
+  }
+
+  & .rect4 {
+    top: 60%;
+    left: 45%;
+    bottom: 10%;
+    right: -$line;
+  }
+}
+
+@keyframes noiseAnim {
+  0% {
+    background-position: 0;
+  }
+
+  50% {
+    background-position: 10rem 10rem;
+  }
+
+  70% {
+    background-position: -10rem 7rem;
+  }
+
+  100% {
+    background-position: 0;
+  }
+}
+
+@keyframes scanLineAnim {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 0 100px;
+  }
+}
+
+@keyframes flickerButtonBg {
+  0% {
+    background-color: $accentColor;
+  }
+
+  30% {
+    background-color: $accentTextColor;
+  }
+
+  50% {
+    background-color: $accentColor;
+  }
+
+  100% {
+    background-color: $accentTextColor;
+  }
+}
+
+@media only screen and (min-width: 1070px) {
+  main {
+    order: 1;
+    margin-top: -$pad * 7;
+  }
+}
 
 /* HIDE */
 .hide {

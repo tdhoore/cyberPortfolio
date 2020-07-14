@@ -2,7 +2,7 @@ import React from "react";
 import { Route, Switch, withRouter } from "react-router-dom";
 import { ConnectedRouter } from "connected-react-router";
 import { history } from "./configureStore";
-import PageBase from "../components/core/PageBase";
+import PageBase from "../components/_core/PageBase";
 
 export default function () {
   //date
@@ -12,13 +12,41 @@ export default function () {
     <ConnectedRouter history={history}>
       <Switch>
         <Route
+          exact
           path="/"
           component={withRouter((props) => (
-            <PageBase {...props} />
+            <PageBase {...props} pageCompName="Home" />
+          ))}
+        />
+        <Route
+          exact
+          path="/Work"
+          component={withRouter((props) => (
+            <PageBase {...props} pageCompName="Work" />
+          ))}
+        />
+        <Route
+          path="/Work/:id"
+          component={withRouter((props) => (
+            <PageBase {...props} pageCompName="WorkDetail" />
+          ))}
+        />
+        <Route
+          exact
+          path="/about"
+          component={withRouter((props) => (
+            <PageBase {...props} pageCompName="About" />
+          ))}
+        />
+        <Route
+          exact
+          path="/contact"
+          component={withRouter((props) => (
+            <PageBase {...props} pageCompName="Contact" />
           ))}
         />
       </Switch>
-      <footer> &copy; {date.getFullYear()}</footer>
+      <footer className="hide"> &copy; {date.getFullYear()}</footer>
     </ConnectedRouter>
   );
 }

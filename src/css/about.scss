@@ -1,0 +1,174 @@
+.aboutArticle {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  & .wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100%;
+    padding: $pad * 3 0;
+    max-width: $pad * 120;
+    margin: 0 auto;
+  }
+
+  & header {
+    margin-bottom: $pad * 2;
+    padding: 0 $pad * 3;
+
+    & h2 {
+      position: relative;
+      display: inline-block;
+    }
+
+    & h2::after {
+      content: "";
+      display: block;
+      position: absolute;
+      bottom: -10%;
+      height: 30%;
+      width: 100%;
+      opacity: 0.3;
+      background-image: url("../assets/img/crossPatern.png");
+    }
+  }
+
+  & p {
+    padding: 0 $pad * 3;
+    margin-bottom: $pad * 2;
+  }
+
+  & header p {
+    padding: 0;
+  }
+
+  & p:last-of-type {
+    margin-bottom: 0;
+  }
+
+  & .imageHolder {
+    display: flex;
+    align-items: center;
+    object-fit: cover;
+    width: 100%;
+    order: -1;
+    align-self: center;
+    margin-bottom: $pad * 5;
+  }
+
+  & .imageHolder img {
+    height: auto;
+    width: 40vw;
+    max-height: 50vh;
+    object-fit: cover;
+    margin: 0 $pad * 3;
+  }
+
+  & .imageHolder::after,
+  & .imageHolder::before {
+    content: "";
+    display: block;
+    flex: 2;
+    height: 10vh;
+    filter: drop-shadow(0.1rem 0.1rem 0 $blue)
+      drop-shadow(-0.1rem -0.1rem 0 $pink);
+    opacity: 0.5;
+    border-top: solid $line $textColor;
+    border-bottom: solid $line $textColor;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .aboutArticle {
+    & .wrapper {
+      align-items: center;
+    }
+
+    & .titleAndInfo {
+      max-width: $pad * 70;
+    }
+  }
+}
+
+@media only screen and (min-width: 1070px) {
+  .aboutArticle {
+    & .wrapper {
+      flex-direction: row;
+    }
+
+    & .titleAndInfo {
+      position: relative;
+      align-self: center;
+      flex: 3;
+      max-width: auto;
+    }
+
+    & .titleAndInfo::before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 50%;
+      right: calc(-100vw - 2.4rem);
+      height: $line;
+      width: 100vw;
+      background-color: $textColor;
+      filter: drop-shadow(0.1rem 0.1rem 0 $blue)
+        drop-shadow(-0.1rem -0.1rem 0 $pink);
+      opacity: 0.5;
+    }
+
+    & header {
+      padding: 0;
+      margin: 0 0 $pad * 3;
+      align-self: flex-end;
+
+      & h2 {
+        font-size: $pad * 5;
+      }
+
+      & p {
+        font-size: $pad * 3;
+      }
+    }
+
+    & p {
+      padding: 0;
+    }
+
+    & .imageHolder {
+      position: relative;
+      margin: 0;
+      height: 70%;
+      max-height: 100%;
+      width: 100%;
+      margin-right: $pad * 10;
+      flex: 2;
+
+      & img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        margin: 0;
+      }
+    }
+
+    & .imageHolder::after,
+    & .imageHolder::before {
+      display: none;
+    }
+
+    & .imageHolder::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: 100%;
+      display: block;
+      width: 100vw;
+      margin-right: $pad * 5;
+      transform: translateY(-50%);
+      height: 20vh;
+    }
+  }
+}

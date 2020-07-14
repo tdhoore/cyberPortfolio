@@ -1,0 +1,279 @@
+.workSection {
+  width: 100%;
+  height: 100%;
+
+  .wrapper {
+    display: flex;
+    min-height: 100%;
+    max-width: $pad * 160;
+    margin: 0 auto;
+  }
+}
+
+.projectCounter {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: $pad * 10;
+
+  & .rorator {
+    position: absolute;
+    top: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(-50%) rotate(90deg);
+  }
+
+  & .diamondButton {
+    width: $pad * 3;
+    height: $pad * 3;
+  }
+
+  & .counter {
+    display: block;
+    font-size: $pad * 2;
+    margin: 0 $pad * 2;
+  }
+}
+
+.project {
+  flex: 2;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: stretch;
+  padding: $pad * 2 0;
+  max-width: 100%;
+  transition: all 300ms ease;
+}
+
+.projectImage {
+  flex: 2;
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin: $pad * 2 0;
+  padding-left: $pad * 2;
+
+  & .image {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    margin-right: $pad * 3;
+  }
+
+  & img {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+
+  & .image::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -$pad * 2;
+    left: -$pad * 2;
+    width: $pad * 4;
+    height: calc(100% + 3.2rem);
+    border-top: solid $line;
+    border-bottom: solid $line;
+    border-left: solid $line;
+    filter: drop-shadow(0.1rem 0.1rem 0 $blue)
+      drop-shadow(-0.1rem -0.1rem 0 $pink);
+    opacity: 0.5;
+  }
+
+  & .decoNumbers {
+    display: none;
+  }
+}
+
+.projectTitle {
+  display: flex;
+  flex-direction: column;
+  padding: $pad * 2 0 0;
+  margin-right: $pad * 2;
+
+  & header {
+    display: flex;
+    padding-bottom: $pad * 2;
+    min-height: 20vh;
+    align-content: stretch;
+  }
+
+  & header h3 {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    //font-size: 6.65vw;
+  }
+
+  & header h3::after {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: -1;
+    top: $pad * 3;
+    left: 0;
+    bottom: $pad * 2;
+    width: 100%;
+    opacity: 0.3;
+    background-image: url("../assets/img/crossPatern.png");
+  }
+
+  & .counter {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .projectCounter {
+    & .diamondButton {
+      width: $pad * 4;
+      height: $pad * 4;
+    }
+  }
+
+  .projectTitle h3 {
+    //font-size: $pad * 5;
+  }
+
+  .project {
+    max-width: 70%;
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (min-width: 1070px) {
+  .workSection {
+    & .wrapper {
+      position: relative;
+    }
+  }
+
+  .projectCounter {
+    position: relative;
+    align-items: flex-end;
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 50%;
+      right: $pad * 9;
+      height: $line;
+      width: 100vw;
+      background-color: $textColor;
+      filter: drop-shadow(0.1rem 0.1rem 0 $blue)
+        drop-shadow(-0.1rem -0.1rem 0 $pink);
+      opacity: 0.5;
+    }
+  }
+
+  .project {
+    flex-direction: row-reverse;
+    justify-content: center;
+    flex: 2;
+    margin: 0;
+    max-width: 100%;
+  }
+
+  .projectImage {
+    margin: 0;
+    padding: 0;
+    flex: 2;
+    margin-right: $pad * 10;
+
+    & .image {
+      width: 100%;
+      height: 70%;
+      max-height: 100%;
+
+      & img {
+        position: relative;
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    & .image::after {
+      top: -$pad * 4;
+      left: -$pad * 4;
+      width: $pad * 6;
+      height: calc(100% + 6.4rem);
+    }
+
+    & .decoNumbers {
+      display: block;
+      order: -1;
+      flex: 1;
+      padding: 0 $pad * 2;
+      margin-right: $pad * 5;
+
+      & div {
+        margin: $pad * 6 0;
+      }
+    }
+  }
+
+  .projectTitle {
+    justify-content: center;
+    flex: 3;
+
+    & header {
+      position: relative;
+      justify-content: flex-start;
+    }
+
+    & header h3 {
+      font-size: $pad * 5;
+      width: auto;
+    }
+
+    & header h3::after {
+      top: $pad * 6;
+      width: 110%;
+    }
+
+    & header::before {
+      content: "";
+      display: block;
+      position: absolute;
+      z-index: 1;
+      top: -$pad * 6;
+      bottom: -$pad * 12;
+      left: 0;
+      width: 100vw;
+      filter: drop-shadow(0.1rem 0.1rem 0 $blue)
+        drop-shadow(-0.1rem -0.1rem 0 $pink);
+      opacity: 0.5;
+      border-top: solid $textColor $line;
+      border-bottom: solid $textColor $line;
+      pointer-events: none;
+    }
+
+    & .defaultButton {
+      align-self: flex-start;
+    }
+
+    & .counter {
+      display: block;
+      margin-top: $pad * 8;
+      align-self: center;
+      font-size: $pad * 2;
+    }
+
+    & .counter:first-of-type {
+      order: -2;
+      margin-top: 0;
+      margin-bottom: $pad * 8;
+    }
+  }
+}

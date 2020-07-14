@@ -1,0 +1,87 @@
+nav {
+  border-top: $line solid $textColor;
+
+  & ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+  }
+
+  & li {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  & li a {
+    text-decoration: none;
+    color: $textColor;
+    font-size: 1rem;
+    display: block;
+    padding: $pad * 2 $pad/2;
+  }
+
+  & li a::after,
+  & li a::before {
+    content: "_";
+    opacity: 0;
+  }
+}
+
+.activeElement {
+  &::after {
+    opacity: 1;
+    animation: fadeElem 1s infinite;
+  }
+
+  &:hover::after {
+    animation: none;
+    opacity: 0;
+  }
+}
+
+.returnToWork {
+  display: block;
+  background-color: $accentColor;
+  color: $accentTextColor;
+  font-size: $pad * 2;
+  text-align: center;
+  padding: $pad * 2;
+}
+
+@media only screen and (min-width: 1070px) {
+  nav {
+    position: relative;
+    z-index: 999;
+    display: flex;
+    justify-content: flex-end;
+    border: none;
+
+    & li {
+      margin: 0;
+    }
+
+    & li a {
+      margin: 0;
+      padding: $pad * 3 $pad $pad * 2;
+    }
+  }
+
+  .returnToWork {
+    margin: $pad * 4 $pad * 2 0;
+  }
+}
+
+@keyframes fadeElem {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
