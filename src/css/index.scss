@@ -229,7 +229,7 @@ main {
   & .noiseAnimated {
     z-index: 1;
     background-image: url("../assets/img/noiseTexture.png");
-    opacity: 0.06;
+    opacity: 0.15;
     animation: noiseAnim 1s steps(10) forwards infinite;
   }
 
@@ -295,11 +295,11 @@ main {
   }
 
   50% {
-    background-position: 10rem 10rem;
+    background-position: 10% 10%;
   }
 
   70% {
-    background-position: -10rem 7rem;
+    background-position: -10% 7%;
   }
 
   100% {
@@ -313,7 +313,7 @@ main {
   }
 
   100% {
-    background-position: 0 100px;
+    background-position: 0 10vh;
   }
 }
 

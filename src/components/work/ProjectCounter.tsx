@@ -1,5 +1,7 @@
 import React from "react";
 import { getNextProject } from "./api";
+import { motion } from "framer-motion";
+import { fadeInFlickerHalf } from "../anim/animationPresets";
 
 const ProjectCounter = (props: any) => {
   //gebruik push url
@@ -15,7 +17,12 @@ const ProjectCounter = (props: any) => {
           className="diamondButton"
           onClick={(e) => handleNextProject(e, -1)}
         ></button>
-        <div className="pixFont counter blurEffectText">{props.counter}</div>
+        <motion.div
+          {...fadeInFlickerHalf}
+          className="pixFont counter blurEffectText"
+        >
+          {props.counter}
+        </motion.div>
         <button
           className="diamondButton"
           onClick={(e) => handleNextProject(e, 1)}

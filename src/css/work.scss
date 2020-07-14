@@ -87,6 +87,7 @@
     filter: drop-shadow(0.1rem 0.1rem 0 $blue)
       drop-shadow(-0.1rem -0.1rem 0 $pink);
     opacity: 0.5;
+    animation: glitchFadeInHalf 0.5s ease;
   }
 
   & .decoNumbers {
@@ -140,10 +141,6 @@
     }
   }
 
-  .projectTitle h3 {
-    //font-size: $pad * 5;
-  }
-
   .project {
     max-width: 70%;
     margin: 0 auto;
@@ -166,7 +163,7 @@
       display: block;
       position: absolute;
       top: 50%;
-      right: $pad * 9;
+      right: $pad * 12;
       height: $line;
       width: 100vw;
       background-color: $textColor;

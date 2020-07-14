@@ -20,6 +20,28 @@
   }
 }
 
+@keyframes glitchFadeInHalf {
+  0% {
+    opacity: 0;
+  }
+
+  23% {
+    opacity: 0.4;
+  }
+
+  46% {
+    opacity: 0;
+  }
+
+  70% {
+    opacity: 0.15;
+  }
+
+  100% {
+    opacity: 0.5;
+  }
+}
+
 @keyframes glitchIn {
   0% {
     filter: drop-shadow(0.4rem 0.4rem 0 rgba($color: $blue, $alpha: 0.5))

@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import ScrollDetector from "../_core/ScrollDetector";
 import { gotToWork } from "./api";
 import { motion } from "framer-motion";
-import { fadeIn3D, fadeInFlicker, fadeIn } from "../anim/animationPresets";
+import { fadeInFlicker } from "../anim/animationPresets";
 
 const Home = (props: props) => {
   useEffect(() => {
@@ -38,7 +38,7 @@ const Home = (props: props) => {
               </motion.h2>
               <motion.p
                 {...fadeInFlicker}
-                transition={{ ...fadeInFlicker.transition, delay: 0.2 }}
+                transition={{ ...fadeInFlicker.transition, delay: 0.4 }}
               >
                 Creative frontend developer
               </motion.p>
@@ -46,7 +46,7 @@ const Home = (props: props) => {
             <motion.p
               className="shortInfo"
               {...fadeInFlicker}
-              transition={{ ...fadeInFlicker.transition, delay: 0.4 }}
+              transition={{ ...fadeInFlicker.transition, delay: 0.5 }}
             >
               Delectus reiciendis impedit possimus dolor esse vitae itaque
               ratione natus labore voluptatibus!
@@ -57,7 +57,7 @@ const Home = (props: props) => {
         <motion.div
           className="scrollNextPage"
           {...fadeInFlicker}
-          transition={{ ...fadeInFlicker.transition, delay: 0.5 }}
+          transition={{ ...fadeInFlicker.transition, delay: 0.6 }}
         >
           <Link to="/work" className="pixFont">
             Scroll for more
