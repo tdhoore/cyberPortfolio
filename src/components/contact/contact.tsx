@@ -1,5 +1,6 @@
 import React from "react";
 import { props } from "./types";
+import DecoNumbers from "../_core/DecoNumbers";
 
 const Contact = (props: props) => {
   return (
@@ -37,12 +38,7 @@ const Contact = (props: props) => {
             </a>
           </li>
         </ul>
-        <div className="pixFont blurEffectText decoNumbers">
-          <div>541</div>
-          <div>541</div>
-          <div>541</div>
-          <div>541</div>
-        </div>
+        <DecoNumbers />
       </div>
     </article>
   );

@@ -190,7 +190,7 @@ main {
   }
 
   &:hover {
-    background-color: $accentTextColor;
+    background-color: transparent;
     color: $accentColor;
     animation: flickerButtonBg 150ms forwards;
   }
@@ -217,14 +217,6 @@ main {
   left: 0;
   right: 0;
   bottom: 0;
-
-  & div {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-  }
 
   & .noiseAnimated {
     z-index: 1;
@@ -253,8 +245,19 @@ main {
   }
 }
 
+.forground {
+  & div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
+
 .background {
   & .bgRect {
+    position: absolute;
     border: solid $blue $line;
     opacity: 0.15;
     filter: drop-shadow(0 0 $pad rgba($color: $blue, $alpha: 0.5));
@@ -290,20 +293,28 @@ main {
 }
 
 .arrows {
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   z-index: 4;
   height: 100%;
+  width: 100%;
+  transform: scale(0.4) translateY(10%);
+  transition: all 300ms;
 
   & div {
     position: absolute;
-    top: 50%;
+    top: calc(50% - 2.4rem);
     background-color: $shapeColor;
     width: $pad * 25;
-    height: 500vw;
+    height: 500vh;
     transform-origin: top right;
     transform: rotate(45deg);
     background-image: url("../assets/img/crossPaternFade.png");
     background-position: center left;
+    transition: all 300ms;
 
     &::after {
       content: "";
@@ -311,7 +322,7 @@ main {
       position: absolute;
       top: 0;
       right: 0;
-      width: 500vw;
+      width: 500vh;
       height: $pad * 25;
       background-color: $shapeColor;
       background-image: url("../assets/img/crossPaternFade.png");
@@ -326,59 +337,17 @@ main {
 
 .arrowsRight {
   transform: scale(-1);
+
+  & div {
+    top: calc(50% + 2.4rem);
+  }
 }
 
 .arrowHome {
-  transform: translateX(20vw);
+  transform: translateX(-10vw) translateY(-1.8rem) scale(0.4);
 
   &.arrowsRight {
-    transform: translateX(-20vw) scale(-1);
-  }
-}
-
-@keyframes noiseAnim {
-  0% {
-    background-position: 0;
-  }
-
-  50% {
-    background-position: 10% 10%;
-  }
-
-  70% {
-    background-position: -10% 7%;
-  }
-
-  100% {
-    background-position: 0;
-  }
-}
-
-@keyframes scanLineAnim {
-  0% {
-    background-position: 0 0;
-  }
-
-  100% {
-    background-position: 0 10vh;
-  }
-}
-
-@keyframes flickerButtonBg {
-  0% {
-    background-color: $accentColor;
-  }
-
-  30% {
-    background-color: $accentTextColor;
-  }
-
-  50% {
-    background-color: $accentColor;
-  }
-
-  100% {
-    background-color: $accentTextColor;
+    transform: translateX(10vw) translateY(-1.8rem) scale(-0.4);
   }
 }
 
@@ -386,6 +355,31 @@ main {
   main {
     order: 1;
     margin-top: -$pad * 7;
+  }
+
+  .arrows {
+    & div {
+      top: 50%;
+
+      height: 500vw;
+      transform: rotate(45deg) scale(1);
+
+      &::after {
+        width: 500vw;
+      }
+    }
+  }
+
+  .arrowsRight {
+    transform: scale(-1);
+  }
+
+  .arrowHome {
+    transform: translateX(20vw);
+
+    &.arrowsRight {
+      transform: translateX(-20vw) scale(-1);
+    }
   }
 }
 

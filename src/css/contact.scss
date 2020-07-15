@@ -161,12 +161,12 @@
     & .decoNumbers {
       position: absolute;
       top: 50%;
-      right: -$pad * 9;
+      right: -$pad * 11;
       display: block;
       transform: translateY(-50%);
 
       & div {
-        margin: $pad * 3 0;
+        margin: $pad * 6 0;
       }
     }
   }

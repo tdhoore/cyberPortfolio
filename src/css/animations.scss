@@ -73,3 +73,49 @@
       drop-shadow(0 0 0 rgba($color: $pink, $alpha: 0.5));
   }
 }
+
+@keyframes noiseAnim {
+  0% {
+    background-position: 0;
+  }
+
+  50% {
+    background-position: 10% 10%;
+  }
+
+  70% {
+    background-position: -10% 7%;
+  }
+
+  100% {
+    background-position: 0;
+  }
+}
+
+@keyframes scanLineAnim {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 0 10vh;
+  }
+}
+
+@keyframes flickerButtonBg {
+  0% {
+    background-color: $accentColor;
+  }
+
+  30% {
+    background-color: transparent;
+  }
+
+  50% {
+    background-color: $accentColor;
+  }
+
+  100% {
+    background-color: transparent;
+  }
+}
