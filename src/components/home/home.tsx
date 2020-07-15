@@ -43,26 +43,18 @@ const Home = (props: props) => {
                 Creative frontend developer
               </motion.p>
             </header>
-            <motion.p
-              className="shortInfo"
-              {...fadeInFlicker}
-              transition={{ ...fadeInFlicker.transition, delay: 0.5 }}
-            >
-              Delectus reiciendis impedit possimus dolor esse vitae itaque
-              ratione natus labore voluptatibus!
-            </motion.p>
           </div>
           <img src={logo} alt="Tim D'hoore logo" />
+          <motion.div
+            className="scrollNextPage"
+            {...fadeInFlicker}
+            transition={{ ...fadeInFlicker.transition, delay: 0.6 }}
+          >
+            <Link to="/work" className="diamondButton">
+              Scroll for more
+            </Link>
+          </motion.div>
         </div>
-        <motion.div
-          className="scrollNextPage"
-          {...fadeInFlicker}
-          transition={{ ...fadeInFlicker.transition, delay: 0.6 }}
-        >
-          <Link to="/work" className="pixFont">
-            Scroll for more
-          </Link>
-        </motion.div>
       </div>
     </motion.article>
   );

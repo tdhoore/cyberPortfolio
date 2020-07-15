@@ -289,6 +289,45 @@ main {
   }
 }
 
+.arrows {
+  position: relative;
+  z-index: 4;
+  height: 100%;
+
+  & div {
+    position: absolute;
+    top: 50%;
+    background-color: $shapeColor;
+    width: $pad * 30;
+    height: 100vw;
+    transform-origin: top right;
+    transform: rotate(45deg);
+    background-image: url("../assets/img/crossPaternFade.png");
+    background-position: center left;
+
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100vw;
+      height: $pad * 30;
+      background-color: $shapeColor;
+      background-image: url("../assets/img/crossPaternFade.png");
+      background-position: center left;
+    }
+  }
+
+  & div:last-of-type {
+    left: -$pad * 90;
+  }
+}
+
+.arrowsRight {
+  transform: scale(-1);
+}
+
 @keyframes noiseAnim {
   0% {
     background-position: 0;

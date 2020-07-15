@@ -66,30 +66,13 @@
   }
 
   & .scrollNextPage {
-    position: absolute;
-    bottom: $pad * 3;
-    display: flex;
-    justify-content: center;
-    //color: transparent;
+    margin-top: $pad * 4;
 
     & a {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      font-size: 1rem;
-      cursor: pointer;
-    }
-
-    & a::after {
-      content: "";
-      display: block;
       width: $pad * 5;
       height: $pad * 5;
-      transform: rotate(45deg);
-      border: solid $line $accentColor;
-      background-color: $accentColor;
-      margin-top: $pad * 2;
+      overflow: hidden;
+      color: transparent;
     }
   }
 }
@@ -105,62 +88,9 @@
       height: auto;
     }
 
-    & .content {
-      position: relative;
-      flex-direction: row;
-    }
-
-    & .content::after {
-      content: "";
-      display: block;
-      position: absolute;
-      z-index: 10;
-      top: -$pad * 4;
-      left: -$pad * 4;
-      width: $pad * 4;
-      height: calc(100% + 6.4rem);
-      border-top: solid $line;
-      border-bottom: solid $line;
-      border-left: solid $line;
-      filter: drop-shadow(0.1rem 0.1rem 0 $blue)
-        drop-shadow(-0.1rem -0.1rem 0 $pink);
-      opacity: 0.5;
-    }
-
-    & .content::before {
-      content: "";
-      display: block;
-      position: absolute;
-      top: 50%;
-      left: calc(-100vw - 3.2rem);
-      height: $line;
-      width: 100vw;
-      background-color: $textColor;
-      filter: drop-shadow(0.1rem 0.1rem 0 $blue)
-        drop-shadow(-0.1rem -0.1rem 0 $pink);
-      opacity: 0.5;
-    }
-
     & .intro {
       margin-left: $pad * 3;
       max-width: $pad * 65;
-    }
-
-    & header {
-      text-align: left;
-
-      & h2 {
-        font-size: $pad * 5;
-      }
-
-      & p {
-        font-size: $pad * 3;
-      }
-    }
-
-    & img {
-      position: relative;
-      margin-bottom: 0;
     }
 
     & p {
