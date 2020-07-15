@@ -298,8 +298,8 @@ main {
     position: absolute;
     top: 50%;
     background-color: $shapeColor;
-    width: $pad * 30;
-    height: 100vw;
+    width: $pad * 25;
+    height: 500vw;
     transform-origin: top right;
     transform: rotate(45deg);
     background-image: url("../assets/img/crossPaternFade.png");
@@ -311,8 +311,8 @@ main {
       position: absolute;
       top: 0;
       right: 0;
-      width: 100vw;
-      height: $pad * 30;
+      width: 500vw;
+      height: $pad * 25;
       background-color: $shapeColor;
       background-image: url("../assets/img/crossPaternFade.png");
       background-position: center left;
@@ -326,6 +326,14 @@ main {
 
 .arrowsRight {
   transform: scale(-1);
+}
+
+.arrowHome {
+  transform: translateX(20vw);
+
+  &.arrowsRight {
+    transform: translateX(-20vw) scale(-1);
+  }
 }
 
 @keyframes noiseAnim {

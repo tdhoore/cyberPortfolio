@@ -11,6 +11,43 @@
     padding: $pad * 2 0;
   }
 
+  & .contentAndDeco {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &::before,
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 50%;
+      right: 100%;
+      height: $line;
+      width: 100vw;
+      background-color: $textColor;
+      filter: drop-shadow(0.1rem 0.1rem 0 $blue)
+        drop-shadow(-0.1rem -0.1rem 0 $pink);
+      opacity: 0.5;
+      transform: translateY(-50%);
+    }
+
+    &::after {
+      right: auto;
+      left: 100%;
+    }
+
+    & .decoNumbers {
+      display: none;
+      padding: 0 $pad * 2;
+
+      & div {
+        margin: $pad * 6 $pad * 5;
+      }
+    }
+  }
+
   & .content {
     display: flex;
     flex-direction: column;
@@ -48,8 +85,8 @@
     order: -1;
     width: 40vw;
     height: 40vw;
-    max-width: $pad * 25;
-    max-height: $pad * 25;
+    max-width: $pad * 22;
+    max-height: $pad * 22;
     margin-bottom: $pad * 3;
     animation: glitchFadeIn 0.5s ease, glitchIn 0.5s ease;
   }
@@ -100,6 +137,12 @@
 
     & .shortInfo {
       margin-top: $pad * 2;
+    }
+
+    & .contentAndDeco {
+      & .decoNumbers {
+        display: block;
+      }
     }
   }
 }

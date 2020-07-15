@@ -6,6 +6,7 @@ import ScrollDetector from "../_core/ScrollDetector";
 import { gotToWork } from "./api";
 import { motion } from "framer-motion";
 import { fadeInFlicker } from "../anim/animationPresets";
+import DecoNumbers from "../_core/DecoNumbers";
 
 const Home = (props: props) => {
   useEffect(() => {
@@ -30,30 +31,34 @@ const Home = (props: props) => {
   return (
     <motion.article className="homeArticle">
       <div className="wrapper">
-        <div className="content">
-          <div className="intro">
-            <header>
-              <motion.h2 {...fadeInFlicker}>
-                <span>Tim D'hoore</span>
-              </motion.h2>
-              <motion.p
-                {...fadeInFlicker}
-                transition={{ ...fadeInFlicker.transition, delay: 0.4 }}
-              >
-                Creative frontend developer
-              </motion.p>
-            </header>
+        <div className="contentAndDeco">
+          <DecoNumbers />
+          <div className="content">
+            <div className="intro">
+              <header>
+                <motion.h2 {...fadeInFlicker}>
+                  <span>Tim D'hoore</span>
+                </motion.h2>
+                <motion.p
+                  {...fadeInFlicker}
+                  transition={{ ...fadeInFlicker.transition, delay: 0.4 }}
+                >
+                  Creative frontend developer
+                </motion.p>
+              </header>
+            </div>
+            <img src={logo} alt="Tim D'hoore logo" />
+            <motion.div
+              className="scrollNextPage"
+              {...fadeInFlicker}
+              transition={{ ...fadeInFlicker.transition, delay: 0.6 }}
+            >
+              <Link to="/work" className="diamondButton">
+                Scroll for more
+              </Link>
+            </motion.div>
           </div>
-          <img src={logo} alt="Tim D'hoore logo" />
-          <motion.div
-            className="scrollNextPage"
-            {...fadeInFlicker}
-            transition={{ ...fadeInFlicker.transition, delay: 0.6 }}
-          >
-            <Link to="/work" className="diamondButton">
-              Scroll for more
-            </Link>
-          </motion.div>
+          <DecoNumbers />
         </div>
       </div>
     </motion.article>
