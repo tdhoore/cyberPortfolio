@@ -333,7 +333,7 @@ main {
   }
 
   & div:last-of-type {
-    left: -$pad * 90;
+    left: -$pad * 80;
   }
 }
 
@@ -353,7 +353,15 @@ main {
   }
 }
 
-@media only screen and (min-width: 1070px) {
+.arrowWork {
+  transform: translateX(30vw) translateY(-18%) scale(0.4);
+
+  &.arrowsRight {
+    transform: translateX(10vw) translateY(-18%) scale(-0.4);
+  }
+}
+
+@media only screen and (min-width: 1024px) {
   main {
     order: 1;
     margin-top: -$pad * 7;
@@ -380,6 +388,14 @@ main {
 
     &.arrowsRight {
       transform: translateX(-20vw) scale(-1);
+    }
+  }
+
+  .arrowWork {
+    transform: translateX(35vw) translateY(0.1rem);
+
+    &.arrowsRight {
+      transform: translateX(10vw) translateY(-0.1rem) scale(-1);
     }
   }
 }
