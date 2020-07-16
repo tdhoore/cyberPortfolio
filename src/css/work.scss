@@ -170,6 +170,8 @@
       filter: drop-shadow(0.1rem 0.1rem 0 $blue)
         drop-shadow(-0.1rem -0.1rem 0 $pink);
       opacity: 0.5;
+      transform: scaleX(0);
+      animation: homeLineAnim 0.3s 0.3s forwards;
     }
   }
 
@@ -254,6 +256,8 @@
       border-top: solid $textColor $line;
       border-bottom: solid $textColor $line;
       pointer-events: none;
+      transform: scaleX(0);
+      animation: scaleAnim 0.3s 0.3s forwards;
     }
 
     & .defaultButton {

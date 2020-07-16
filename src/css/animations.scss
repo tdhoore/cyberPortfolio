@@ -139,3 +139,13 @@
     transform: translateY(-50%) scaleX(1);
   }
 }
+
+@keyframes scaleAnim {
+  0% {
+    transform: scaleX(0);
+  }
+
+  100% {
+    transform: scaleX(1);
+  }
+}

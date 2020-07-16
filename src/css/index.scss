@@ -395,7 +395,7 @@ main {
     transform: translateX(35vw) translateY(0.1rem);
 
     &.arrowsRight {
-      transform: translateX(10vw) translateY(-0.1rem) scale(-1);
+      transform: translateX(-8vw) translateY(-0.1rem) scale(-1);
     }
   }
 }
