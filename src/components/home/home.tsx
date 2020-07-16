@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import ScrollDetector from "../_core/ScrollDetector";
 import { gotToWork } from "./api";
 import { motion } from "framer-motion";
-import { fadeInFlicker } from "../anim/animationPresets";
+import { fadeInFlicker, fadeInFlickerScale } from "../anim/animationPresets";
 import DecoNumbers from "../_core/DecoNumbers";
 
 const Home = (props: props) => {
@@ -29,25 +29,32 @@ const Home = (props: props) => {
   });
 
   return (
-    <motion.article className="homeArticle">
+    <article className="homeArticle">
       <div className="wrapper">
         <div className="contentAndDeco">
           <DecoNumbers />
           <div className="content">
             <div className="intro">
               <header>
-                <motion.h2 {...fadeInFlicker}>
+                <motion.h2
+                  {...fadeInFlickerScale}
+                  transition={{ ...fadeInFlickerScale.transition, delay: 0.5 }}
+                >
                   <span>Tim D'hoore</span>
                 </motion.h2>
                 <motion.p
-                  {...fadeInFlicker}
-                  transition={{ ...fadeInFlicker.transition, delay: 0.4 }}
+                  {...fadeInFlickerScale}
+                  transition={{ ...fadeInFlickerScale.transition, delay: 0.6 }}
                 >
                   Creative frontend developer
                 </motion.p>
               </header>
             </div>
-            <img src={logo} alt="Tim D'hoore logo" />
+            <motion.img
+              src={logo}
+              alt="Tim D'hoore logo"
+              {...fadeInFlickerScale}
+            />
             <motion.div
               className="scrollNextPage"
               {...fadeInFlicker}
@@ -61,7 +68,7 @@ const Home = (props: props) => {
           <DecoNumbers />
         </div>
       </div>
-    </motion.article>
+    </article>
   );
 };
 

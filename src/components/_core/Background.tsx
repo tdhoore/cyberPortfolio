@@ -7,12 +7,10 @@ const Background = () => {
       <div className="bgRect rect2"></div>
       <div className="bgRect rect3"></div>
       <div className="bgRect rect4"></div>
-
       <div className="arrows arrowsLeft arrowHome">
         <div></div>
         <div></div>
       </div>
-
       <div className="arrows arrowsRight arrowHome">
         <div></div>
         <div></div>
