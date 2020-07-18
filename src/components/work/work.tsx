@@ -58,7 +58,6 @@ const Work = (props: props) => {
         <header className="hide">
           <h2>Work</h2>
         </header>
-
         <ProjectCounter counter={setCounter()} />
         <Project data={work[currentItem]} counter={setCounter()} />
       </div>

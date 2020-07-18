@@ -27,8 +27,8 @@ export const fadeInFlickerScale = {
     scale: 1,
     filter: [
       "drop-shadow(4px 4px 0 rgba(96, 202, 224, 0.5)) drop-shadow(-4px -4px 0 rgba(255, 68, 180, 0.5)",
-      "drop-shadow(16px 16px 0 rgba(96, 202, 224, 0.5)) drop-shadow(-16px -16px 0 rgba(255, 68, 180, 0.5)",
-      "drop-shadow(16px 16px 0 rgba(96, 202, 224, 0.5)) drop-shadow(-16px -16px 0 rgba(255, 68, 180, 0.5)",
+      "drop-shadow(12px 12px 0 rgba(96, 202, 224, 0.5)) drop-shadow(-12px -12px 0 rgba(255, 68, 180, 0.5)",
+      "drop-shadow(12px 12px 0 rgba(96, 202, 224, 0.5)) drop-shadow(-12px -12px 0 rgba(255, 68, 180, 0.5)",
       "drop-shadow(8px 8px 0 rgba(96, 202, 224, 0.5)) drop-shadow(-8px -8px 0 rgba(255, 68, 180, 0.5)",
       "drop-shadow(0 0 0 rgba(96, 202, 224, 0.5)) drop-shadow(0 0 0 rgba(255, 68, 180, 0.5)",
       "drop-shadow(0 0 0 rgba(96, 202, 224, 0.5)) drop-shadow(0 0 0 rgba(255, 68, 180, 0.5)",
@@ -117,5 +117,19 @@ export const workTransitionIn = {
   transition: {
     duration: 0.3,
     delay: 0.3,
+  },
+};
+export const fade = {
+  initial: {
+    opacity: 1,
+  },
+  animate: {
+    opacity: 1,
+  },
+  exit: {
+    opacity: 0,
+  },
+  transition: {
+    duration: 0.2,
   },
 };

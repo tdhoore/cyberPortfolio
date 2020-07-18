@@ -6,6 +6,7 @@ import {
   fadeInFlicker,
   fadeInFlickerHalf,
   workTransitionIn,
+  fadeInFlickerScale,
 } from "../anim/animationPresets";
 import DecoNumbers from "../_core/DecoNumbers";
 
@@ -15,7 +16,9 @@ const Project = (props: ProjectProps) => {
       <div className="projectTitle">
         <header>
           <h3>
-            <motion.span {...fadeInFlicker}>{props.data.title}</motion.span>
+            <motion.span {...fadeInFlickerScale}>
+              {props.data.title}
+            </motion.span>
           </h3>
         </header>
         <motion.div
