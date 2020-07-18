@@ -119,6 +119,22 @@ export const workTransitionIn = {
     delay: 0.3,
   },
 };
+
+export const workTransitionExit = {
+  animate: {
+    opacity: 1,
+    x: 0,
+  },
+  exit: {
+    opacity: 0,
+    x: 30,
+    transition: {
+      duration: 0.2,
+      delay: 0.3,
+    },
+  },
+};
+
 export const fade = {
   initial: {
     opacity: 1,
@@ -128,6 +144,23 @@ export const fade = {
   },
   exit: {
     opacity: 0,
+  },
+  transition: {
+    duration: 0.2,
+  },
+};
+
+export const updateWork = {
+  initial: {
+    opacity: 1,
+  },
+  animate: {
+    opacity: 1,
+    x: 0,
+  },
+  exit: {
+    opacity: 0,
+    x: 20,
   },
   transition: {
     duration: 0.2,

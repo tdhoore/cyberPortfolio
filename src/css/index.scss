@@ -83,14 +83,16 @@ body {
   font-family: "Roboto Mono", Arial, Helvetica, sans-serif;
 }
 
-.basePage {
+.mainPage {
   position: relative;
   display: flex;
   flex-direction: column;
   height: 100vh;
+  overflow: hidden;
 }
 
 main {
+  position: relative;
   order: -1;
   flex: 2;
   overflow: hidden;

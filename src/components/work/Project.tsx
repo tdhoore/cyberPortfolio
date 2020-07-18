@@ -7,12 +7,14 @@ import {
   fadeInFlickerHalf,
   workTransitionIn,
   fadeInFlickerScale,
+  updateWork,
+  workTransitionExit,
 } from "../anim/animationPresets";
 import DecoNumbers from "../_core/DecoNumbers";
 
 const Project = (props: ProjectProps) => {
   return props.data !== undefined ? (
-    <article className="project">
+    <motion.article className="project" {...updateWork}>
       <div className="projectTitle">
         <header>
           <h3>
@@ -51,11 +53,12 @@ const Project = (props: ProjectProps) => {
             src={props.data.image}
             alt={props.data.title}
             {...workTransitionIn}
+            {...workTransitionExit}
           />
         </div>
         <DecoNumbers />
       </div>
-    </article>
+    </motion.article>
   ) : (
     <div></div>
   );

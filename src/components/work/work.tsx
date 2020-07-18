@@ -6,6 +6,7 @@ import { getWork } from "./api";
 import { useSelector } from "react-redux";
 import ScrollDetector from "../_core/ScrollDetector";
 import { getNextProject } from "./api";
+import { AnimatePresence } from "framer-motion";
 
 const Work = (props: props) => {
   const work = useSelector((state: any) => state.workReducer.workItems);
@@ -59,7 +60,15 @@ const Work = (props: props) => {
           <h2>Work</h2>
         </header>
         <ProjectCounter counter={setCounter()} />
-        <Project data={work[currentItem]} counter={setCounter()} />
+        <div className="projectHolder">
+          <AnimatePresence>
+            <Project
+              data={work[currentItem]}
+              counter={setCounter()}
+              key={currentItem}
+            />
+          </AnimatePresence>
+        </div>
       </div>
     </section>
   );
