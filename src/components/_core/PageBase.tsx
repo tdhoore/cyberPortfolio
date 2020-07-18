@@ -7,8 +7,8 @@ import Work from "../work/Work";
 import About from "../about/About";
 import Contact from "../contact/Contact";
 import WorkDetails from "../workDetails/WorkDetails";
-import Forground from "./Forground";
-import Background from "./Background";
+
+import { AnimatePresence } from "framer-motion";
 
 const PageBase = (props: pageBase) => {
   const navMainLinks = useSelector(
@@ -21,10 +21,10 @@ const PageBase = (props: pageBase) => {
     switch (props.pageCompName) {
       case "Home":
         document.title = `${title}Portfolio`;
-        return <Home />;
+        return <Home key="Home" />;
       case "Work":
         document.title = `${title}Work`;
-        return <Work />;
+        return <Work key="Work" />;
       case "About":
         document.title = `${title}About`;
         return <About />;
@@ -39,6 +39,21 @@ const PageBase = (props: pageBase) => {
     }
   };
 
+  const test = {
+    initial: {
+      opacity: 0,
+    },
+    animate: {
+      opacity: 1,
+    },
+    exit: {
+      opacity: 0,
+    },
+    transition: {
+      duration: 5,
+    },
+  };
+
   return (
     <div className="basePage">
       <header>
@@ -46,8 +61,6 @@ const PageBase = (props: pageBase) => {
         <NavMain links={navMainLinks} activeLink={props.pageCompName} />
       </header>
       <main>{getActivePage()}</main>
-      <Forground />
-      <Background />
     </div>
   );
 };

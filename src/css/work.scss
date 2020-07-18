@@ -86,8 +86,8 @@
     border-left: solid $line;
     filter: drop-shadow(0.1rem 0.1rem 0 $blue)
       drop-shadow(-0.1rem -0.1rem 0 $pink);
-    opacity: 0.5;
-    animation: glitchFadeInHalf 0.5s ease;
+    opacity: 0;
+    animation: glitchFadeInHalf 0.5s 0.3s ease forwards;
   }
 
   & .decoNumbers {
@@ -112,7 +112,6 @@
     position: relative;
     z-index: 2;
     width: 100%;
-    //font-size: 6.65vw;
   }
 
   & header h3::after {
@@ -124,8 +123,9 @@
     left: 0;
     bottom: $pad * 2;
     width: 100%;
-    opacity: 0.3;
+    opacity: 0;
     background-image: url("../assets/img/crossPatern.png");
+    animation: glitchFadeInKwarter 0.5s 0.3s ease forwards;
   }
 
   & .counter {
@@ -260,7 +260,7 @@
       animation: scaleAnim 0.3s 0.3s forwards;
     }
 
-    & .defaultButton {
+    & .defaultButtonHolder {
       align-self: flex-start;
     }
 
@@ -271,7 +271,7 @@
       font-size: $pad * 2;
     }
 
-    & .counter:first-of-type {
+    & .firstCounter {
       order: -2;
       margin-top: 0;
       margin-bottom: $pad * 8;

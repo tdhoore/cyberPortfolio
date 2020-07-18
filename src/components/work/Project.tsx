@@ -18,9 +18,15 @@ const Project = (props: ProjectProps) => {
             <motion.span {...fadeInFlicker}>{props.data.title}</motion.span>
           </h3>
         </header>
-        <Link to={`/work/${props.data.title}`} className="defaultButton">
-          Show me more
-        </Link>
+        <motion.div
+          className="defaultButtonHolder"
+          {...fadeInFlicker}
+          transition={{ ...fadeInFlicker.transition, delay: 0.4 }}
+        >
+          <Link to={`/work/${props.data.title}`} className="defaultButton">
+            Show me more
+          </Link>
+        </motion.div>
         <motion.div
           className="pixFont counter blurEffectText"
           {...fadeInFlickerHalf}
@@ -29,7 +35,7 @@ const Project = (props: ProjectProps) => {
           {props.counter}
         </motion.div>
         <motion.div
-          className="pixFont counter blurEffectText"
+          className="pixFont counter firstCounter blurEffectText"
           {...fadeInFlickerHalf}
           transition={{ ...fadeInFlickerHalf.transition, delay: 0.5 }}
         >

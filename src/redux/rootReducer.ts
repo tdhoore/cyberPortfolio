@@ -6,7 +6,7 @@ import { ReduxState } from "./types";
 
 const createRootReducer = (history: any) =>
   combineReducers<ReduxState>({
-    router: connectRouter(history),
+    //router: connectRouter(history),
     navMainReducer: navMainComp.components.navMainReducer,
     workReducer: workComp.components.workReducer,
   });
