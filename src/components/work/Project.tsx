@@ -2,7 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { ProjectProps } from "./types";
 import { motion } from "framer-motion";
-import { fadeInFlicker, fadeInFlickerHalf } from "../anim/animationPresets";
+import {
+  fadeInFlicker,
+  fadeInFlickerHalf,
+  workTransitionIn,
+} from "../anim/animationPresets";
 import DecoNumbers from "../_core/DecoNumbers";
 
 const Project = (props: ProjectProps) => {
@@ -34,7 +38,11 @@ const Project = (props: ProjectProps) => {
       </div>
       <div className="projectImage">
         <div className="image">
-          <img src={props.data.image} alt={props.data.title} />
+          <motion.img
+            src={props.data.image}
+            alt={props.data.title}
+            {...workTransitionIn}
+          />
         </div>
         <DecoNumbers />
       </div>
