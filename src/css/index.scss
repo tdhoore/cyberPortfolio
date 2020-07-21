@@ -170,6 +170,26 @@ main {
   }
 }
 
+.borderBox,
+.window {
+  border: $line solid rgba($color: $textColor, $alpha: 0.5);
+}
+
+.window {
+  position: relative;
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -$line;
+    left: -$line;
+    right: -$line;
+    height: $pad * 3;
+    background-color: $textColor;
+  }
+}
+
 .defaultButton {
   position: relative;
   display: block;

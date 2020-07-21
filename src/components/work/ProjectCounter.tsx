@@ -15,7 +15,7 @@ const ProjectCounter = (props: any) => {
       <div className="rorator">
         <motion.button
           {...fadeInFlicker}
-          className="diamondButton"
+          className="diamondButton hide"
           onClick={(e) => handleNextProject(e, -1)}
         ></motion.button>
         <motion.div
@@ -26,7 +26,7 @@ const ProjectCounter = (props: any) => {
         </motion.div>
         <motion.button
           {...fadeInFlicker}
-          className="diamondButton"
+          className="diamondButton hide"
           onClick={(e) => handleNextProject(e, 1)}
         ></motion.button>
       </div>
