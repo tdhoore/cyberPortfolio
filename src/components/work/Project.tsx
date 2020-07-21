@@ -10,11 +10,13 @@ import {
   updateWork,
   workTransitionExit,
 } from "../anim/animationPresets";
-import DecoNumbers from "../_core/DecoNumbers";
 
 const Project = (props: ProjectProps) => {
   return props.data !== undefined ? (
-    <Link to={`/work/${props.data.title}`} className="projectPage">
+    <Link
+      to={`/work/${props.data.title}`}
+      className={`projectPage ${props.closedClass}`}
+    >
       <article className="project">
         <div className="projectTitle borderBox">
           <header>
@@ -30,9 +32,7 @@ const Project = (props: ProjectProps) => {
             {...fadeInFlicker}
             transition={{ ...fadeInFlicker.transition, delay: 0.4 }}
           >
-            <Link to={`/work/${props.data.title}`} className="defaultButton">
-              See more
-            </Link>
+            <button className="defaultButton">See more</button>
           </motion.div>
         </div>
         <div className="projectImage window">

@@ -296,9 +296,9 @@
   .wrapper {
     display: flex;
     flex-direction: column;
-    min-height: 100%;
-    //max-width: $pad * 160;
+    height: 100%;
     margin: 0 auto;
+    justify-content: center;
 
     & .projectCounter:last-of-type {
       order: -1;
@@ -318,29 +318,17 @@
   flex: 2;
 }
 
-.projectHolder {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  flex: 2;
-}
-
 .projectPage {
-  display: flex;
-  flex-direction: column;
-  flex: 2;
+  display: block;
   text-decoration: none;
   color: $textColor;
-  width: calc(100vw - 4.8rem);
   margin-left: $pad * 3;
 }
 
 .project {
-  display: flex;
-  flex-direction: column;
   position: relative;
   height: 100%;
-  flex: 2;
+  width: calc(100vw - 4.8rem);
 }
 
 .projectTitle {
@@ -384,21 +372,16 @@
 
 .projectImage {
   height: 100%;
-  display: flex;
-  flex-direction: column;
-  flex: 2;
   width: 65vw;
 
   .image {
-    display: flex;
-    flex-direction: column;
+    position: relative;
     height: 100%;
     width: 100%;
-    flex: 2;
   }
 
   & img {
-    flex: 2;
+    position: absolute;
     display: block;
     width: 100%;
     height: 100%;
@@ -414,4 +397,63 @@
   & .projectTitle {
     display: none;
   }
+}
+
+@media only screen and (min-width: 1024px) {
+  .workSection {
+    .wrapper {
+      flex-direction: row;
+      padding: 0 $pad * 20;
+      //max-width: $pad * 128;
+    }
+  }
+
+  .projectSlider {
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .projectPage {
+    position: relative;
+
+    height: 50%;
+  }
+
+  .project {
+    width: 100%;
+  }
+
+  .projectTitle {
+    display: inline-block;
+    width: auto;
+    min-width: $pad * 61;
+
+    bottom: $pad * 8;
+
+    & .defaultButton {
+      padding: $pad * 2;
+    }
+
+    & header h3 {
+      font-size: $pad * 5;
+      width: auto;
+    }
+
+    & header p {
+      font-size: $pad * 3;
+      width: auto;
+      margin-bottom: $pad * 3;
+    }
+  }
+
+  .projectImage {
+    width: 100%;
+  }
+}
+
+.closedProject {
+  margin-top: 10%;
+  height: 10%;
 }

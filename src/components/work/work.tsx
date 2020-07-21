@@ -85,24 +85,17 @@ const Work = (props: props) => {
 
             if (swipe < -swipeConfidenceThreshold) {
               getNextProject(1);
-              console.log("up");
             } else if (swipe > swipeConfidenceThreshold) {
               getNextProject(-1);
-              console.log("down");
-            } else {
-              getNextProject(0);
             }
           }}
         >
-          <div className="projectHolder">
-            <Project data={work[0]} counter={setCounter()} />
-          </div>
-          <div className="projectHolder">
-            <Project data={work[1]} counter={setCounter()} />
-          </div>
-          <div className="projectHolder">
-            <Project data={work[2]} counter={setCounter()} />
-          </div>
+          <Project data={work[0]} counter={setCounter()} />
+          <Project
+            data={work[1]}
+            counter={setCounter()}
+            closedClass="closedProject"
+          />
         </motion.div>
         <ProjectCounter counter={setCounter()} />
         <ProjectCounter counter={setCounter()} />
