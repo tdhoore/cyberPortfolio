@@ -3,16 +3,18 @@ import { props } from "./types";
 import logo from "../../assets/img/logo.svg";
 import { Link } from "react-router-dom";
 import ScrollDetector from "../_core/ScrollDetector";
-import { gotToWork } from "./api";
+import { useHistory } from "react-router-dom";
 
 const Home = (props: props) => {
+  const history = useHistory();
+
   useEffect(() => {
     //setup scroll support
     const scrollDetector = new ScrollDetector();
 
     const handleScroll = (e: Event) => {
       if (scrollDetector.dir > 0) {
-        gotToWork();
+        history.push("/work");
       }
     };
 
