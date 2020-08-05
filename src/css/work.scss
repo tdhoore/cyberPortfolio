@@ -395,7 +395,7 @@
   }
 
   & .projectTitle {
-    display: none;
+    //display: none;
   }
 }
 
@@ -406,54 +406,58 @@
       padding: 0 $pad * 20;
       //max-width: $pad * 128;
     }
-  }
 
-  .projectSlider {
-    position: relative;
-    flex-direction: column;
-    justify-content: center;
-    overflow: hidden;
-  }
-
-  .projectPage {
-    position: relative;
-
-    height: 50%;
-  }
-
-  .project {
-    width: 100%;
-  }
-
-  .projectTitle {
-    display: inline-block;
-    width: auto;
-    min-width: $pad * 61;
-
-    bottom: $pad * 8;
-
-    & .defaultButton {
-      padding: $pad * 2;
+    .projectSlider {
+      position: relative;
+      flex-direction: column;
+      justify-content: center;
+      overflow: hidden;
     }
 
-    & header h3 {
-      font-size: $pad * 5;
+    .projectPage {
+      position: relative;
+
+      height: 50%;
+    }
+
+    .project {
+      width: 100%;
+    }
+
+    .projectTitle {
+      display: inline-block;
       width: auto;
+      min-width: $pad * 61;
+
+      & .defaultButton {
+        padding: $pad * 2;
+        bottom: $pad * 3;
+      }
+
+      & header h3 {
+        font-size: $pad * 5;
+        width: auto;
+      }
+
+      & header p {
+        font-size: $pad * 3;
+        width: auto;
+        margin-bottom: $pad * 5;
+      }
     }
 
-    & header p {
-      font-size: $pad * 3;
-      width: auto;
-      margin-bottom: $pad * 3;
+    .projectImage {
+      width: 100%;
     }
   }
+  .workSection {
+    & .closedProject {
+      margin-top: 10%;
+      height: 10%;
 
-  .projectImage {
-    width: 100%;
+      & .projectTitle {
+        display: none;
+      }
+    }
   }
-}
-
-.closedProject {
-  margin-top: 10%;
-  height: 10%;
 }
