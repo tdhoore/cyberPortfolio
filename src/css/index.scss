@@ -46,6 +46,7 @@ dl {
 h2,
 h3 {
   font-size: $pad * 3;
+  letter-spacing: 0.4rem;
 }
 
 p {
@@ -96,12 +97,26 @@ main {
   order: -1;
   flex: 2;
   overflow: hidden;
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+
+    top: 30%;
+    width: 100%;
+    height: 40%;
+    background-color: rgba($color: $accentColor, $alpha: 0.5);
+    background-image: url("../assets/img/crossPatern.png");
+    opacity: 0.4;
+  }
 }
 
 .mainHolder {
   position: absolute;
   top: 0;
   left: 0;
+  z-index: 2;
   width: 100%;
   height: 100%;
   overflow: auto;
@@ -126,48 +141,6 @@ main {
   text-shadow: 0.1rem 0.1rem $blue, -0.1rem -0.1rem $pink;
   opacity: 0.5;
   color: $textColor;
-}
-.diamondButton {
-  display: block;
-  transform: rotate(45deg);
-  background-color: $accentColor;
-  border: solid $line $accentColor;
-  overflow: hidden;
-  transition: all 150ms;
-  cursor: pointer;
-
-  &::after {
-    content: "";
-    display: block;
-    position: absolute;
-    top: $pad/2;
-    left: $pad/2;
-    right: $pad/2;
-    bottom: $pad/2;
-    border: solid $line $accentColor;
-    transform: scale(1.2, 1.2);
-    transition: all 300ms;
-  }
-
-  &:hover {
-    background-color: $accentTextColor;
-    color: $accentColor;
-    opacity: 1;
-    animation: flickerButtonBg 150ms forwards;
-  }
-
-  &:hover::after {
-    transform: scale(1);
-  }
-
-  &:active {
-    opacity: 1;
-    transform: rotate(45deg) scale(0.95);
-  }
-
-  &:active::after {
-    transform: scale(1.5, 1.5);
-  }
 }
 
 .borderBox,
@@ -240,8 +213,7 @@ main {
   }
 }
 
-.forground,
-.background {
+.forground {
   pointer-events: none;
   position: absolute;
   z-index: -1;
@@ -250,11 +222,19 @@ main {
   right: 0;
   bottom: 0;
 
+  & div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
   & .noiseAnimated {
     z-index: 1;
     background-image: url("../assets/img/noiseTexture.png");
-    opacity: 0.15;
-    animation: noiseAnim 1s steps(10) forwards infinite;
+    opacity: 0.1;
+    animation: noiseAnim 5s steps(10) forwards infinite;
   }
 
   & .noise {
@@ -266,7 +246,7 @@ main {
   & .brightness {
     z-index: 2;
     background-color: #fff;
-    opacity: 0.7;
+    opacity: 0.5;
   }
 
   & .scanLines {
@@ -277,157 +257,55 @@ main {
   }
 }
 
-.forground {
-  & div {
+.panel,
+.decoPanel {
+  position: relative;
+  border: solid $line $accentColor;
+  padding: $pad * 5 $pad * 2 $pad * 2;
+  background-color: $accentTextColor;
+  box-shadow: $line $line 0 rgba($color: $accentColor, $alpha: 0.5);
+
+  &::before {
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
+    display: block;
+    height: $pad * 3;
+    width: 100%;
+    background-color: $accentColor;
   }
-}
 
-.background {
-  & .bgRect {
+  &::after {
+    content: "";
     position: absolute;
-    border: solid $blue $line;
-    opacity: 0.15;
-    filter: drop-shadow(0 0 $pad rgba($color: $blue, $alpha: 0.5));
-  }
-
-  & .rect1 {
-    top: -$line;
-    left: 10%;
-    bottom: 60%;
-    right: 60%;
-  }
-
-  & .rect2 {
-    top: 30%;
-    left: 20%;
-    bottom: -$line;
-    right: 48%;
-  }
-
-  & .rect3 {
-    top: -$line;
-    left: 60%;
-    bottom: 70%;
-    right: -$line;
-  }
-
-  & .rect4 {
-    top: 60%;
-    left: 45%;
-    bottom: 10%;
-    right: -$line;
+    top: 0;
+    left: 0;
+    display: block;
+    height: 100%;
+    width: 100%;
+    background-image: url("../assets/img/scanLineTexture.png");
+    opacity: 0.4;
   }
 }
 
-.arrows {
+.pannelHolder {
+  position: relative;
+}
+
+.decoPanel {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 4;
-  height: 100%;
-  width: 100%;
-  transform: scale(0.4) translateY(10%);
-  transition: all 0.3s cubic-bezier(0.57, 0.21, 0.64, 1.26);
-
-  & div {
-    position: absolute;
-    top: calc(50% - 2.4rem);
-    background-color: $shapeColor;
-    width: $pad * 25;
-    height: 500vh;
-    transform-origin: top right;
-    transform: scale(0) rotate(45deg);
-    background-image: url("../assets/img/crossPaternFade.png");
-    background-position: center left;
-    transition: all 300ms;
-    animation: arrowAnim 0.5s 0.3s forwards;
-
-    &::after {
-      content: "";
-      display: block;
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 500vh;
-      height: $pad * 25;
-      background-color: $shapeColor;
-      background-image: url("../assets/img/crossPaternFade.png");
-      background-position: center left;
-    }
-  }
-
-  & div:last-of-type {
-    left: -$pad * 80;
-  }
-}
-
-.arrowsRight {
-  transform: scale(-1);
-
-  & div {
-    top: calc(50% + 2.4rem);
-  }
-}
-
-.arrowHome {
-  transform: translateX(-10vw) translateY(-1.8rem) scale(0.4);
-
-  &.arrowsRight {
-    transform: translateX(10vw) translateY(-1.8rem) scale(-0.4);
-  }
-}
-
-.arrowWork {
-  transform: translateX(30vw) translateY(-18%) scale(0.4);
-
-  &.arrowsRight {
-    transform: translateX(10vw) translateY(-18%) scale(-0.4);
-  }
+  z-index: -1;
+  transition: all 300ms ease;
 }
 
 @media only screen and (min-width: 1024px) {
   main {
     order: 1;
-    //margin-top: -$pad * 7;
   }
 
-  .arrows {
-    & div {
-      top: 50%;
-      height: 500vw;
-      transform: rotate(45deg) scale(0);
-
-      &::after {
-        width: 500vw;
-      }
-    }
-  }
-
-  .arrowsRight {
-    transform: scale(-1);
-  }
-
-  .arrowHome {
-    transform: translateX(20vw);
-
-    &.arrowsRight {
-      transform: translateX(-20vw) scale(-1);
-    }
-  }
-
-  .arrowWork {
-    transform: translateX(35vw) translateY(0.1rem);
-
-    &.arrowsRight {
-      transform: translateX(-8vw) translateY(-0.1rem) scale(-1);
-    }
+  h2 {
+    font-size: $pad * 5;
   }
 }
 

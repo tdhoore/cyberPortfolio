@@ -4,9 +4,6 @@ import logo from "../../assets/img/logo.svg";
 import { Link } from "react-router-dom";
 import ScrollDetector from "../_core/ScrollDetector";
 import { gotToWork } from "./api";
-import { motion } from "framer-motion";
-import { fadeInFlicker, fadeInFlickerScale } from "../anim/animationPresets";
-import DecoNumbers from "../_core/DecoNumbers";
 
 const Home = (props: props) => {
   useEffect(() => {
@@ -31,41 +28,26 @@ const Home = (props: props) => {
   return (
     <article className="homeArticle">
       <div className="wrapper">
-        <div className="contentAndDeco">
-          <DecoNumbers />
-          <div className="content">
+        <div className="pannelHolder">
+          <div className="content panel">
             <div className="intro">
               <header>
-                <motion.h2
-                  {...fadeInFlickerScale}
-                  transition={{ ...fadeInFlickerScale.transition, delay: 0.5 }}
-                >
+                <h2>
                   <span>Tim D'hoore</span>
-                </motion.h2>
-                <motion.p
-                  {...fadeInFlickerScale}
-                  transition={{ ...fadeInFlickerScale.transition, delay: 0.6 }}
-                >
-                  Creative frontend developer
-                </motion.p>
+                </h2>
+                <p>Creative developer</p>
               </header>
             </div>
-            <motion.img
-              src={logo}
-              alt="Tim D'hoore logo"
-              {...fadeInFlickerScale}
-            />
-            <motion.div
-              className="scrollNextPage"
-              {...fadeInFlicker}
-              transition={{ ...fadeInFlicker.transition, delay: 0.6 }}
-            >
-              <Link to="/work" className="diamondButton">
+            <img src={logo} alt="Tim D'hoore logo" />
+            <div className="scrollNextPage">
+              <Link to="/work" className="defaultButton">
                 Scroll for more
               </Link>
-            </motion.div>
+            </div>
           </div>
-          <DecoNumbers />
+          <div className="decoPanel homeDeco1"></div>
+          <div className="decoPanel homeDeco2"></div>
+          <div className="decoPanel homeDeco3"></div>
         </div>
       </div>
     </article>

@@ -5,7 +5,6 @@ import PageBase from "../components/_core/PageBase";
 import { AnimatePresence } from "framer-motion";
 import { useSelector } from "react-redux";
 import Forground from "../components/_core/Forground";
-import Background from "../components/_core/Background";
 
 export default function () {
   const navMainLinks = useSelector((state) => state.navMainReducer.navLinks);
@@ -46,7 +45,6 @@ export default function () {
         </AnimatePresence>
       </main>
       <Forground />
-      <Background activePage={location.pathname} />
       <footer className="hide"> &copy; {date.getFullYear()}</footer>
     </div>
   );
