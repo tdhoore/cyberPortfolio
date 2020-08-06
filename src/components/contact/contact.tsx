@@ -5,17 +5,19 @@ import DecoNumbers from "../_core/DecoNumbers";
 const Contact = (props: props) => {
   return (
     <article className="contactArticle">
-      <header>
-        <h2 className="hide">Contact</h2>
-      </header>
-      <div className="letter">
-        <span>Inbox 0</span>
-        <p>Love to hear from you</p>
-      </div>
-      <div className="contactInfo">
+      <div className="contactMain panel">
+        <header>
+          <h2>I'm still looking for work</h2>
+          <p>Have anything?</p>
+        </header>
         <a href="mailto:" className="defaultButton">
           Leave a message
         </a>
+      </div>
+      <section className="socialMediaSection panel">
+        <header>
+          <h3>Social media</h3>
+        </header>
         <ul className="socialLinks">
           <li>
             <a href="" target="_blank">
@@ -38,7 +40,9 @@ const Contact = (props: props) => {
             </a>
           </li>
         </ul>
-        <DecoNumbers />
+      </section>
+      <div className="panel letter">
+        <div className="letterImg"></div>
       </div>
     </article>
   );

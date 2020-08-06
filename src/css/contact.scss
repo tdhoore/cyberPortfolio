@@ -1,48 +1,45 @@
 .contactArticle {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   padding: $pad * 3;
   min-height: 100%;
 
-  & .letter {
+  & h2 {
     position: relative;
-    font-family: "pix Chicago", Arial, Helvetica, sans-serif;
-    font-weight: normal;
-    text-align: center;
+    display: inline-block;
+    margin-top: $pad * 3;
   }
 
-  & .letter span {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-size: $pad * 3;
-    letter-spacing: 0.2rem;
-
-    &::after {
-      content: "";
-      display: block;
-      position: absolute;
-      bottom: -$pad * 2;
-      height: $pad * 5;
-      width: 100%;
-      opacity: 0.3;
-      background-image: url("../assets/img/crossPatern.png");
-    }
-  }
-
-  & .letter span::before {
+  & h2::after {
     content: "";
     display: block;
-    width: 40vw;
-    height: 25vw;
-    margin-bottom: $pad * 2;
-    background-image: url("../assets/img/inbox.svg");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center center;
+    position: absolute;
+    bottom: -15%;
+    height: 60%;
+    width: 100%;
+    opacity: 0.3;
+    background-image: url("../assets/img/crossPatern.png");
+  }
+
+  & .letter {
+    position: relative;
+    left: -24%;
+    order: -1;
+    width: $pad * 21;
+    height: $pad * 17;
+    margin-bottom: -$pad * 6;
+    margin-left: -$pad * 2;
+
+    & .letterImg {
+      width: 100%;
+      height: 100%;
+      background-image: url("../assets/img/inbox.svg");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
   }
 
   & p {
@@ -50,182 +47,101 @@
   }
 }
 
-.contactInfo {
-  & .decoNumbers {
-    display: none;
+.contactMain {
+  margin-bottom: $pad * 4;
+  max-width: $pad * 60;
+}
+
+.socialMediaSection {
+  max-width: $pad * 60;
+  width: 100%;
+
+  & header {
+    margin-bottom: $pad * 3;
   }
 }
 
 .socialLinks {
   display: flex;
-  justify-content: center;
-  margin-top: $pad * 2;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-top: 0;
 
   & li {
-    margin-left: $pad;
+    margin-left: 0;
+    margin-bottom: $pad * 3;
   }
 
-  & li:first-of-type {
-    margin-left: 0;
+  & li:last-of-type {
+    margin-bottom: 0;
   }
 
   & li a {
+    display: flex;
+    align-items: center;
+    width: auto;
+    height: $pad * 6 + $line;
+    font-size: $pad * 2;
+    color: $textColor;
+    text-decoration: none;
+    background: none;
+    border: solid $line $textColor;
+  }
+
+  & li a::before {
+    content: "";
     display: block;
+    height: 100%;
     width: $pad * 6;
-    height: $pad * 6;
-    background-color: $accentColor;
+    background-color: $textColor;
   }
 
   & li a span {
-    display: none;
+    display: block;
+    margin-left: $pad * 2;
   }
 }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 1070px) {
   .contactArticle {
-    flex-direction: row;
-
-    & .letter span::before {
-      width: $pad * 32;
-      height: $pad * 20;
-    }
+    display: grid;
+    grid-template-columns: 1fr min-content min-content 1fr;
+    grid-template-rows: 1fr min-content min-content 1fr;
+    gap: $pad * 4;
 
     & .letter {
-      position: relative;
+      left: auto;
+      order: 0;
+      margin: 0;
+      grid-column: 2 / 3;
+      grid-row: 2 / 3;
+      width: 113%;
+      height: $pad * 30;
+      padding: $pad * 9 $pad * 3 $pad * 6;
+    }
 
-      &::after {
-        content: "";
-        display: block;
-        position: absolute;
-        top: 50%;
-        right: -$pad * 6;
-        font-size: $pad * 2;
-        width: $pad * 2;
-        height: $pad * 2;
-        background-color: $accentColor;
-        transform: translateY(-$pad);
+    & .contactMain {
+      margin: 0;
+      grid-column: 3 / 4;
+      grid-row: 2 / -2;
+      min-width: $pad * 81;
+      padding: $pad * 9 $pad * 3 $pad * 6;
+      align-self: center;
+
+      & p {
+        font-size: $pad * 3;
+      }
+
+      & .defaultButton {
+        display: inline-block;
       }
     }
 
-    & .letter::before {
-      content: "";
-      display: block;
-      position: absolute;
-      top: 50%;
-      left: calc(-100vw - 5.6rem);
-      height: $line;
-      width: 100vw;
-      background-color: $textColor;
-      filter: drop-shadow(0.1rem 0.1rem 0 $blue)
-        drop-shadow(-0.1rem -0.1rem 0 $pink);
-      opacity: 0.5;
-    }
-  }
-
-  .contactInfo {
-    display: flex;
-    flex-direction: column-reverse;
-    position: relative;
-    margin-left: $pad * 10;
-
-    &::after {
-      content: "";
-      display: block;
-      position: absolute;
-      top: -$pad * 4;
-      right: -$pad * 4;
-      width: $pad * 6;
-      height: calc(100% + 6.4rem);
-      border-top: solid $line;
-      border-bottom: solid $line;
-      border-right: solid $line;
-      filter: drop-shadow(0.1rem 0.1rem 0 $blue)
-        drop-shadow(-0.1rem -0.1rem 0 $pink);
-      opacity: 0.5;
-    }
-
-    &::before {
-      content: "";
-      display: block;
-      position: absolute;
-      top: 50%;
-      right: calc(-100vw - 11.2rem);
-      height: $line;
-      width: 100vw;
-      background-color: $textColor;
-      filter: drop-shadow(0.1rem 0.1rem 0 $blue)
-        drop-shadow(-0.1rem -0.1rem 0 $pink);
-      opacity: 0.5;
-    }
-
-    & .decoNumbers {
-      position: absolute;
-      top: 50%;
-      right: -$pad * 11;
-      display: block;
-      transform: translateY(-50%);
-
-      & div {
-        margin: $pad * 6 0;
-      }
-    }
-  }
-
-  .socialLinks {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    min-width: $pad * 40;
-    margin-top: 0;
-
-    &::after,
-    &::before {
-      content: "";
-      display: block;
-      position: absolute;
-      top: 30%;
-      left: -$pad * 6;
-      font-size: $pad * 2;
-      width: $pad * 2;
-      height: $pad * 2;
-      background-color: $accentColor;
-      transform: translateY(-$pad * 3);
-    }
-
-    &::before {
-      top: auto;
-      bottom: 30%;
-      transform: translateY($pad * 3);
-    }
-
-    & li {
-      margin-left: 0;
-      margin-bottom: $pad * 3;
-    }
-
-    & li a {
-      display: flex;
-      align-items: center;
-      width: auto;
-      height: $pad * 6;
-      font-size: $pad * 2;
-      color: $textColor;
-      text-decoration: none;
-      background: none;
-      border: solid $line $textColor;
-    }
-
-    & li a::before {
-      content: "";
-      display: block;
-      height: 100%;
-      width: $pad * 6;
-      background-color: $textColor;
-    }
-
-    & li a span {
-      display: block;
-      margin-left: $pad * 2;
+    & .socialMediaSection {
+      grid-column: 2 / 3;
+      grid-row: 3 / 4;
+      min-width: $pad * 44;
+      padding: $pad * 6 $pad * 3 $pad * 3;
     }
   }
 }
