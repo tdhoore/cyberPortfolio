@@ -143,24 +143,9 @@ main {
   color: $textColor;
 }
 
-.borderBox,
-.window {
-  border: $line solid rgba($color: $textColor, $alpha: 0.5);
-}
-
-.window {
-  position: relative;
-
-  &::after {
-    content: "";
-    display: block;
-    position: absolute;
-    top: -$line;
-    left: -$line;
-    right: -$line;
-    height: $pad * 3;
-    background-color: $textColor;
-  }
+.borderBox {
+  border: $line solid $textColor;
+  box-shadow: $line $line 0 rgba($color: $accentColor, $alpha: 0.5);
 }
 
 .defaultButton {

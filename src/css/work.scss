@@ -31,27 +31,43 @@
   display: block;
   text-decoration: none;
   color: $textColor;
-  margin-left: $pad * 3;
+  height: 100%;
+  //margin: 0 $pad;
+  margin-right: 6vw;
 }
 
 .project {
-  position: relative;
+  //width: calc(100vw - 8rem);
+  width: 72vw;
   height: 100%;
-  width: calc(100vw - 4.8rem);
+  transition: all 300ms ease;
+
+  &.panel::before {
+    z-index: 0;
+  }
+}
+
+.projectPage:first-of-type {
+  //padding-left: $pad * 4;
+  padding-left: 14vw;
+}
+
+.inActiveProject {
+  transform: scale(0.9);
 }
 
 .projectTitle {
   position: absolute;
   z-index: 2;
-  left: -$pad * 2;
-  bottom: $pad * 5;
+  left: -$pad * 2 + $line/2;
+  right: -$pad * 2 + $line/2;
+  bottom: $pad * 3 + $line/2;
   background-color: $accentTextColor;
-  padding: $pad * 2;
-  width: 100%;
+  padding: $pad * 2 $pad * 2 + $line * 2.5;
 
   & .defaultButtonHolder {
     position: absolute;
-    left: 1.4rem;
+    left: $pad * 2 + $line * 2.5;
   }
 
   & .defaultButton {
@@ -81,7 +97,7 @@
 
 .projectImage {
   height: 100%;
-  width: 65vw;
+  width: 100%;
 
   .image {
     position: relative;
@@ -98,42 +114,28 @@
   }
 }
 
-.closedProject {
-  & .projectPage {
-    margin-left: 0;
-  }
-
-  & .projectTitle {
-    //display: none;
-  }
-}
-
 @media only screen and (min-width: 1024px) {
   .workSection {
-    .wrapper {
-      flex-direction: row;
-      padding: 0 $pad * 20;
-      //max-width: $pad * 128;
+    & .projectCounter {
+      padding: $pad * 4 0;
     }
 
-    .projectSlider {
-      position: relative;
-      flex-direction: column;
-      justify-content: center;
-      overflow: hidden;
+    & .projectPage {
+      //margin: 0 $pad * 5;
+      //margin-right: 6vw;
     }
 
-    .projectPage {
-      position: relative;
-
-      height: 50%;
+    & .project {
+      //width: calc(100vw - 46rem);
+      //width: 72vw;
     }
 
-    .project {
-      width: 100%;
+    & .projectPage:first-of-type {
+      //padding-left: 19rem;
+      // padding-left: ;
     }
 
-    .projectTitle {
+    & .projectTitle {
       display: inline-block;
       width: auto;
       min-width: $pad * 61;
@@ -155,11 +157,11 @@
       }
     }
 
-    .projectImage {
+    & .projectImage {
       width: 100%;
     }
   }
-  .workSection {
+  & .workSection {
     & .closedProject {
       margin-top: 10%;
       height: 10%;

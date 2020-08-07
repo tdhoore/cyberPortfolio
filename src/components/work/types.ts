@@ -5,7 +5,7 @@ export interface props {}
 export interface ProjectProps {
   data: any;
   counter?: string;
-  closedClass?: string;
+  isActive?: boolean;
 }
 export interface ProjectCounterProps {
   counter?: string;

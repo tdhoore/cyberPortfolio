@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Project from "./Project";
 import ProjectCounter from "./ProjectCounter";
 import { props } from "./types";
@@ -6,7 +6,7 @@ import { getWork } from "./api";
 import { useSelector } from "react-redux";
 import ScrollDetector from "../_core/ScrollDetector";
 import { getNextProject } from "./api";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 
 const Work = (props: props) => {
   const work = useSelector((state: any) => state.workReducer.workItems);
@@ -58,7 +58,6 @@ const Work = (props: props) => {
   };
 
   const swipeConfidenceThreshold = 0;
-
   return (
     <section className="workSection">
       <div className="wrapper">
@@ -67,8 +66,13 @@ const Work = (props: props) => {
         </header>
         <motion.div
           className="projectSlider"
-          initial={{ x: -(window.innerWidth - 24) * (currentItem - 1) }}
-          animate={{ x: -(window.innerWidth - 24) * currentItem }}
+          //initial={{ x: -window.innerWidth * (currentItem - 1) }}
+          animate={{
+            x:
+              currentItem === 0
+                ? -window.innerWidth * currentItem
+                : (-window.innerWidth / 100) * 78 * currentItem,
+          }}
           transition={{
             x: { type: "spring", stiffness: 300, damping: 200 },
           }}
@@ -83,19 +87,23 @@ const Work = (props: props) => {
           onDragEnd={(event, { offset, velocity }) => {
             const swipe = swipePower(offset.x, velocity.x);
 
-            if (swipe < -swipeConfidenceThreshold) {
+            if (swipe <= -swipeConfidenceThreshold) {
               getNextProject(1);
-            } else if (swipe > swipeConfidenceThreshold) {
+            } else if (swipe >= swipeConfidenceThreshold) {
               getNextProject(-1);
             }
           }}
         >
-          <Project data={work[0]} counter={setCounter()} />
-          <Project
-            data={work[1]}
-            counter={setCounter()}
-            closedClass="closedProject"
-          />
+          {work.map((data: any, index: number) => {
+            return (
+              <Project
+                key={`workProject${index}`}
+                data={data}
+                counter={setCounter()}
+                isActive={index === currentItem}
+              />
+            );
+          })}
         </motion.div>
         <ProjectCounter counter={setCounter()} />
         <ProjectCounter counter={setCounter()} />
