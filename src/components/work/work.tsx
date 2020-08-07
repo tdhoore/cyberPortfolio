@@ -17,6 +17,14 @@ const Work = (props: props) => {
     (state: any) => state.workReducer.workItems.length
   );
 
+  const [currentPageWidth, setCurrentPageWidth] = useState(window.innerWidth);
+
+  const handleWindowResize = () => {
+    if (currentPageWidth !== window.innerWidth) {
+      setCurrentPageWidth(window.innerWidth);
+    }
+  };
+
   useEffect(() => {
     //if there is no work here get it
     if (work.length === 0) {
@@ -33,9 +41,13 @@ const Work = (props: props) => {
     //listen for updates
     window.addEventListener("updateScroll", handleScroll);
 
+    //listen for window resize
+    window.addEventListener("resize", handleWindowResize);
+
     return () => {
       scrollDetector.remove();
       window.removeEventListener("updateScroll", handleScroll);
+      window.removeEventListener("resize", handleWindowResize);
     };
   });
 
@@ -70,8 +82,8 @@ const Work = (props: props) => {
           animate={{
             x:
               currentItem === 0
-                ? -window.innerWidth * currentItem
-                : (-window.innerWidth / 100) * 78 * currentItem,
+                ? -currentPageWidth * currentItem
+                : (-currentPageWidth / 100) * 78 * currentItem,
           }}
           transition={{
             x: { type: "spring", stiffness: 300, damping: 200 },
