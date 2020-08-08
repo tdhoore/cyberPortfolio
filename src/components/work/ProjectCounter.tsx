@@ -18,10 +18,7 @@ const ProjectCounter = (props: any) => {
           className="diamondButton hide"
           onClick={(e) => handleNextProject(e, -1)}
         ></motion.button>
-        <motion.div
-          {...fadeInFlickerHalf}
-          className="pixFont counter blurEffectText"
-        >
+        <motion.div {...fadeInFlickerHalf} className="pixFont counter">
           {props.counter}
         </motion.div>
         <motion.button

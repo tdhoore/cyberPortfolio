@@ -68,7 +68,11 @@ const Work = (props: props) => {
   const swipePower = (offset: number, velocity: number) => {
     return Math.abs(offset) * velocity;
   };
-
+  /*
+  currentItem === 0
+                ? -currentPageWidth * currentItem
+                : (-currentPageWidth / 100) * 82 * currentItem,
+*/
   const swipeConfidenceThreshold = 0;
   return (
     <section className="workSection">
@@ -80,10 +84,7 @@ const Work = (props: props) => {
           className="projectSlider"
           //initial={{ x: -window.innerWidth * (currentItem - 1) }}
           animate={{
-            x:
-              currentItem === 0
-                ? -currentPageWidth * currentItem
-                : (-currentPageWidth / 100) * 78 * currentItem,
+            x: -currentPageWidth * currentItem,
           }}
           transition={{
             x: { type: "spring", stiffness: 300, damping: 200 },
@@ -112,7 +113,13 @@ const Work = (props: props) => {
                 key={`workProject${index}`}
                 data={data}
                 counter={setCounter()}
-                isActive={index === currentItem}
+                isActive={
+                  index > currentItem
+                    ? "rightProject"
+                    : index < currentItem
+                    ? "leftProject"
+                    : ""
+                }
               />
             );
           })}

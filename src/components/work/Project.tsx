@@ -4,28 +4,28 @@ import { ProjectProps } from "./types";
 
 const Project = (props: ProjectProps) => {
   return props.data !== undefined ? (
-    <Link to={`/work/${props.data.title}`} className="projectPage">
-      <article
-        className={`project panel ${!props.isActive ? "inActiveProject" : ""}`}
-      >
-        <div className="projectTitle borderBox">
-          <header>
-            <h3>
-              <span>{props.data.title}</span>
-            </h3>
-            <p>Sub title</p>
-          </header>
-          <div className="defaultButtonHolder">
-            <button className="defaultButton">See more</button>
+    <div className={`projectPage ${props.isActive}`}>
+      <Link to={`/work/${props.data.title}`} className="projectLink">
+        <article className={`project panel `}>
+          <div className="projectTitle borderBox">
+            <header>
+              <h3>
+                <span>{props.data.title}</span>
+              </h3>
+              <p>Sub title</p>
+            </header>
+            <div className="defaultButtonHolder">
+              <button className="defaultButton">See more</button>
+            </div>
           </div>
-        </div>
-        <div className="projectImage">
-          <div className="image">
-            <img src={props.data.image} alt={props.data.title} />
+          <div className="projectImage">
+            <div className="image">
+              <img src={props.data.image} alt={props.data.title} />
+            </div>
           </div>
-        </div>
-      </article>
-    </Link>
+        </article>
+      </Link>
+    </div>
   ) : (
     <div></div>
   );

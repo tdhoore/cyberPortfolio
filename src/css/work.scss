@@ -26,34 +26,36 @@
   display: flex;
   flex: 2;
 }
-
 .projectPage {
-  display: block;
+  transition: all 300ms;
+}
+.projectLink {
+  display: flex;
+  justify-content: center;
   text-decoration: none;
   color: $textColor;
   height: 100%;
-  //margin: 0 $pad;
-  margin-right: 6vw;
+  width: 100vw;
+  padding: 0 $pad * 6;
 }
 
 .project {
-  //width: calc(100vw - 8rem);
-  width: 72vw;
   height: 100%;
   transition: all 300ms ease;
+  flex: 2;
+  max-width: $pad * 135;
 
   &.panel::before {
     z-index: 0;
   }
 }
 
-.projectPage:first-of-type {
-  //padding-left: $pad * 4;
-  padding-left: 14vw;
+.rightProject {
+  transform: translateX(-$pad * 12) scale(0.9);
 }
 
-.inActiveProject {
-  transform: scale(0.9);
+.leftProject {
+  transform: translateX($pad * 12) scale(0.9);
 }
 
 .projectTitle {
@@ -63,15 +65,14 @@
   right: -$pad * 2 + $line/2;
   bottom: $pad * 3 + $line/2;
   background-color: $accentTextColor;
-  padding: $pad * 2 $pad * 2 + $line * 2.5;
+  padding: $pad * 2 $pad + $line * 0.5 $pad * 3;
 
   & .defaultButtonHolder {
     position: absolute;
-    left: $pad * 2 + $line * 2.5;
+    left: $pad + $line * 0.5;
   }
 
   & .defaultButton {
-    padding: $pad/2 $pad;
     display: inline-block;
   }
 
@@ -96,6 +97,8 @@
 }
 
 .projectImage {
+  position: relative;
+  z-index: 1;
   height: 100%;
   width: 100%;
 
@@ -120,29 +123,30 @@
       padding: $pad * 4 0;
     }
 
-    & .projectPage {
-      //margin: 0 $pad * 5;
-      //margin-right: 6vw;
-    }
-
     & .project {
-      //width: calc(100vw - 46rem);
-      //width: 72vw;
+      padding: $pad * 11 $pad * 8 $pad * 8;
     }
 
-    & .projectPage:first-of-type {
-      //padding-left: 19rem;
-      // padding-left: ;
+    & .rightProject {
+      transform: translateX(0) scale(0.9);
+    }
+
+    & .leftProject {
+      transform: translateX(0) scale(0.9);
     }
 
     & .projectTitle {
       display: inline-block;
       width: auto;
       min-width: $pad * 61;
+      right: auto;
+      left: $pad * 4;
+      bottom: $pad * 5 - $line;
+      padding: $pad * 2 $pad * 3 + $line * 0.5 0;
 
       & .defaultButton {
-        padding: $pad * 2;
         bottom: $pad * 3;
+        left: $pad * 2 + $line * 0.5;
       }
 
       & header h3 {
@@ -159,16 +163,6 @@
 
     & .projectImage {
       width: 100%;
-    }
-  }
-  & .workSection {
-    & .closedProject {
-      margin-top: 10%;
-      height: 10%;
-
-      & .projectTitle {
-        display: none;
-      }
     }
   }
 }
