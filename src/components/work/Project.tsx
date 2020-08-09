@@ -6,19 +6,22 @@ const Project = (props: ProjectProps) => {
   return props.data !== undefined ? (
     <div className={`projectPage ${props.isActive}`}>
       <Link to={`/work/${props.data.title}`} className="projectLink">
-        <article className={`project panel `}>
-          <div className="projectTitle borderBox">
+        <article className="project">
+          <div className="projectTitle panel">
             <header>
               <h3>
                 <span>{props.data.title}</span>
               </h3>
               <p>Sub title</p>
+              <div
+                className={`panel categoryDeco categoryDeco${props.data.title}`}
+              ></div>
             </header>
             <div className="defaultButtonHolder">
               <button className="defaultButton">See more</button>
             </div>
           </div>
-          <div className="projectImage">
+          <div className="projectImage panel">
             <div className="image">
               <img src={props.data.image} alt={props.data.title} />
             </div>

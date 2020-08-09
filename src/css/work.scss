@@ -40,10 +40,10 @@
 }
 
 .project {
+  position: relative;
   height: 100%;
   transition: all 300ms ease;
   flex: 2;
-  max-width: $pad * 135;
 
   &.panel::before {
     z-index: 0;
@@ -66,6 +66,10 @@
   bottom: $pad * 3 + $line/2;
   background-color: $accentTextColor;
   padding: $pad * 2 $pad + $line * 0.5 $pad * 3;
+
+  &.panel {
+    position: absolute;
+  }
 
   & .defaultButtonHolder {
     position: absolute;
@@ -117,6 +121,10 @@
   }
 }
 
+.categoryDeco {
+  display: none;
+}
+
 @media only screen and (min-width: 1024px) {
   .workSection {
     & .projectCounter {
@@ -124,7 +132,9 @@
     }
 
     & .project {
-      padding: $pad * 11 $pad * 8 $pad * 8;
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: center;
     }
 
     & .rightProject {
@@ -136,17 +146,21 @@
     }
 
     & .projectTitle {
+      position: relative;
       display: inline-block;
+      align-self: center;
       width: auto;
-      min-width: $pad * 61;
+      min-width: $pad * 70;
       right: auto;
-      left: $pad * 4;
-      bottom: $pad * 5 - $line;
-      padding: $pad * 2 $pad * 3 + $line * 0.5 0;
+      left: auto;
+      bottom: auto;
+      margin-left: $pad * 5;
+
+      padding: $pad * 8 $pad * 5 + $line * 0.5 $pad;
 
       & .defaultButton {
         bottom: $pad * 3;
-        left: $pad * 2 + $line * 0.5;
+        left: $pad * 4 + $line * 0.5;
       }
 
       & header h3 {
@@ -162,7 +176,21 @@
     }
 
     & .projectImage {
-      width: 100%;
+      max-width: 50vw;
+      padding: $pad * 8 $pad * 5 $pad * 5;
+    }
+  }
+
+  .categoryDeco {
+    position: absolute;
+    top: -$pad * 16;
+    left: -$pad * 9;
+    display: block;
+    width: $pad * 28;
+    height: $pad * 22;
+
+    &.panel {
+      position: absolute;
     }
   }
 }
