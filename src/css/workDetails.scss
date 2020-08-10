@@ -1,4 +1,44 @@
-.detailPage {
+.workDetailArticle {
+  height: 100%;
+  overflow: auto;
+
+  & .projectPage {
+    height: 50vh;
+    margin-top: $pad * 5;
+  }
+}
+
+.workDetailSection {
+  margin: $pad * 5 $pad * 2 0;
+}
+
+.workDetailSection:last-of-type {
+  margin-bottom: $pad * 5;
+}
+
+.rollInformation {
+  text-align: center;
+
+  & .panel {
+    margin-bottom: $pad * 3;
+  }
+
+  & .panel:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+.projectInfo {
+  & header {
+    margin-bottom: $pad;
+  }
+
+  & p {
+    margin-bottom: $pad * 2;
+  }
+}
+
+/*.detailPage {
   width: 100vw;
 }
 
@@ -350,3 +390,4 @@
     }
   }
 }
+*/
