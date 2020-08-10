@@ -20,22 +20,22 @@ const Contact = (props: props) => {
         </header>
         <ul className="socialLinks">
           <li>
-            <a href="" target="_blank">
+            <a href="" target="_blank" className="linkButton">
               <span>Link</span>
             </a>
           </li>
           <li>
-            <a href="" target="_blank">
+            <a href="" target="_blank" className="linkButton">
               <span>Link</span>
             </a>
           </li>
           <li>
-            <a href="" target="_blank">
+            <a href="" target="_blank" className="linkButton">
               <span>Link</span>
             </a>
           </li>
           <li>
-            <a href="" target="_blank">
+            <a href="" target="_blank" className="linkButton">
               <span>Link</span>
             </a>
           </li>

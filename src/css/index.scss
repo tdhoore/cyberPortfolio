@@ -293,6 +293,31 @@ main {
   transition: all 300ms ease;
 }
 
+.linkButton {
+  display: flex;
+  align-items: center;
+  width: auto;
+  height: $pad * 6 + $line;
+  font-size: $pad * 2;
+  color: $textColor;
+  text-decoration: none;
+  background: none;
+  border: solid $line $textColor;
+
+  &::before {
+    content: "";
+    display: block;
+    height: 100%;
+    width: $pad * 6;
+    background-color: $textColor;
+  }
+
+  & span {
+    display: block;
+    margin-left: $pad * 2;
+  }
+}
+
 @media only screen and (min-width: 1024px) {
   main {
     order: 1;

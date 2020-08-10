@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { props } from "./types";
-import ProjectDetailCounter from "./ProjectDetailCounter";
 import { getWork } from "../work/api";
 import { useSelector } from "react-redux";
 
@@ -60,6 +59,7 @@ const WorkDetails = (props: props) => {
           </div>
         </div>
       </div>
+
       <section className="workDetailSection">
         <header className="hide">
           <h4>client and roll</h4>
@@ -79,93 +79,47 @@ const WorkDetails = (props: props) => {
           </div>
         </dl>
       </section>
+
       <section className="workDetailSection panel projectInfo">
         <header>
           <h3>Project info</h3>
         </header>
         <p>{currentProject.projectInfo}</p>
-        <a href="#" target="_blank" className="defaultButton">
-          test
+        <a href="#" target="_blank" className="linkButton">
+          <span>test</span>
         </a>
       </section>
-    </article>
-  ) : (
-    /* <article className="workDetailArticle">
-      <header className="mainHeader">
-        <h2>{currentProject.title}</h2>
-      </header>
-      <div className="workDetailContentHolder">
-        <div
-          className="workDetailContent"
-          style={{
-            transform: `translateX(${
-              (100 / calcMinAndMaxForCounter()) * -pageIndex
-            }%)`,
-          }}
-        >
-          <section className="projectInfoSection">
-            <div className="wrapper">
-              <header>
-                <h3>Project info</h3>
-                <p>{currentProject.projectInfo}</p>
-              </header>
-              <div className="image">
-                <img src="https://via.placeholder.com/236x438" alt="" />
-              </div>
-              <section className="rollInformationSection">
-                <header className="hide">
-                  <h4>client and roll</h4>
-                </header>
-                <dl className="rollInformation">
-                  <div>
-                    <dt>Roll</dt>
-                    <dd>{currentProject.roll}</dd>
-                  </div>
-                  <div>
-                    <dt>Client</dt>
-                    <dd>{currentProject.client}</dd>
-                  </div>
-                </dl>
-              </section>
+
+      {currentProject.sliderimages.map((item: any, index: number) => {
+        return !item.description ? (
+          <section
+            className="workDetailSection screenshotSection"
+            key={item.title + index}
+          >
+            <header className="hide">
+              <h3>screenshot - {item.title}</h3>
+            </header>
+            <div className="imageHolder panel" key={`screenshot${index}`}>
+              <img src={item.image} alt={item.title} />
             </div>
           </section>
-          {currentProject.sliderimages ? (
-            currentProject.sliderimages.map((item: any, index: number) => {
-              return item.description ? (
-                <section
-                  className="screenshotSectionWithDescription"
-                  key={item.title + index}
-                >
-                  <div className="wrapper">
-                    <header>
-                      <h3>{item.title}</h3>
-                      <p>{item.description}</p>
-                    </header>
-                    <img src={item.image} alt={item.title} />
-                  </div>
-                </section>
-              ) : (
-                <section className="screenshotSection" key={item.title + index}>
-                  <div className="wrapper">
-                    <header className="hide">
-                      <h3>{item.title}</h3>
-                    </header>
-                    <img src={item.image} alt={item.title} />
-                  </div>
-                </section>
-              );
-            })
-          ) : (
-            <div></div>
-          )}
-        </div>
-      </div>
-      <ProjectDetailCounter
-        length={calcMinAndMaxForCounter()}
-        pageIndex={pageIndex}
-        setPageIndex={setPageIndex}
-      />
-    </article>*/
+        ) : (
+          <section
+            className="workDetailSection panel projectInfoImage"
+            key={item.title + index}
+          >
+            <header>
+              <h3>{item.title}</h3>
+            </header>
+            <div className="imageHolder panel">
+              <img src={item.image} alt={item.title} />
+            </div>
+            <p>{item.description}</p>
+          </section>
+        );
+      })}
+    </article>
+  ) : (
     <div></div>
   );
 };

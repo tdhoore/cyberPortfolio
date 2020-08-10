@@ -76,7 +76,7 @@
     margin-bottom: 0;
   }
 
-  & li a {
+  /*& li a {
     display: flex;
     align-items: center;
     width: auto;
@@ -99,7 +99,7 @@
   & li a span {
     display: block;
     margin-left: $pad * 2;
-  }
+  }*/
 }
 
 @media only screen and (min-width: 1070px) {

@@ -1,9 +1,10 @@
 .workDetailArticle {
   height: 100%;
   overflow: auto;
+  overflow-x: hidden;
 
   & .projectPage {
-    height: 50vh;
+    height: 70vh;
     margin-top: $pad * 5;
   }
 }
@@ -28,7 +29,8 @@
   }
 }
 
-.projectInfo {
+.projectInfo,
+.projectInfoImage {
   & header {
     margin-bottom: $pad;
   }
@@ -38,356 +40,38 @@
   }
 }
 
-/*.detailPage {
-  width: 100vw;
-}
+.projectInfoImage {
+  margin-top: $pad * 25;
 
-.workDetailArticle {
-  overflow-x: hidden;
-  overflow-y: auto;
-  width: 100vw;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-
-  & header h2 {
-    text-align: center;
-    margin: $pad * 2;
-    font-size: $pad * 2;
-  }
-}
-
-.workDetailContentHolder {
-  position: relative;
-  flex: 2;
-  overflow-y: auto;
-  overflow-x: hidden;
-}
-
-.workDetailContent {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  display: flex;
-  //transform: translateX(-50%);
-}
-
-.projectInfoSection {
-  width: 100vw;
-  display: flex;
-  flex-direction: column;
-
-  & .wrapper {
-    display: flex;
-    flex-direction: column;
-    padding: 0 $pad * 3 $pad * 2;
-    max-width: $pad * 160;
-    margin: 0 auto;
+  & header {
+    margin-top: $pad * 2;
   }
 
-  & header h3 {
-    margin-bottom: $pad;
-  }
+  & .imageHolder {
+    top: -$pad * 20;
+    left: -$line - $pad;
+    max-width: $pad * 30;
+    height: $pad * 25;
 
-  & .image {
-    order: -1;
-    margin-bottom: $pad * 2;
-  }
+    &.panel {
+      position: absolute;
+    }
 
-  & img {
-    display: block;
-    width: 100%;
-    height: 20vh;
-    object-fit: cover;
-  }
-}
-
-.rollInformationSection {
-  order: -1;
-}
-
-.rollInformation {
-  font-size: $pad * 2;
-  display: flex;
-  margin-bottom: $pad * 2;
-
-  & div {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    flex: 2;
+    & img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
   }
 }
 
 .screenshotSection {
-  width: 100vw;
-  overflow-x: hidden;
-
-  & .wrapper {
-    position: relative;
-    padding: 0 $pad * 3 $pad * 2;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    max-width: $pad * 128;
-    margin: 0 auto;
-  }
-
   & img {
-    display: block;
     object-fit: cover;
     width: 100%;
-    max-height: 100%;
-  }
-}
-
-.projectDetailCounter {
-  display: flex;
-  justify-content: center;
-  width: 100vw;
-  padding: $pad * 2;
-  margin-bottom: $pad * 2;
-
-  & .counter {
-    margin: 0 $pad * 2;
-    font-size: $pad * 2;
-  }
-
-  & .diamondButton {
-    width: $pad * 4;
-    height: $pad * 4;
-  }
-}
-
-.screenshotSectionWithDescription {
-  width: 100vw;
-
-  & .wrapper {
-    display: flex;
-    flex-direction: column-reverse;
-    max-width: $pad * 160;
-    padding: 0 $pad * 3;
-    margin: 0 auto;
     height: 100%;
   }
-
-  & header {
-    margin-bottom: $pad;
-  }
-
-  & img {
-    width: 100%;
-    height: 20vh;
-    object-fit: cover;
-    margin-bottom: $pad * 2;
-  }
 }
 
-@media only screen and (min-width: 1070px) {
-  .mainHeader {
-    display: flex;
-    justify-content: center;
-  }
-
-  .workDetailArticle header h2 {
-    position: relative;
-    z-index: 1000;
-    font-size: $pad * 3;
-    margin-top: $pad;
-    display: inline-block;
-  }
-
-  .projectInfoSection {
-    overflow-x: hidden;
-
-    & .wrapper {
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
-      flex: 2;
-      padding: 0 $pad * 3;
-    }
-
-    & header {
-      position: relative;
-      justify-content: center;
-      flex: 3;
-      max-width: $pad * 70;
-
-      &::after {
-        content: "";
-        display: block;
-        position: absolute;
-        top: 50%;
-        left: calc(100% + 6.4rem);
-        height: $line;
-        width: 100vw;
-        background-color: $textColor;
-        filter: drop-shadow(0.1rem 0.1rem 0 $blue)
-          drop-shadow(-0.1rem -0.1rem 0 $pink);
-        opacity: 0.5;
-        pointer-events: none;
-      }
-    }
-
-    & .image {
-      position: relative;
-      z-index: 2;
-      flex: 1.5;
-      margin: 0;
-      padding: 0;
-      width: 100%;
-      height: 70%;
-      max-height: 100%;
-
-      & img {
-        height: auto;
-        position: relative;
-        object-fit: cover;
-        width: 100%;
-        height: 100%;
-      }
-    }
-
-    & .rollInformationSection {
-      position: relative;
-      margin: 0 $pad * 8;
-
-      &::after {
-        content: "";
-        display: block;
-        position: absolute;
-        top: -$pad * 5;
-        bottom: -$pad * 5;
-        right: -$pad * 2;
-        width: 100vw;
-        border-top: solid $line $accentColor;
-        border-bottom: solid $line $accentColor;
-        filter: drop-shadow(0.1rem 0.1rem 0 $blue)
-          drop-shadow(-0.1rem -0.1rem 0 $pink);
-        opacity: 0.5;
-        pointer-events: none;
-      }
-
-      & .rollInformation {
-        flex-direction: column;
-        margin: 0;
-
-        & div {
-          position: relative;
-          padding: 0 $pad * 5;
-          margin: $pad * 5 0;
-
-          &::after,
-          &::before {
-            content: "";
-            display: block;
-            position: absolute;
-            top: -$pad * 2;
-            left: -$pad * 2;
-            width: $pad * 4;
-            height: calc(100% + 3.2rem);
-            border-top: solid $line $accentColor;
-            border-bottom: solid $line $accentColor;
-            border-left: solid $line $accentColor;
-            filter: drop-shadow(0.1rem 0.1rem 0 $blue)
-              drop-shadow(-0.1rem -0.1rem 0 $pink);
-            opacity: 0.5;
-            pointer-events: none;
-          }
-
-          &::before {
-            left: auto;
-            right: -$pad * 2;
-            border-right: solid $line $accentColor;
-            border-left: none;
-          }
-        }
-      }
-    }
-  }
-
-  .screenshotSection {
-    position: relative;
-    overflow-x: hidden;
-
-    & img {
-      position: relative;
-      z-index: 2;
-      max-height: 70%;
-    }
-
-    & .wrapper {
-      padding: 0;
-    }
-
-    & .wrapper::before,
-    & .wrapper::after {
-      content: "";
-      display: block;
-      position: absolute;
-      top: 50%;
-      left: calc(100% + 6.4rem);
-      height: $line;
-      width: 100vw;
-      background-color: $textColor;
-      filter: drop-shadow(0.1rem 0.1rem 0 $blue)
-        drop-shadow(-0.1rem -0.1rem 0 $pink);
-      opacity: 0.5;
-      pointer-events: none;
-    }
-
-    & .wrapper::before {
-      left: auto;
-      right: calc(100% + 6.4rem);
-    }
-  }
-
-  .screenshotSectionWithDescription {
-    overflow-x: hidden;
-
-    & .wrapper {
-      position: relative;
-      flex-direction: row-reverse;
-      justify-content: center;
-      align-items: center;
-      flex: 2;
-
-      &::before,
-      &::after {
-        content: "";
-        display: block;
-        position: absolute;
-        top: 50%;
-        left: calc(100% + 6.4rem);
-        height: $line;
-        width: 100vw;
-        background-color: $textColor;
-        filter: drop-shadow(0.1rem 0.1rem 0 $blue)
-          drop-shadow(-0.1rem -0.1rem 0 $pink);
-        opacity: 0.5;
-        pointer-events: none;
-      }
-
-      &::before {
-        left: auto;
-        right: calc(100% + 6.4rem);
-      }
-    }
-
-    & img {
-      width: 100%;
-      height: 70%;
-      max-height: 100%;
-      margin: 0 $pad * 7 0 0;
-    }
-
-    & header {
-      margin: $pad * 3 0;
-      max-width: $pad * 70;
-    }
-  }
+@media only screen and (min-width: 1024px) {
 }
-*/
