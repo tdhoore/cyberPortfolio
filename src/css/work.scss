@@ -126,59 +126,60 @@
 }
 
 @media only screen and (min-width: 1024px) {
-  .workSection {
-    & .projectCounter {
-      padding: $pad * 4 0;
-    }
+  .projectCounter {
+    padding: $pad * 4 0;
+  }
 
-    & .project {
-      display: flex;
-      flex-direction: row-reverse;
-      justify-content: center;
-    }
+  .project {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+  }
 
-    & .rightProject {
-      transform: translateX(0) scale(0.9);
-    }
+  .rightProject {
+    transform: translateX(0) scale(0.9);
+  }
 
-    & .leftProject {
-      transform: translateX(0) scale(0.9);
-    }
+  .leftProject {
+    transform: translateX(0) scale(0.9);
+  }
 
-    & .projectTitle {
+  .projectTitle {
+    position: relative;
+    display: inline-block;
+    align-self: center;
+    width: auto;
+    min-width: $pad * 70;
+    right: auto;
+    left: auto;
+    bottom: auto;
+    margin-left: $pad * 5;
+
+    &.panel {
       position: relative;
-      display: inline-block;
-      align-self: center;
+      padding: $pad * 8 $pad * 5 + $line * 0.5 0;
+    }
+
+    & .defaultButtonHolder {
+      bottom: -$pad * 3;
+      left: $pad * 5 + $line * 0.5;
+    }
+
+    & header h3 {
+      font-size: $pad * 5;
       width: auto;
-      min-width: $pad * 70;
-      right: auto;
-      left: auto;
-      bottom: auto;
-      margin-left: $pad * 5;
-
-      padding: $pad * 8 $pad * 5 + $line * 0.5 $pad;
-
-      & .defaultButton {
-        bottom: $pad * 3;
-        left: $pad * 4 + $line * 0.5;
-      }
-
-      & header h3 {
-        font-size: $pad * 5;
-        width: auto;
-      }
-
-      & header p {
-        font-size: $pad * 3;
-        width: auto;
-        margin-bottom: $pad * 5;
-      }
     }
 
-    & .projectImage {
-      max-width: 50vw;
-      padding: $pad * 8 $pad * 5 $pad * 5;
+    & header p {
+      font-size: $pad * 3;
+      width: auto;
+      margin-bottom: $pad * 5;
     }
+  }
+
+  & .projectImage {
+    max-width: 50vw;
+    padding: $pad * 8 $pad * 5 $pad * 5;
   }
 
   .categoryDeco {
