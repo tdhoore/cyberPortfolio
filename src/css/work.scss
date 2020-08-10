@@ -179,7 +179,10 @@
 
   & .projectImage {
     max-width: 50vw;
-    padding: $pad * 8 $pad * 5 $pad * 5;
+
+    &.panel {
+      padding: $pad * 8 $pad * 5 $pad * 5;
+    }
   }
 
   .categoryDeco {
