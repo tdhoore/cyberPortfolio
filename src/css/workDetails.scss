@@ -12,11 +12,16 @@
 }
 
 .workDetailSection {
+  & h3,
+  & h4 {
+    font-size: $pad * 2;
+  }
+
   margin: $pad * 5 $pad * 2 0;
 }
 
 .workDetailSection:last-of-type {
-  margin-bottom: $pad * 5;
+  margin-bottom: $pad * 10;
 }
 
 .rollInformation {
@@ -76,6 +81,44 @@
 }
 
 .workDetailNextMove {
+  text-align: center;
+  margin: 0 $pad * 2 $pad * 5;
+
+  & section {
+    width: 100%;
+    margin-top: $pad * 3;
+
+    & h4,
+    & h5 {
+      font-size: $pad * 2;
+    }
+  }
+
+  & .OR {
+    margin-top: $pad * 3;
+  }
+}
+
+.nextProject {
+  color: $textColor;
+  text-align: left;
+
+  & .projectTitle {
+    left: $pad;
+    right: $pad;
+    bottom: $pad * 4;
+  }
+
+  & .imageHolder {
+    margin-top: $pad * 2;
+    height: $pad * 50;
+
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
 }
 
 @media only screen and (min-width: 1024px) {

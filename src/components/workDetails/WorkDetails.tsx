@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { props } from "./types";
 import { getWork } from "../work/api";
+import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 const WorkDetails = (props: props) => {
   const work = useSelector((state: any) => state.workReducer.workItems);
-  const [pageIndex, setPageIndex] = useState(0);
 
   //get current project
   let currentProject: any = undefined;
@@ -22,18 +22,6 @@ const WorkDetails = (props: props) => {
       getWork();
     }
   });
-
-  const calcMinAndMaxForCounter = () => {
-    let length = 1;
-
-    if (currentProject) {
-      if (currentProject.sliderimages) {
-        length += currentProject.sliderimages.length;
-      }
-    }
-
-    return length;
-  };
 
   return currentProject ? (
     <div className="workDetail">
@@ -124,10 +112,35 @@ const WorkDetails = (props: props) => {
         <header className="panel">
           <h3>What's next?</h3>
         </header>
-        <section>
+        <section className="panel">
           <header>
-            <h4>test</h4>
+            <h4>Want to chat?</h4>
           </header>
+          <Link to="/contact" className="defaultButton">
+            Let's talk
+          </Link>
+        </section>
+        <p className="OR pixFont">OR</p>
+        <section className="panel">
+          <header>
+            <h4>Next project</h4>
+          </header>
+          <Link to="/work" className="nextProject">
+            <article>
+              <div className="projectTitle panel">
+                <header>
+                  <h5>Title</h5>
+                  <p>lorem</p>
+                </header>
+                <div className="defaultButtonHolder">
+                  <button className="defaultButton">See more</button>
+                </div>
+              </div>
+              <div className="imageHolder">
+                <img src={currentProject.image} alt={currentProject.title} />
+              </div>
+            </article>
+          </Link>
         </section>
       </article>
     </div>

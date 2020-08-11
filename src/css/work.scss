@@ -87,12 +87,16 @@
   }
 
   & header h3,
-  h2 {
+  h2,
+  h4,
+  h5 {
     position: relative;
   }
 
   & header h3::after,
-  h2::after {
+  h2::after,
+  h4::after,
+  h5::after {
     content: "";
     display: block;
     position: absolute;

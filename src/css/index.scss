@@ -30,6 +30,7 @@ h1,
 h2,
 h3,
 h4,
+h5,
 dt,
 nav {
   font-family: "pix Chicago", Arial, Helvetica, sans-serif;
@@ -44,7 +45,9 @@ dl {
 }
 
 h2,
-h3 {
+h3,
+h4,
+h5 {
   font-size: $pad * 3;
   letter-spacing: 0.4rem;
 }
