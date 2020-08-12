@@ -162,6 +162,11 @@
     margin: $pad * 10 $pad * 5 0;
   }
 
+  .projectInfo {
+    max-width: $pad * 88;
+    margin-bottom: $pad * 3;
+  }
+
   .rollAndInfo {
     display: flex;
     justify-content: center;
@@ -171,11 +176,6 @@
     & .workDetailSection {
       margin-top: 0;
       margin-bottom: 0;
-    }
-
-    & .projectInfo {
-      max-width: $pad * 88;
-      margin-bottom: $pad * 3;
     }
   }
 
@@ -195,5 +195,24 @@
       margin-top: -$pad * 10;
       margin-bottom: -$pad * 5;
     }
+  }
+
+  .projectInfoImage {
+    margin-left: $pad * 76;
+    max-width: $pad * 88;
+
+    & .imageHolder {
+      top: 50%;
+      left: auto;
+      right: 100%;
+      width: 100%;
+      max-width: $pad * 63;
+      height: 50vh;
+      transform: translate(2.4rem, -50%);
+    }
+  }
+
+  .screenshotSection {
+    max-width: 100%;
   }
 }
