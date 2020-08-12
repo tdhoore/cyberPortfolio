@@ -112,7 +112,7 @@ const WorkDetails = (props: props) => {
         <header className="panel">
           <h3>What's next?</h3>
         </header>
-        <section className="panel">
+        <section className="contactLink panel">
           <header>
             <h4>Want to chat?</h4>
           </header>

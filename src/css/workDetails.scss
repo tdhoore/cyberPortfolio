@@ -94,6 +94,21 @@
     }
   }
 
+  & .contactLink {
+    & header::after {
+      content: "";
+      display: block;
+      height: 25vw;
+      width: 30vw;
+      max-width: $pad * 20;
+      max-height: $pad * 20;
+      margin: $pad * 2 auto;
+      background-image: url("../assets/img/inbox.svg");
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
+  }
+
   & .OR {
     margin-top: $pad * 3;
   }
