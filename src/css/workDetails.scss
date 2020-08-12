@@ -2,6 +2,11 @@
   height: 100%;
   overflow: auto;
   overflow-x: hidden;
+
+  & .wrapper {
+    margin: 0 auto;
+    max-width: $pad * 180;
+  }
 }
 
 .workDetailArticle {
@@ -16,7 +21,6 @@
   & h4 {
     font-size: $pad * 2;
   }
-
   margin: $pad * 5 $pad * 2 0;
 }
 
@@ -137,4 +141,59 @@
 }
 
 @media only screen and (min-width: 1024px) {
+  .workDetail {
+    & .panel,
+    &.panel {
+      padding: $pad * 8 $pad * 5 $pad * 5;
+    }
+
+    & h3,
+    & h4,
+    & h5 {
+      font-size: $pad * 3;
+    }
+
+    & .projectTitle p {
+      margin-bottom: 0;
+    }
+  }
+
+  .workDetailSection {
+    margin: $pad * 10 $pad * 5 0;
+  }
+
+  .rollAndInfo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: $pad * 10 0;
+
+    & .workDetailSection {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    & .projectInfo {
+      max-width: $pad * 88;
+      margin-bottom: $pad * 3;
+    }
+  }
+
+  .rollInformation {
+    margin-right: $pad * 13;
+
+    & .panel {
+      position: relative;
+      z-index: 2;
+      padding: $pad * 13 $pad * 10 $pad * 10;
+    }
+
+    & .panel:nth-of-type(2n) {
+      position: relative;
+      left: $pad * 26;
+
+      margin-top: -$pad * 10;
+      margin-bottom: -$pad * 5;
+    }
+  }
 }

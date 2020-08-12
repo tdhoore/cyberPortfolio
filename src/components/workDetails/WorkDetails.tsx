@@ -48,101 +48,106 @@ const WorkDetails = (props: props) => {
             </div>
           </div>
         </div>
-
-        <section className="workDetailSection">
-          <header className="hide">
-            <h4>client and roll</h4>
-          </header>
-          <dl className="rollInformation">
-            <div className="panel">
-              <dt>Roll</dt>
-              <dd>{currentProject.roll}</dd>
-            </div>
-            <div className="panel">
-              <dt>Client</dt>
-              <dd>{currentProject.client}</dd>
-            </div>
-            <div className="panel">
-              <dt>Created</dt>
-              <dd>{currentProject.client}</dd>
-            </div>
-          </dl>
-        </section>
-
-        <section className="workDetailSection panel projectInfo">
-          <header>
-            <h3>Project info</h3>
-          </header>
-          <p>{currentProject.projectInfo}</p>
-          <a href="#" target="_blank" className="linkButton">
-            <span>test</span>
-          </a>
-        </section>
-
-        {currentProject.sliderimages.map((item: any, index: number) => {
-          return !item.description ? (
-            <section
-              className="workDetailSection screenshotSection"
-              key={item.title + index}
-            >
+        <div className="wrapper">
+          <div className="rollAndInfo">
+            <section className="workDetailSection">
               <header className="hide">
-                <h3>screenshot - {item.title}</h3>
+                <h4>client and roll</h4>
               </header>
-              <div className="imageHolder panel" key={`screenshot${index}`}>
-                <img src={item.image} alt={item.title} />
-              </div>
-            </section>
-          ) : (
-            <section
-              className="workDetailSection panel projectInfoImage"
-              key={item.title + index}
-            >
-              <header>
-                <h3>{item.title}</h3>
-              </header>
-              <div className="imageHolder panel">
-                <img src={item.image} alt={item.title} />
-              </div>
-              <p>{item.description}</p>
-            </section>
-          );
-        })}
-      </article>
-      <article className="workDetailNextMove">
-        <header className="panel">
-          <h3>What's next?</h3>
-        </header>
-        <section className="contactLink panel">
-          <header>
-            <h4>Want to chat?</h4>
-          </header>
-          <Link to="/contact" className="defaultButton">
-            Let's talk
-          </Link>
-        </section>
-        <p className="OR pixFont">OR</p>
-        <section className="panel">
-          <header>
-            <h4>Next project</h4>
-          </header>
-          <Link to="/work" className="nextProject">
-            <article>
-              <div className="projectTitle panel">
-                <header>
-                  <h5>Title</h5>
-                  <p>lorem</p>
-                </header>
-                <div className="defaultButtonHolder">
-                  <button className="defaultButton">See more</button>
+              <dl className="rollInformation">
+                <div className="panel">
+                  <dt>Roll</dt>
+                  <dd>{currentProject.roll}</dd>
                 </div>
-              </div>
-              <div className="imageHolder">
-                <img src={currentProject.image} alt={currentProject.title} />
-              </div>
-            </article>
-          </Link>
-        </section>
+                <div className="panel">
+                  <dt>Client</dt>
+                  <dd>{currentProject.client}</dd>
+                </div>
+                <div className="panel">
+                  <dt>Created</dt>
+                  <dd>{currentProject.client}</dd>
+                </div>
+              </dl>
+            </section>
+
+            <section className="workDetailSection panel projectInfo">
+              <header>
+                <h3>Project info</h3>
+              </header>
+              <p>{currentProject.projectInfo}</p>
+              <a href="#" target="_blank" className="linkButton">
+                <span>test</span>
+              </a>
+            </section>
+          </div>
+
+          {currentProject.sliderimages.map((item: any, index: number) => {
+            return !item.description ? (
+              <section
+                className="workDetailSection screenshotSection"
+                key={item.title + index}
+              >
+                <header className="hide">
+                  <h3>screenshot - {item.title}</h3>
+                </header>
+                <div className="imageHolder panel" key={`screenshot${index}`}>
+                  <img src={item.image} alt={item.title} />
+                </div>
+              </section>
+            ) : (
+              <section
+                className="workDetailSection panel projectInfoImage"
+                key={item.title + index}
+              >
+                <header>
+                  <h3>{item.title}</h3>
+                </header>
+                <div className="imageHolder panel">
+                  <img src={item.image} alt={item.title} />
+                </div>
+                <p>{item.description}</p>
+              </section>
+            );
+          })}
+        </div>
       </article>
+      <div className="wrapper">
+        <article className="workDetailNextMove">
+          <header className="panel">
+            <h3>What's next?</h3>
+          </header>
+          <section className="contactLink panel">
+            <header>
+              <h4>Want to chat?</h4>
+            </header>
+            <Link to="/contact" className="defaultButton">
+              Let's talk
+            </Link>
+          </section>
+          <p className="OR pixFont">OR</p>
+          <section className="panel">
+            <header>
+              <h4>Next project</h4>
+            </header>
+            <Link to="/work" className="nextProject">
+              <article>
+                <div className="projectTitle panel">
+                  <header>
+                    <h5>Title</h5>
+                    <p>lorem</p>
+                  </header>
+                  <div className="defaultButtonHolder">
+                    <button className="defaultButton">See more</button>
+                  </div>
+                </div>
+                <div className="imageHolder">
+                  <img src={currentProject.image} alt={currentProject.title} />
+                </div>
+              </article>
+            </Link>
+          </section>
+        </article>
+      </div>
     </div>
   ) : (
     <div></div>
