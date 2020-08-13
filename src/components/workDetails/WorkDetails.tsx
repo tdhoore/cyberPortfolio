@@ -26,7 +26,7 @@ const WorkDetails = (props: props) => {
   return currentProject ? (
     <div className="workDetail">
       <article className="workDetailArticle">
-        <div className={`projectPage`}>
+        <div className="projectPage">
           <div className="project">
             <div className="projectTitle panel">
               <header>
