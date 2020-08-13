@@ -27,23 +27,21 @@ const WorkDetails = (props: props) => {
     <div className="workDetail">
       <article className="workDetailArticle">
         <div className={`projectPage`}>
-          <div className="projectLink">
-            <div className="project">
-              <div className="projectTitle panel">
-                <header>
-                  <h2>
-                    <span>{currentProject.title}</span>
-                  </h2>
-                  <p>Sub title</p>
-                  <div
-                    className={`panel categoryDeco categoryDeco${currentProject.roll}`}
-                  ></div>
-                </header>
-              </div>
-              <div className="projectImage panel">
-                <div className="image">
-                  <img src={currentProject.image} alt={currentProject.title} />
-                </div>
+          <div className="project">
+            <div className="projectTitle panel">
+              <header>
+                <h2>
+                  <span>{currentProject.title}</span>
+                </h2>
+                <p>Sub title</p>
+                <div
+                  className={`panel categoryDeco categoryDeco${currentProject.roll}`}
+                ></div>
+              </header>
+            </div>
+            <div className="projectImage panel">
+              <div className="image">
+                <img src={currentProject.image} alt={currentProject.title} />
               </div>
             </div>
           </div>
@@ -96,16 +94,18 @@ const WorkDetails = (props: props) => {
               </section>
             ) : (
               <section
-                className="workDetailSection panel projectInfoImage"
+                className="workDetailSection projectInfoImage"
                 key={item.title + index}
               >
-                <header>
-                  <h3>{item.title}</h3>
-                </header>
+                <div className="panel info">
+                  <header>
+                    <h3>{item.title}</h3>
+                  </header>
+                  <p>{item.description}</p>
+                </div>
                 <div className="imageHolder panel">
                   <img src={item.image} alt={item.title} />
                 </div>
-                <p>{item.description}</p>
               </section>
             );
           })}
