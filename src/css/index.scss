@@ -320,7 +320,8 @@ main {
     display: block;
     position: absolute;
     z-index: -1;
-    width: $pad * 10;
+    width: 100%;
+    max-width: $pad * 50;
     background-color: $accentBar;
     background-image: url("../assets/img/crossPaternFade.png");
   }

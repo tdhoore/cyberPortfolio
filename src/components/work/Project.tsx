@@ -6,7 +6,7 @@ const Project = (props: ProjectProps) => {
   return props.data !== undefined ? (
     <div className={`projectPage ${props.isActive}`}>
       <Link to={`/work/${props.data.title}`} className="projectLink">
-        <article className="project">
+        <article className="project accentBarAfter">
           <div className="projectTitle panel">
             <header>
               <h3>

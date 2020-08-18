@@ -13,19 +13,15 @@ const ProjectCounter = (props: any) => {
   return (
     <div className="projectCounter">
       <div className="rorator">
-        <motion.button
-          {...fadeInFlicker}
+        <button
           className="diamondButton hide"
           onClick={(e) => handleNextProject(e, -1)}
-        ></motion.button>
-        <motion.div {...fadeInFlickerHalf} className="pixFont counter">
-          {props.counter}
-        </motion.div>
-        <motion.button
-          {...fadeInFlicker}
+        ></button>
+        <div className="pixFont counter">{props.counter}</div>
+        <button
           className="diamondButton hide"
           onClick={(e) => handleNextProject(e, 1)}
-        ></motion.button>
+        ></button>
       </div>
     </div>
   );

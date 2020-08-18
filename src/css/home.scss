@@ -27,7 +27,8 @@
     top: -100vh;
     left: -$pad * 6;
     bottom: -$pad * 3;
-    width: $pad * 50;
+    width: 70vw;
+    max-width: $pad * 50;
   }
 
   & header {

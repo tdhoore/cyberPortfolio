@@ -13,9 +13,20 @@
       order: -1;
     }
   }
+
+  .accentBarAfter::after {
+    z-index: -4;
+    top: -$pad * 2;
+    left: 50%;
+    bottom: -$pad * 2;
+    width: 70%;
+    transform: translateX(-50%);
+  }
 }
 
 .projectCounter {
+  position: relative;
+  z-index: 2;
   display: flex;
   justify-content: center;
   font-size: $pad * 2;
@@ -135,6 +146,15 @@
 }
 
 @media only screen and (min-width: 1024px) {
+  .workSection {
+    .accentBarAfter::after {
+      top: -100vh;
+      left: calc(50% - 30rem);
+      bottom: -$pad * 4;
+      width: 100%;
+    }
+  }
+
   .projectCounter {
     padding: $pad * 4 0;
   }
