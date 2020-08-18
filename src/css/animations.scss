@@ -64,38 +64,6 @@
   }
 }
 
-@keyframes glitchIn {
-  0% {
-    filter: drop-shadow(0.4rem 0.4rem 0 rgba($color: $blue, $alpha: 0.5))
-      drop-shadow(-0.4rem -0.4rem 0 rgba($color: $pink, $alpha: 0.5));
-  }
-
-  23% {
-    filter: drop-shadow(0.8rem 0.8rem 0 rgba($color: $blue, $alpha: 0.5))
-      drop-shadow(-0.8rem -0.8rem 0 rgba($color: $pink, $alpha: 0.5));
-  }
-
-  46% {
-    filter: drop-shadow(0.8rem 0.8rem 0 rgba($color: $blue, $alpha: 0.5))
-      drop-shadow(-0.8rem -0.8rem 0 rgba($color: $pink, $alpha: 0.5));
-  }
-
-  75% {
-    filter: drop-shadow(0.8rem 0.8rem 0 rgba($color: $blue, $alpha: 0.5))
-      drop-shadow(-0.8rem -0.8rem 0 rgba($color: $pink, $alpha: 0.5));
-  }
-
-  80% {
-    filter: drop-shadow(0 0 0 rgba($color: $blue, $alpha: 0.5))
-      drop-shadow(0 0 0 rgba($color: $pink, $alpha: 0.5));
-  }
-
-  100% {
-    filter: drop-shadow(0 0 0 rgba($color: $blue, $alpha: 0.5))
-      drop-shadow(0 0 0 rgba($color: $pink, $alpha: 0.5));
-  }
-}
-
 @keyframes noiseAnim {
   0% {
     background-position: 0;

@@ -30,7 +30,7 @@ const Home = (props: props) => {
   return (
     <article className="homeArticle">
       <div className="wrapper">
-        <div className="pannelHolder">
+        <div className="pannelHolder accentBarAfter">
           <div className="content panel">
             <div className="intro">
               <header>

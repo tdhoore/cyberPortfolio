@@ -22,6 +22,14 @@
     padding: $pad * 9 $pad * 3 $pad * 6;
   }
 
+  & .accentBarAfter::after {
+    z-index: -2;
+    top: -100vh;
+    left: -$pad * 6;
+    bottom: -$pad * 3;
+    width: $pad * 50;
+  }
+
   & header {
     text-align: center;
 
@@ -73,25 +81,25 @@
 .homeDeco1 {
   top: 0;
   left: 0;
-  width: $pad * 21;
-  height: $pad * 27;
-  transform: translate(-60%, -40%);
+  width: $pad * 30;
+  height: $pad * 20;
+  transform: translate(-60%, -30%);
 }
 
 .homeDeco2 {
   bottom: 0;
   left: 0;
-  width: $pad * 21;
-  height: $pad * 23;
-  transform: translate(-60%, 20%);
+  width: $pad * 28;
+  height: $pad * 30;
+  transform: translate(-62%, 30%);
 }
 
 .homeDeco3 {
-  top: 50%;
+  top: $pad * 10;
   right: 0;
-  width: $pad * 16;
-  height: calc(100% + 10rem);
-  transform: translate(80%, -50%);
+  width: $pad * 25;
+  height: calc(100% - 3.2rem);
+  transform: translate(80%);
 }
 
 @media only screen and (min-width: 1070px) {
@@ -118,18 +126,18 @@
     }
 
     & .homeDeco1 {
-      width: $pad * 42;
-      height: $pad * 37;
-      transform: translate(-60%, -30%);
+      width: $pad * 60;
+      height: $pad * 50;
+      transform: translate(-50%, -10%);
     }
 
     .homeDeco2 {
-      width: $pad * 42;
-      height: $pad * 33;
+      width: $pad * 55;
+      height: $pad * 30;
     }
 
     .homeDeco3 {
-      width: $pad * 32;
+      width: $pad * 50;
     }
   }
 }
