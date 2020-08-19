@@ -4,7 +4,7 @@ import { props } from "./types";
 const About = (props: props) => {
   return (
     <article className="aboutArticle">
-      <div className="wrapper">
+      <div className="wrapper accentBarAfter">
         <div className="titleAndInfo panel">
           <header>
             <h2>

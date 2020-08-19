@@ -12,8 +12,18 @@
     align-items: center;
     min-height: 100%;
     padding: $pad * 3;
-    //max-width: $pad * 120;
     margin: 0 auto;
+  }
+
+  & .accentBarAfter::after {
+    top: 50%;
+    right: 32%;
+    z-index: -2;
+    max-width: 100vw;
+    width: 100vw;
+    height: 100%;
+    max-height: $pad * 50;
+    transform: translateY(-50%);
   }
 
   & .titleAndInfo {
@@ -114,6 +124,7 @@
     }
 
     & .imageHolder {
+      top: $pad * 3;
       height: $pad * 63;
       margin: 0;
       margin-right: -$pad * 3;
@@ -127,7 +138,7 @@
       max-width: $pad * 45;
       height: $pad * 42;
       align-self: center;
-      transform: translateY($pad * 5);
+      transform: translateY($pad * 8);
     }
 
     & .aboutDeco2 {
