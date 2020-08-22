@@ -4,6 +4,8 @@ import logo from "../../assets/img/logo.svg";
 import { Link } from "react-router-dom";
 import ScrollDetector from "../_core/ScrollDetector";
 import { useHistory } from "react-router-dom";
+import { motion } from "framer-motion";
+import { panelAnim } from "../anim/animationPresets";
 
 const Home = (props: props) => {
   const history = useHistory();
@@ -31,7 +33,7 @@ const Home = (props: props) => {
     <article className="homeArticle">
       <div className="wrapper">
         <div className="pannelHolder accentBarAfter">
-          <div className="content panel">
+          <motion.div className="content panel" {...panelAnim}>
             <div className="intro">
               <header>
                 <h2>
@@ -46,10 +48,22 @@ const Home = (props: props) => {
                 Scroll for more
               </Link>
             </div>
-          </div>
-          <div className="decoPanel homeDeco1"></div>
-          <div className="decoPanel homeDeco2"></div>
-          <div className="decoPanel homeDeco3"></div>
+          </motion.div>
+          <motion.div
+            className="decoPanel homeDeco1"
+            {...panelAnim}
+            transition={{ ...panelAnim.transition, delay: 0.4 }}
+          ></motion.div>
+          <motion.div
+            className="decoPanel homeDeco2"
+            {...panelAnim}
+            transition={{ ...panelAnim.transition, delay: 0.5 }}
+          ></motion.div>
+          <motion.div
+            className="decoPanel homeDeco3"
+            {...panelAnim}
+            transition={{ ...panelAnim.transition, delay: 0.6 }}
+          ></motion.div>
         </div>
       </div>
     </article>

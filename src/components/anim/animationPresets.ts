@@ -15,6 +15,34 @@ export const fadeInFlicker = {
   },
 };
 
+export const panelAnim = {
+  initial: {
+    x: -50,
+    y: -50,
+    scale: 1.2,
+    opacity: 0,
+  },
+  animate: {
+    x: 0,
+    y: 0,
+    scale: 1,
+    opacity: 1,
+  },
+  exit: {
+    x: 0,
+    y: 0,
+    scale: 1,
+    opacity: 1,
+  },
+  transition: {
+    duration: 0.3,
+    delay: 0.3,
+    type: "spring",
+    stiffness: 700,
+    damping: 35,
+  },
+};
+
 export const fadeInFlickerScale = {
   initial: {
     opacity: 0,
