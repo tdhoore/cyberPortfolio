@@ -13,15 +13,6 @@
       order: -1;
     }
   }
-
-  .accentBarAfter::after {
-    z-index: -4;
-    top: -$pad * 2;
-    left: 50%;
-    bottom: -$pad * 2;
-    width: 70%;
-    transform: translateX(-50%);
-  }
 }
 
 .projectCounter {
@@ -60,6 +51,15 @@
 
   &.panel::before {
     z-index: 0;
+  }
+
+  &.accentBarAfter::after {
+    z-index: -4;
+    top: -$pad * 2;
+    left: 50%;
+    bottom: -$pad * 2;
+    width: 70%;
+    transform: translateX(-50%);
   }
 }
 
@@ -146,15 +146,6 @@
 }
 
 @media only screen and (min-width: 1024px) {
-  .workSection {
-    .accentBarAfter::after {
-      top: -100vh;
-      left: calc(50% - 30rem);
-      bottom: -$pad * 4;
-      width: 100%;
-    }
-  }
-
   .projectCounter {
     padding: $pad * 4 0;
   }
@@ -163,6 +154,13 @@
     display: flex;
     flex-direction: row-reverse;
     justify-content: center;
+
+    &.accentBarAfter::after {
+      top: -100vh;
+      left: calc(50% - 30rem);
+      bottom: -$pad * 4;
+      width: 100%;
+    }
   }
 
   .rightProject {

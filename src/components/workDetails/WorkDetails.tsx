@@ -27,7 +27,7 @@ const WorkDetails = (props: props) => {
     <div className="workDetail">
       <article className="workDetailArticle">
         <div className="projectPage">
-          <div className="project">
+          <div className="project accentBarAfter">
             <div className="projectTitle panel">
               <header>
                 <h2>
@@ -52,7 +52,7 @@ const WorkDetails = (props: props) => {
               <header className="hide">
                 <h4>client and roll</h4>
               </header>
-              <dl className="rollInformation">
+              <dl className="rollInformation accentBarAfter">
                 <div className="panel">
                   <dt>Roll</dt>
                   <dd>{currentProject.roll}</dd>
@@ -97,11 +97,13 @@ const WorkDetails = (props: props) => {
                 className="workDetailSection projectInfoImage"
                 key={item.title + index}
               >
-                <div className="panel info">
-                  <header>
-                    <h3>{item.title}</h3>
-                  </header>
-                  <p>{item.description}</p>
+                <div className="accentBarAfter">
+                  <div className="panel info">
+                    <header>
+                      <h3>{item.title}</h3>
+                    </header>
+                    <p>{item.description}</p>
+                  </div>
                 </div>
                 <div className="imageHolder panel">
                   <img src={item.image} alt={item.title} />
@@ -112,40 +114,47 @@ const WorkDetails = (props: props) => {
         </div>
       </article>
       <div className="wrapper">
-        <article className="workDetailNextMove">
+        <article className="workDetailNextMove ">
           <header className="panel">
             <h3>What's next?</h3>
           </header>
-          <section className="contactLink panel">
-            <header>
-              <h4>Want to chat?</h4>
-            </header>
-            <Link to="/contact" className="defaultButton">
-              Let's talk
-            </Link>
-          </section>
+          <div className="accentBarAfter contactLinkBar">
+            <section className="contactLink panel">
+              <header>
+                <h4>Want to chat?</h4>
+              </header>
+              <Link to="/contact" className="defaultButton">
+                Let's talk
+              </Link>
+            </section>
+          </div>
           <p className="OR pixFont">OR</p>
-          <section className="panel">
-            <header>
-              <h4>Next project</h4>
-            </header>
-            <Link to="/work" className="nextProject">
-              <article>
-                <div className="projectTitle panel">
-                  <header>
-                    <h5>Title</h5>
-                    <p>lorem</p>
-                  </header>
-                  <div className="defaultButtonHolder">
-                    <button className="defaultButton">See more</button>
+          <div className="accentBarAfter nextProjectBar">
+            <section className="panel">
+              <header>
+                <h4>Next project</h4>
+              </header>
+              <Link to="/work" className="nextProject">
+                <article>
+                  <div className="projectTitle panel">
+                    <header>
+                      <h5>Title</h5>
+                      <p>lorem</p>
+                    </header>
+                    <div className="defaultButtonHolder">
+                      <button className="defaultButton">See more</button>
+                    </div>
                   </div>
-                </div>
-                <div className="imageHolder">
-                  <img src={currentProject.image} alt={currentProject.title} />
-                </div>
-              </article>
-            </Link>
-          </section>
+                  <div className="imageHolder">
+                    <img
+                      src={currentProject.image}
+                      alt={currentProject.title}
+                    />
+                  </div>
+                </article>
+              </Link>
+            </section>
+          </div>
         </article>
       </div>
     </div>
