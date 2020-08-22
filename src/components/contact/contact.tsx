@@ -1,10 +1,9 @@
 import React from "react";
 import { props } from "./types";
-import DecoNumbers from "../_core/DecoNumbers";
 
 const Contact = (props: props) => {
   return (
-    <article className="contactArticle">
+    <article className="contactArticle accentBarAfter">
       <div className="contactMain panel">
         <header>
           <h2>I'm still looking for work</h2>

@@ -6,6 +6,17 @@
   padding: $pad * 3;
   min-height: 100%;
 
+  &.accentBarAfter {
+    z-index: 2;
+
+    &::after {
+      top: 0;
+      left: 35%;
+      height: 75vh;
+      width: 100%;
+    }
+  }
+
   & h2 {
     position: relative;
     display: inline-block;
@@ -75,31 +86,6 @@
   & li:last-of-type {
     margin-bottom: 0;
   }
-
-  /*& li a {
-    display: flex;
-    align-items: center;
-    width: auto;
-    height: $pad * 6 + $line;
-    font-size: $pad * 2;
-    color: $textColor;
-    text-decoration: none;
-    background: none;
-    border: solid $line $textColor;
-  }
-
-  & li a::before {
-    content: "";
-    display: block;
-    height: 100%;
-    width: $pad * 6;
-    background-color: $textColor;
-  }
-
-  & li a span {
-    display: block;
-    margin-left: $pad * 2;
-  }*/
 }
 
 @media only screen and (min-width: 1070px) {
