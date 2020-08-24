@@ -29,17 +29,21 @@ export const panelAnim = {
     opacity: 1,
   },
   exit: {
-    x: 0,
-    y: 0,
-    scale: 1,
-    opacity: 1,
+    x: 50,
+    y: 50,
+    scale: 0.8,
+    opacity: 0,
+    transition: {
+      delay: 0,
+      duration: 0.3,
+    },
   },
   transition: {
     duration: 0.3,
     delay: 0.3,
     type: "spring",
     stiffness: 700,
-    damping: 35,
+    damping: 60,
   },
 };
 

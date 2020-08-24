@@ -1,31 +1,39 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { ProjectProps } from "./types";
+import { motion } from "framer-motion";
+import { panelAnim } from "../anim/animationPresets";
 
 const Project = (props: ProjectProps) => {
   return props.data !== undefined ? (
     <div className={`projectPage ${props.isActive}`}>
       <Link to={`/work/${props.data.title}`} className="projectLink">
         <article className="project accentBarAfter">
-          <div className="projectTitle panel">
+          <motion.div
+            className="projectTitle panel"
+            {...panelAnim}
+            transition={{ ...panelAnim.transition, delay: 0.4 }}
+          >
             <header>
               <h3>
                 <span>{props.data.title}</span>
               </h3>
               <p>Sub title</p>
-              <div
+              <motion.div
                 className={`panel categoryDeco categoryDeco${props.data.title}`}
-              ></div>
+                {...panelAnim}
+                transition={{ ...panelAnim.transition, delay: 0.5 }}
+              ></motion.div>
             </header>
             <div className="defaultButtonHolder">
               <button className="defaultButton">See more</button>
             </div>
-          </div>
-          <div className="projectImage panel">
+          </motion.div>
+          <motion.div className="projectImage panel" {...panelAnim}>
             <div className="image">
               <img src={props.data.image} alt={props.data.title} />
             </div>
-          </div>
+          </motion.div>
         </article>
       </Link>
     </div>

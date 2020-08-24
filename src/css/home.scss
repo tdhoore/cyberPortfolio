@@ -41,6 +41,8 @@
     & h2 {
       position: relative;
       display: inline-block;
+      animation: glitchFadeIn 300ms 400ms ease forwards;
+      opacity: 0;
     }
 
     & h2::after {
@@ -50,8 +52,10 @@
       bottom: -15%;
       height: 60%;
       width: 100%;
-      opacity: 0.3;
+
       background-image: url("../assets/img/crossPatern.png");
+      opacity: 0;
+      animation: glitchFadeInKwarter 500ms 500ms ease forwards;
     }
   }
 
@@ -63,14 +67,18 @@
     order: -1;
     width: 40vw;
     height: 40vw;
-    max-width: $pad * 22;
-    max-height: $pad * 22;
+    max-width: $pad * 25;
+    max-height: $pad * 25;
     margin-bottom: $pad * 3;
+    animation: glitchFadeIn 300ms 500ms ease forwards;
+    opacity: 0;
   }
 
   & p {
     margin: 0 $pad * 3;
     text-align: center;
+    animation: glitchFadeIn 300ms 500ms ease forwards;
+    opacity: 0;
   }
 
   & .shortInfo {
@@ -130,6 +138,10 @@
 
     & .scrollNextPage {
       margin-top: $pad * 5;
+    }
+
+    & .defaultButton {
+      padding: $pad * 2 $pad * 3;
     }
 
     & .homeDeco1 {
