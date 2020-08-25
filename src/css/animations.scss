@@ -30,6 +30,16 @@
   }
 }
 
+@keyframes barVerticalWork {
+  0% {
+    transform: translateX(-50%) scaleY(0);
+  }
+
+  100% {
+    transform: translateX(-50%) scaleY(1);
+  }
+}
+
 @keyframes glitchFadeInHalf {
   0% {
     opacity: 0;
