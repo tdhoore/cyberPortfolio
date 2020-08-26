@@ -1,10 +1,12 @@
 import React from "react";
 import { props } from "./types";
+import { motion } from "framer-motion";
+import { panelAnim } from "../anim/animationPresets";
 
 const Contact = (props: props) => {
   return (
     <article className="contactArticle accentBarAfter">
-      <div className="contactMain panel">
+      <motion.div className="contactMain panel" {...panelAnim}>
         <header>
           <h2>I'm still looking for work</h2>
           <p>Have anything?</p>
@@ -12,8 +14,12 @@ const Contact = (props: props) => {
         <a href="mailto:" className="defaultButton">
           Leave a message
         </a>
-      </div>
-      <section className="socialMediaSection panel">
+      </motion.div>
+      <motion.section
+        className="socialMediaSection panel"
+        {...panelAnim}
+        transition={{ ...panelAnim.transition, delay: 0.4 }}
+      >
         <header>
           <h3>Social media</h3>
         </header>
@@ -39,10 +45,14 @@ const Contact = (props: props) => {
             </a>
           </li>
         </ul>
-      </section>
-      <div className="panel letter">
+      </motion.section>
+      <motion.div
+        className="panel letter"
+        {...panelAnim}
+        transition={{ ...panelAnim.transition, delay: 0.5 }}
+      >
         <div className="letterImg"></div>
-      </div>
+      </motion.div>
     </article>
   );
 };

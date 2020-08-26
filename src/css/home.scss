@@ -29,10 +29,9 @@
     bottom: -$pad * 3;
     width: 70vw;
     max-width: $pad * 50;
-    transform-origin: center top;
-    /*animation: barVertical 500ms 200ms cubic-bezier(0.57, 0.35, 0.79, 1.08)
+    animation: barVertical 300ms 300ms cubic-bezier(0.57, 0.35, 0.79, 1.08)
       forwards;
-    transform: scaleY(0);*/
+    transform: scaleY(0);
   }
 
   & header {
