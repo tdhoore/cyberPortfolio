@@ -26,6 +26,8 @@
     position: relative;
     display: inline-block;
     margin-top: $pad * 3;
+    animation: glitchFadeIn 300ms 300ms ease forwards;
+    opacity: 0;
   }
 
   & h2::after {
@@ -35,8 +37,9 @@
     bottom: -15%;
     height: 60%;
     width: 100%;
-    opacity: 0.3;
     background-image: url("../assets/img/crossPatern.png");
+    opacity: 0;
+    animation: glitchFadeInKwarter 500ms 500ms ease forwards;
   }
 
   & .letter {
@@ -55,11 +58,15 @@
       background-size: contain;
       background-repeat: no-repeat;
       background-position: center center;
+      animation: glitchFadeIn 300ms 500ms ease forwards;
+      opacity: 0;
     }
   }
 
   & p {
     margin-bottom: $pad * 3;
+    animation: glitchFadeIn 300ms 500ms ease forwards;
+    opacity: 0;
   }
 }
 
@@ -74,6 +81,8 @@
 
   & header {
     margin-bottom: $pad * 3;
+    animation: glitchFadeIn 300ms 500ms ease forwards;
+    opacity: 0;
   }
 }
 
@@ -86,6 +95,20 @@
   & li {
     margin-left: 0;
     margin-bottom: $pad * 3;
+    animation: glitchFadeIn 300ms 600ms ease forwards;
+    opacity: 0;
+  }
+
+  & li:nth-of-type(2) {
+    animation-delay: 650ms;
+  }
+
+  & li:nth-of-type(3) {
+    animation-delay: 700ms;
+  }
+
+  & li:nth-of-type(4) {
+    animation-delay: 750ms;
   }
 
   & li:last-of-type {
