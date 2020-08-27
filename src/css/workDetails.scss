@@ -1,15 +1,51 @@
 .workDetail {
-  height: 100%;
-  overflow: auto;
+  min-height: 100%;
+  position: relative;
   overflow-x: hidden;
+  background-color: $accentColor;
+
+  &::before,
+  &::after {
+    position: absolute;
+    content: "";
+    display: block;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  &::before {
+    background-image: url("../assets/img/scanLineTexture.png");
+    opacity: 0.2;
+    animation: scanLineAnim 40s linear infinite;
+  }
+
+  &::after {
+    background-image: url("../assets/img/noiseTexture.png");
+    opacity: 0.05;
+    animation: noiseAnim 5s steps(10) forwards infinite;
+  }
 
   & .wrapper {
     margin: 0 auto;
     max-width: $pad * 170;
   }
+
+  & .panel,
+  & .decoPanel {
+    border-color: $bgColor;
+
+    &::before {
+      background-color: $bgColor;
+    }
+  }
 }
 
 .workDetailArticle {
+  position: relative;
+  z-index: 2;
+
   & .projectPage {
     height: 70vh;
     margin: $pad * 5 $pad * 4 0;
