@@ -2,7 +2,7 @@
   min-height: 100%;
   position: relative;
   overflow-x: hidden;
-  background-color: $accentColor;
+  background-color: $accentTextColor;
 
   &::before,
   &::after {
@@ -17,7 +17,7 @@
 
   &::before {
     background-image: url("../assets/img/scanLineTexture.png");
-    opacity: 0.2;
+    opacity: 0.4;
     animation: scanLineAnim 40s linear infinite;
   }
 
@@ -29,16 +29,6 @@
 
   & .wrapper {
     margin: 0 auto;
-    max-width: $pad * 170;
-  }
-
-  & .panel,
-  & .decoPanel {
-    border-color: $bgColor;
-
-    &::before {
-      background-color: $bgColor;
-    }
   }
 }
 
@@ -47,8 +37,14 @@
   z-index: 2;
 
   & .projectPage {
-    height: 70vh;
-    margin: $pad * 5 $pad * 4 0;
+    height: 50vh;
+    margin: 0 0 $pad * 8;
+  }
+
+  .projectTitle {
+    left: $pad * 2;
+    right: $pad * 2;
+    bottom: -$pad * 3;
   }
 }
 
@@ -107,7 +103,7 @@
   margin-top: 0;
 
   & header {
-    margin-top: $pad * 2;
+    margin-top: $pad * 9;
   }
 
   & .imageHolder {
@@ -128,11 +124,11 @@
   }
 
   & .accentBarAfter::after {
-    top: -$pad * 9;
-    bottom: -$pad * 3;
+    top: -$pad * 14;
+    bottom: auto;
     left: 15%;
     width: 70%;
-    height: auto;
+    height: $pad * 22;
   }
 }
 
@@ -239,35 +235,70 @@
 
     & .project {
       margin: 0 $pad * 5;
-    }
 
-    & .wrapper {
-      padding: 0 $pad * 5;
+      &.accentBarAfter::after {
+        top: 0;
+        left: calc(50% - 44rem);
+        right: auto;
+        bottom: -$pad * 17;
+        width: 100%;
+        transform: none;
+        animation: none;
+      }
     }
 
     & .linkButton {
       display: inline-flex;
     }
+
+    & .projectPage {
+      height: 60vh;
+      margin-bottom: $pad * 25;
+    }
+
+    & .project {
+      margin: 0;
+
+      & .projectImage {
+        width: 100%;
+        max-width: 100vw;
+      }
+
+      & .projectTitle {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        max-width: $pad * 80;
+        margin-left: $pad * 14;
+        transform: translate(-50%, 50%);
+      }
+
+      & .categoryDeco {
+        top: 50%;
+        left: $pad * 2;
+        transform: translate(-100%, -50%);
+      }
+    }
   }
 
   .workDetailSection {
-    margin: $pad * 20 $pad * 5 0;
+    margin: $pad * 10 $pad * 5 0;
   }
 
   .workDetailSection:last-of-type {
-    margin-bottom: $pad * 20;
+    margin-bottom: $pad * 10;
   }
 
   .projectInfo {
-    max-width: $pad * 88;
-    margin-bottom: $pad * 3;
+    max-width: $pad * 80;
+    margin-left: $pad * 20;
   }
 
   .rollAndInfo {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: $pad * 20 0;
+    margin: $pad * 10 0;
 
     & .workDetailSection {
       margin-top: 0;
@@ -287,7 +318,6 @@
     & .panel:nth-of-type(2n) {
       position: relative;
       left: $pad * 26;
-
       margin-top: -$pad * 10;
       margin-bottom: -$pad * 5;
     }
@@ -306,26 +336,30 @@
     align-items: center;
 
     & .info {
-      max-width: $pad * 88;
+      max-width: $pad * 80;
       margin-bottom: -$pad * 3;
-      margin-left: -$pad * 3;
+      margin-left: $pad * 10;
     }
 
     & .imageHolder {
-      max-width: 100%;
+      max-width: $pad * 120;
       width: 50vw;
       height: 70vh;
       margin: 0;
     }
 
     & .accentBarAfter::after {
-      top: -$pad * 3;
-      bottom: -$pad * 6;
+      top: 50%;
+      left: -$pad * 15;
+      bottom: 0;
+      width: $pad * 20;
+      height: 50vh;
+      margin-top: calc(-10vh - 3.2rem);
+      transform: translateY(-50%);
     }
   }
 
   .screenshotSection {
-    max-width: calc(50vw + 68rem);
     width: 100%;
     height: 70vh;
     margin-left: auto;

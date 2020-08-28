@@ -39,7 +39,7 @@ const WorkDetails = (props: props) => {
                 ></div>
               </header>
             </div>
-            <div className="projectImage panel">
+            <div className="projectImage">
               <div className="image">
                 <img src={currentProject.image} alt={currentProject.title} />
               </div>
@@ -68,7 +68,7 @@ const WorkDetails = (props: props) => {
               </dl>
             </section>
 
-            <section className="workDetailSection panel projectInfo">
+            <section className="workDetailSection projectInfo">
               <header>
                 <h3>Project info</h3>
               </header>
@@ -88,7 +88,7 @@ const WorkDetails = (props: props) => {
                 <header className="hide">
                   <h3>screenshot - {item.title}</h3>
                 </header>
-                <div className="imageHolder panel" key={`screenshot${index}`}>
+                <div className="imageHolder" key={`screenshot${index}`}>
                   <img src={item.image} alt={item.title} />
                 </div>
               </section>
@@ -98,7 +98,7 @@ const WorkDetails = (props: props) => {
                 key={item.title + index}
               >
                 <div className="accentBarAfter">
-                  <div className="panel info">
+                  <div className="info">
                     <header>
                       <h3>{item.title}</h3>
                     </header>
