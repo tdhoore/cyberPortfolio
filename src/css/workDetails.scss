@@ -37,7 +37,7 @@
   z-index: 2;
 
   & .projectPage {
-    height: 50vh;
+    height: 70vh;
     margin: 0 0 $pad * 8;
   }
 
@@ -252,7 +252,7 @@
     }
 
     & .projectPage {
-      height: 60vh;
+      height: 70vh;
       margin-bottom: $pad * 25;
     }
 
@@ -282,11 +282,11 @@
   }
 
   .workDetailSection {
-    margin: $pad * 10 $pad * 5 0;
+    margin: $pad * 20 $pad * 5 0;
   }
 
   .workDetailSection:last-of-type {
-    margin-bottom: $pad * 10;
+    margin-bottom: $pad * 20;
   }
 
   .projectInfo {
