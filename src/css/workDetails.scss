@@ -38,7 +38,9 @@
 
   & .projectPage {
     height: 70vh;
-    margin: 0 0 $pad * 8;
+    margin: $pad * 3 auto $pad * 8;
+    max-width: $pad * 210;
+    padding: 0 $pad * 3;
   }
 
   .projectTitle {
@@ -143,6 +145,18 @@
     width: 100%;
     height: 100%;
   }
+}
+
+.screenshotSectionaccent {
+  max-width: $pad * 160;
+  margin: 0 auto;
+}
+
+.screenshotSectionaccent.accentBarAfter::after {
+  top: -$pad * 3;
+  bottom: 50%;
+  left: -$pad * 5;
+  max-width: $pad * 40;
 }
 
 .workDetailNextMove {
@@ -253,7 +267,8 @@
 
     & .projectPage {
       height: 70vh;
-      margin-bottom: $pad * 25;
+      margin: $pad * 5 auto $pad * 25;
+      padding: 0 $pad * 20;
     }
 
     & .project {
@@ -330,7 +345,24 @@
     }
   }
 
+  .screenshotMain {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-columns: repeat(2, 1fr);
+    grid-template-rows: min-content;
+    column-gap: $pad * 10;
+    row-gap: $pad * 20;
+    width: 100%;
+    padding: 0 $pad * 5;
+    margin: $pad * 20 0 0;
+
+    .workDetailSection {
+      margin: 0;
+    }
+  }
+
   .projectInfoImage {
+    grid-column: 1 / -1;
     flex-direction: row-reverse;
     justify-content: center;
     align-items: center;
@@ -359,11 +391,55 @@
     }
   }
 
+  .screenshotSectionaccent {
+    width: 100%;
+    align-self: flex-start;
+    justify-self: flex-end;
+    max-width: $pad * 100;
+    margin: 0;
+  }
+
   .screenshotSection {
     width: 100%;
-    height: 70vh;
-    margin-left: auto;
+    height: 80vh;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .screenshotSectionaccent.accentBarAfter::after {
+    top: -$pad * 5;
+    bottom: -$pad * 5;
+    left: calc(50% - 8rem);
+    max-width: $pad * 60;
+    transform: translateX(-50%);
+  }
+
+  .screenshotSectionaccent:nth-of-type(2n).accentBarAfter::after,
+  .screenshotSectionaccent:nth-of-type(3n).accentBarAfter::after {
+    top: -$pad * 5;
+    bottom: $pad * 10;
+    left: -$pad * 3;
+    transform: none;
+    max-width: $pad * 40;
+  }
+
+  .screenshotSectionaccent.accentBarAfter:first-of-type::after,
+  .screenshotSectionaccent:nth-of-type(4n).accentBarAfter::after {
+    top: -$pad * 5;
+    bottom: -$pad * 5;
+    left: calc(50% - 8rem);
+    max-width: $pad * 60;
+    transform: translateX(-50%);
+  }
+
+  .screenshotSectionaccent:nth-of-type(2n) {
+    margin-top: $pad * 10;
+    margin-bottom: -$pad * 10;
     margin-right: auto;
+  }
+
+  .screenshotSectionaccent:last-of-type {
+    margin-bottom: 0;
   }
 
   .workDetailNextMove {

@@ -78,39 +78,42 @@ const WorkDetails = (props: props) => {
               </a>
             </section>
           </div>
-
-          {currentProject.sliderimages.map((item: any, index: number) => {
-            return !item.description ? (
-              <section
-                className="workDetailSection screenshotSection"
-                key={item.title + index}
-              >
-                <header className="hide">
-                  <h3>screenshot - {item.title}</h3>
-                </header>
-                <div className="imageHolder" key={`screenshot${index}`}>
-                  <img src={item.image} alt={item.title} />
-                </div>
-              </section>
-            ) : (
-              <section
-                className="workDetailSection projectInfoImage"
-                key={item.title + index}
-              >
-                <div className="accentBarAfter">
-                  <div className="info">
-                    <header>
-                      <h3>{item.title}</h3>
+          <div className="screenshotMain">
+            {currentProject.sliderimages.map((item: any, index: number) => {
+              return !item.description ? (
+                <div className="screenshotSectionaccent accentBarAfter">
+                  <section
+                    className="workDetailSection screenshotSection panel"
+                    key={item.title + index}
+                  >
+                    <header className="hide">
+                      <h3>screenshot - {item.title}</h3>
                     </header>
-                    <p>{item.description}</p>
+                    <div className="imageHolder " key={`screenshot${index}`}>
+                      <img src={item.image} alt={item.title} />
+                    </div>
+                  </section>
+                </div>
+              ) : (
+                <section
+                  className="workDetailSection projectInfoImage"
+                  key={item.title + index}
+                >
+                  <div className="accentBarAfter">
+                    <div className="info">
+                      <header>
+                        <h3>{item.title}</h3>
+                      </header>
+                      <p>{item.description}</p>
+                    </div>
                   </div>
-                </div>
-                <div className="imageHolder panel">
-                  <img src={item.image} alt={item.title} />
-                </div>
-              </section>
-            );
-          })}
+                  <div className="imageHolder panel">
+                    <img src={item.image} alt={item.title} />
+                  </div>
+                </section>
+              );
+            })}
+          </div>
         </div>
       </article>
       <div className="wrapper">
