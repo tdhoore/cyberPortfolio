@@ -32,24 +32,49 @@ const Home = (props: props) => {
   return (
     <article className="homeArticle">
       <div className="wrapper">
-        <div className="pannelHolder accentBarAfter">
-          <motion.div className="content panel" {...panelAnim}>
-            <div className="intro">
-              <header>
-                <h2>
-                  <span>Tim D'hoore</span>
-                </h2>
-                <p>Creative developer</p>
-              </header>
-            </div>
-            <img src={logo} alt="Tim D'hoore logo" />
+        <div className="accentBarAfter">
+          <div className="intro panel">
+            <header>
+              <h2>
+                <span>Tim D'hoore</span>
+              </h2>
+              <p>Creative developer</p>
+            </header>
+            <p className="shortInfo">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. quos
+              quibusdam quo?
+            </p>
             <div className="scrollNextPage">
               <Link to="/work" className="defaultButton">
                 Scroll for more
               </Link>
             </div>
-          </motion.div>
-          <motion.div
+          </div>
+        </div>
+        <div className="panel skills pixFont">
+          <ul>
+            <li>Development</li>
+            <li>Design</li>
+            <li>Motion</li>
+          </ul>
+        </div>
+        <div className="panel logo">
+          <img src={logo} alt="Tim D'hoore logo" />
+        </div>
+        <motion.div
+          className="decoPanel homeDeco1"
+          {...panelAnim}
+          transition={{ ...panelAnim.transition, delay: 0.4 }}
+        >
+          <div></div>
+        </motion.div>
+      </div>
+    </article>
+  );
+};
+
+export default Home;
+/*  <motion.div
             className="decoPanel homeDeco1"
             {...panelAnim}
             transition={{ ...panelAnim.transition, delay: 0.4 }}
@@ -63,11 +88,4 @@ const Home = (props: props) => {
             className="decoPanel homeDeco3"
             {...panelAnim}
             transition={{ ...panelAnim.transition, delay: 0.6 }}
-          ></motion.div>
-        </div>
-      </div>
-    </article>
-  );
-};
-
-export default Home;
+          ></motion.div>*/
