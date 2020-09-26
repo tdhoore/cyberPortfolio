@@ -50,24 +50,31 @@ const Home = (props: props) => {
               </Link>
             </div>
           </div>
+          <motion.div
+            className="decoPanel homeDeco1"
+            {...panelAnim}
+            transition={{ ...panelAnim.transition, delay: 0.4 }}
+          >
+            <div></div>
+          </motion.div>
         </div>
         <div className="panel skills pixFont">
-          <ul>
-            <li>Development</li>
-            <li>Design</li>
-            <li>Motion</li>
-          </ul>
+          <div className="carroucel">
+            <div
+              className="carroucelContent"
+              data-loop="Development - Design - Motion - "
+            >
+              <ul>
+                <li>Development</li>
+                <li>Design</li>
+                <li>Motion</li>
+              </ul>
+            </div>
+          </div>
         </div>
         <div className="panel logo">
           <img src={logo} alt="Tim D'hoore logo" />
         </div>
-        <motion.div
-          className="decoPanel homeDeco1"
-          {...panelAnim}
-          transition={{ ...panelAnim.transition, delay: 0.4 }}
-        >
-          <div></div>
-        </motion.div>
       </div>
     </article>
   );

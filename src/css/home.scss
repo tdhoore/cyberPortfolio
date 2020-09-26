@@ -98,26 +98,39 @@
     font-size: $pad * 2;
     padding: $pad * 5 $pad * 2 $pad * 2;
     align-self: flex-start;
+    max-width: 80%;
+
+    & .carroucel {
+      width: 100%;
+      overflow: hidden;
+    }
+
+    & .carroucelContent {
+      display: flex;
+      width: 1000vw;
+    }
+
+    & .carroucelContent:after {
+      content: attr(data-loop);
+      display: block;
+      white-space: pre;
+      animation: moveWords 10s infinite linear;
+    }
 
     & ul {
-      overflow: hidden;
       display: flex;
+      animation: moveWords 10s infinite linear;
     }
 
     & li::after {
-      content: "-";
-      margin: 0 $pad;
-    }
-
-    & li:last-of-type::after {
-      content: "";
-      margin: 0;
+      content: " - ";
+      white-space: pre;
     }
   }
 
   .homeDeco1 {
-    top: $pad * 3;
-    bottom: $pad * 3;
+    top: -$pad * 23;
+    bottom: -$pad * 6;
     left: 100%;
     width: $pad * 50;
     margin-left: -$pad * 6;
@@ -126,6 +139,16 @@
       height: 100%;
       background-image: url("../assets/img/crossPaternFade.png");
     }
+  }
+}
+
+@keyframes moveWords {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-100%);
   }
 }
 
@@ -138,14 +161,28 @@
 
     & .wrapper {
       height: auto;
+      max-width: $pad * 100;
     }
 
     & .panel {
-      padding: $pad * 15 $pad * 8 $pad * 12;
+      padding: $pad * 10 $pad * 8 $pad * 9;
     }
 
     & p {
       font-size: $pad * 3;
+      line-height: initial;
+    }
+
+    & .accentBarAfter::after {
+      top: -$pad * 3;
+      right: $pad * 4;
+      bottom: -$pad * 10;
+      width: 100%;
+      max-width: 100%;
+    }
+
+    & .shortInfo {
+      margin-top: $pad * 2;
     }
 
     & .scrollNextPage {
@@ -154,9 +191,37 @@
 
     & .defaultButton {
       padding: $pad * 2 $pad * 3;
+      display: inline-block;
+    }
+
+    & .panel.logo {
+      padding: $pad * 9 $pad * 3 $pad * 5;
+      margin-bottom: -$pad * 33;
+      margin-left: -$pad * 28;
+      margin-top: -$pad * 3;
+
+      & img {
+        width: $pad * 25;
+        height: $pad * 25;
+      }
+    }
+
+    & .panel.skills {
+      order: -1;
+      margin-bottom: 0;
+      margin-top: -$pad * 6;
+      margin-left: -$pad * 8;
+      font-size: $pad * 3;
+      padding: $pad * 5 $pad * 4 $pad * 2;
     }
 
     & .homeDeco1 {
+      top: -$pad * 14;
+      bottom: -$pad * 14;
+      left: auto;
+      right: 0;
+      margin-left: 0;
+      margin-right: -$pad * 15;
     }
   }
 }
