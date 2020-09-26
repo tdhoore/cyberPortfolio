@@ -53,7 +53,7 @@ const Home = (props: props) => {
           <motion.div
             className="decoPanel homeDeco1"
             {...panelAnim}
-            transition={{ ...panelAnim.transition, delay: 0.6 }}
+            transition={{ ...panelAnim.transition, delay: 0.55 }}
           >
             <div></div>
           </motion.div>
