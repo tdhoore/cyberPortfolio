@@ -18,10 +18,6 @@
     padding: $pad * 11 $pad * 3 $pad * 5;
   }
 
-  & .accentBarAfter {
-    background-color: blue;
-  }
-
   & .accentBarAfter::after {
     z-index: -2;
     top: -$pad * 3;
@@ -82,6 +78,8 @@
   & .shortInfo {
     margin-top: $pad;
     font-weight: bold;
+    animation: glitchFadeIn 300ms 550ms ease forwards;
+    opacity: 0;
   }
 
   & .scrollNextPage {
@@ -175,7 +173,7 @@
 
     & .accentBarAfter::after {
       top: -$pad * 3;
-      right: $pad * 4;
+      left: $pad * 8;
       bottom: -$pad * 10;
       width: 100%;
       max-width: 100%;

@@ -33,7 +33,7 @@ const Home = (props: props) => {
     <article className="homeArticle">
       <div className="wrapper">
         <div className="accentBarAfter">
-          <div className="intro panel">
+          <motion.div className="intro panel" {...panelAnim}>
             <header>
               <h2>
                 <span>Tim D'hoore</span>
@@ -49,16 +49,20 @@ const Home = (props: props) => {
                 Scroll for more
               </Link>
             </div>
-          </div>
+          </motion.div>
           <motion.div
             className="decoPanel homeDeco1"
             {...panelAnim}
-            transition={{ ...panelAnim.transition, delay: 0.4 }}
+            transition={{ ...panelAnim.transition, delay: 0.6 }}
           >
             <div></div>
           </motion.div>
         </div>
-        <div className="panel skills pixFont">
+        <motion.div
+          className="panel skills pixFont"
+          {...panelAnim}
+          transition={{ ...panelAnim.transition, delay: 0.5 }}
+        >
           <div className="carroucel">
             <div
               className="carroucelContent"
@@ -71,10 +75,14 @@ const Home = (props: props) => {
               </ul>
             </div>
           </div>
-        </div>
-        <div className="panel logo">
+        </motion.div>
+        <motion.div
+          className="panel logo"
+          {...panelAnim}
+          transition={{ ...panelAnim.transition, delay: 0.4 }}
+        >
           <img src={logo} alt="Tim D'hoore logo" />
-        </div>
+        </motion.div>
       </div>
     </article>
   );
