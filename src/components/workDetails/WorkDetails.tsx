@@ -26,10 +26,10 @@ const WorkDetails = (props: props) => {
   return currentProject ? (
     <div className="workDetail">
       <article className="workDetailArticle">
-        <div className="projectPage">
+        <header className="projectPage">
           <div className="project accentBarAfter">
             <div className="projectTitle panel">
-              <header>
+              <div>
                 <h2>
                   <span>{currentProject.title}</span>
                 </h2>
@@ -37,7 +37,7 @@ const WorkDetails = (props: props) => {
                 <div
                   className={`panel categoryDeco categoryDeco${currentProject.roll}`}
                 ></div>
-              </header>
+              </div>
             </div>
             <div className="projectImage">
               <div className="image">
@@ -45,7 +45,7 @@ const WorkDetails = (props: props) => {
               </div>
             </div>
           </div>
-        </div>
+        </header>
         <div className="wrapper">
           <div className="rollAndInfo">
             <section className="workDetailSection">
@@ -117,9 +117,12 @@ const WorkDetails = (props: props) => {
         </div>
       </article>
       <div className="wrapper">
-        <article className="workDetailNextMove ">
-          <header className="panel">
-            <h3>What's next?</h3>
+        <article className="workDetailNextMove">
+          <header className="panel nextTitle">
+            <h3>
+              Wasn’t that nice?
+              <br /> What do you want to do next? What's next?
+            </h3>
           </header>
           <div className="accentBarAfter contactLinkBar">
             <section className="contactLink panel">
@@ -131,10 +134,10 @@ const WorkDetails = (props: props) => {
               </Link>
             </section>
           </div>
-          <p className="OR pixFont">OR</p>
+          <p className="panel OR pixFont">OR</p>
           <div className="accentBarAfter nextProjectBar">
-            <section className="panel">
-              <header>
+            <section>
+              <header className="panel nextProjectPanel">
                 <h4>Next project</h4>
               </header>
               <Link to="/work" className="nextProject">
