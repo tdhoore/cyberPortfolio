@@ -117,50 +117,50 @@ const WorkDetails = (props: props) => {
         </div>
       </article>
       <div className="wrapper">
-        <article className="workDetailNextMove">
+        <article className="workDetailNextMove accentBarAfter">
           <header className="panel nextTitle">
             <h3>
               Wasn’t that nice?
               <br /> What do you want to do next? What's next?
             </h3>
           </header>
-          <div className="accentBarAfter contactLinkBar">
-            <section className="contactLink panel">
-              <header>
-                <h4>Want to chat?</h4>
-              </header>
-              <Link to="/contact" className="defaultButton">
-                Let's talk
-              </Link>
-            </section>
-          </div>
+          <section className="contactLink panel">
+            <header>
+              <h4>Want to chat?</h4>
+            </header>
+            <Link to="/contact" className="defaultButton">
+              Let's talk
+            </Link>
+          </section>
           <p className="panel OR pixFont">OR</p>
-          <div className="accentBarAfter nextProjectBar">
-            <section>
-              <header className="panel nextProjectPanel">
-                <h4>Next project</h4>
-              </header>
-              <Link to="/work" className="nextProject">
-                <article>
-                  <div className="projectTitle panel">
-                    <header>
-                      <h5>Title</h5>
-                      <p>lorem</p>
-                    </header>
-                    <div className="defaultButtonHolder">
-                      <button className="defaultButton">See more</button>
+          <section className="nextProjectSection">
+            <header className="panel nextProjectPanel">
+              <h4>Next project</h4>
+            </header>
+            <Link to="/work" className="nextProject">
+              <article className="projectPage">
+                <div className="project accentBarAfter">
+                  <header className="projectTitle panel">
+                    <h5>
+                      <span>{currentProject.title}</span>
+                    </h5>
+                    <p>Sub title</p>
+                    <div
+                      className={`panel categoryDeco categoryDeco${currentProject.roll}`}
+                    ></div>
+                  </header>
+                  <div className="projectImage">
+                    <div className="image">
+                      <img
+                        src={currentProject.image}
+                        alt={currentProject.title}
+                      />
                     </div>
                   </div>
-                  <div className="imageHolder">
-                    <img
-                      src={currentProject.image}
-                      alt={currentProject.title}
-                    />
-                  </div>
-                </article>
-              </Link>
-            </section>
-          </div>
+                </div>
+              </article>
+            </Link>
+          </section>
         </article>
       </div>
     </div>
@@ -170,3 +170,19 @@ const WorkDetails = (props: props) => {
 };
 
 export default WorkDetails;
+/*
+ <article>
+                <div className="projectTitle panel">
+                  <header>
+                    <h5>Title</h5>
+                    <p>lorem</p>
+                  </header>
+                  <div className="defaultButtonHolder">
+                    <button className="defaultButton">See more</button>
+                  </div>
+                </div>
+                <div className="imageHolder">
+                  <img src={currentProject.image} alt={currentProject.title} />
+                </div>
+              </article>
+*/
