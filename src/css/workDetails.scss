@@ -210,16 +210,25 @@
     }
   }
 
+  & .orWrapper {
+    align-self: flex-start;
+  }
+
   & .OR {
     position: relative;
     z-index: 11;
     font-size: $pad * 4;
-    align-self: flex-start;
+
     padding: $pad * 8 $pad * 5 $pad * 5;
     margin-top: -$pad * 3;
     margin-left: -$pad * 2;
     margin-bottom: -$pad * 5;
   }
+}
+
+.contactLinkAndOr {
+  display: flex;
+  flex-direction: column;
 }
 
 .nextProjectPanel {
@@ -273,20 +282,6 @@
       font-size: $pad * 3;
     }
 
-    & .project {
-      margin: 0 $pad * 5;
-
-      &.accentBarAfter::after {
-        top: 0;
-        left: calc(50% - 44rem);
-        right: auto;
-        bottom: -$pad * 17;
-        width: 100%;
-        transform: none;
-        animation: none;
-      }
-    }
-
     & .linkButton {
       display: inline-flex;
     }
@@ -294,11 +289,21 @@
     & .projectPage {
       height: 70vh;
       margin: $pad * 5 auto $pad * 25;
-      padding: 0 $pad * 20;
+      padding: 0 $pad * 5;
     }
 
     & .project {
       margin: 0;
+
+      &.accentBarAfter::after {
+        top: 80%;
+        left: calc(50% - 44rem);
+        right: auto;
+        bottom: -$pad * 17;
+        width: 100%;
+        transform: none;
+        animation: none;
+      }
 
       & .projectImage {
         width: 100%;
@@ -453,7 +458,7 @@
     top: -$pad * 5;
     bottom: -$pad * 5;
     left: calc(50% - 8rem);
-    max-width: $pad * 60;
+    max-width: $pad * 45;
     transform: translateX(-50%);
   }
 
@@ -468,11 +473,9 @@
   }
 
   .workDetailNextMove {
-    margin-top: $pad * 20;
-    display: grid;
+    margin-top: $pad * 10;
+    justify-content: center;
     max-width: $pad * 210;
-    grid-template-rows: min-content min-content;
-    grid-template-columns: repeat(4, 1fr);
     margin-left: auto;
     margin-right: auto;
     row-gap: $pad * 5;
@@ -480,15 +483,34 @@
     padding: $pad * 5;
 
     & .nextTitle {
-      grid-column: 1 / -1;
-      justify-self: center;
-      width: 100%;
+      align-self: center;
+    }
+
+    & .orWrapper {
+      position: relative;
+      align-self: center;
+
+      &::before,
+      &::after {
+        content: "<<<<<";
+        display: block;
+        position: absolute;
+        font-size: $pad * 4;
+      }
+
+      &::before {
+        top: 50%;
+        left: -$pad * 13;
+        transform: translateY(-50%) rotate(-90deg);
+      }
+
+      &::after {
+        left: 50%;
+        transform: translateX(-50%);
+      }
     }
 
     & .OR {
-      grid-column: -3 / -1;
-      align-self: center;
-      justify-self: center;
       margin: 0;
       font-size: $pad * 5;
       padding: $pad * 12 $pad * 9 $pad * 9;
@@ -511,14 +533,24 @@
     }
 
     &.accentBarAfter::after {
-      display: none;
+      top: 0;
+      left: 30%;
+      width: $pad * 40;
+      height: 70%;
     }
   }
 
-  .contactLink {
-    grid-column: 1 / 3;
-    justify-self: flex-start;
+  .contactLinkAndOr {
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    max-width: $pad * 210;
+  }
+
+  section.contactLink {
     max-width: $pad * 80;
+    margin-right: $pad * 20;
+    margin-left: -10%;
 
     & .defaultButton {
       font-size: $pad * 2;
@@ -549,7 +581,6 @@
       right: 0;
       bottom: $pad * 5;
       margin: 0 $pad * 3;
-      min-width: auto;
       grid-column: -3 / -1;
       min-width: $pad * 70;
 

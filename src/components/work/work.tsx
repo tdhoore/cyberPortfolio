@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from "react";
 import Project from "./Project";
 import ProjectCounter from "./ProjectCounter";
-import { props } from "./types";
 import { getWork } from "./api";
 import { useSelector } from "react-redux";
 import ScrollDetector from "../_core/ScrollDetector";
 import { getNextProject } from "./api";
 import { motion } from "framer-motion";
 
-const Work = (props: props) => {
+const Work = () => {
   const work = useSelector((state: any) => state.workReducer.workItems);
   const currentItem = useSelector(
     (state: any) => state.workReducer.currentItem
@@ -68,11 +67,7 @@ const Work = (props: props) => {
   const swipePower = (offset: number, velocity: number) => {
     return Math.abs(offset) * velocity;
   };
-  /*
-  currentItem === 0
-                ? -currentPageWidth * currentItem
-                : (-currentPageWidth / 100) * 82 * currentItem,
-*/
+
   const swipeConfidenceThreshold = 0;
   return (
     <section className="workSection">
@@ -82,7 +77,6 @@ const Work = (props: props) => {
         </header>
         <motion.div
           className="projectSlider"
-          //initial={{ x: -window.innerWidth * (currentItem - 1) }}
           animate={{
             x: -currentPageWidth * currentItem,
           }}

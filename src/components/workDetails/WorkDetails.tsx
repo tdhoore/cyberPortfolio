@@ -124,15 +124,19 @@ const WorkDetails = (props: props) => {
               <br /> What do you want to do next? What's next?
             </h3>
           </header>
-          <section className="contactLink panel">
-            <header>
-              <h4>Want to chat?</h4>
-            </header>
-            <Link to="/contact" className="defaultButton">
-              Let's talk
-            </Link>
-          </section>
-          <p className="panel OR pixFont">OR</p>
+          <div className="contactLinkAndOr">
+            <section className="contactLink panel">
+              <header>
+                <h4>Want to chat?</h4>
+              </header>
+              <Link to="/contact" className="defaultButton">
+                Let's talk
+              </Link>
+            </section>
+            <div className="orWrapper pixFont">
+              <p className="panel OR pixFont">OR</p>
+            </div>
+          </div>
           <section className="nextProjectSection">
             <header className="panel nextProjectPanel">
               <h4>Next project</h4>
