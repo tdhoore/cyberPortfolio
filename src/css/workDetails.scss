@@ -242,6 +242,7 @@
   color: $textColor;
   text-align: left;
   max-width: $pad * 210;
+  margin-bottom: $pad * 5;
 
   & .projectImage {
     height: 70vh;
@@ -256,6 +257,14 @@
       height: 100%;
       object-fit: cover;
     }
+  }
+
+  & p {
+    margin-bottom: $pad;
+  }
+
+  & .defaultButtonHolder {
+    margin-left: $pad;
   }
 }
 
@@ -602,7 +611,7 @@
     }
 
     & .defaultButtonHolder {
-      left: $pad * 2 + $line / 2;
+      left: $pad * 4 + $line / 2;
     }
   }
 }

@@ -152,6 +152,9 @@ const WorkDetails = (props: props) => {
                     <div
                       className={`panel categoryDeco categoryDeco${currentProject.roll}`}
                     ></div>
+                    <div className="defaultButtonHolder">
+                      <button className="defaultButton">See more</button>
+                    </div>
                   </header>
                   <div className="projectImage">
                     <div className="image">
@@ -174,19 +177,3 @@ const WorkDetails = (props: props) => {
 };
 
 export default WorkDetails;
-/*
- <article>
-                <div className="projectTitle panel">
-                  <header>
-                    <h5>Title</h5>
-                    <p>lorem</p>
-                  </header>
-                  <div className="defaultButtonHolder">
-                    <button className="defaultButton">See more</button>
-                  </div>
-                </div>
-                <div className="imageHolder">
-                  <img src={currentProject.image} alt={currentProject.title} />
-                </div>
-              </article>
-*/
