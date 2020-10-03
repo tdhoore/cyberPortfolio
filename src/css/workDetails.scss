@@ -374,7 +374,6 @@
   .screenshotMain {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-auto-columns: repeat(2, 1fr);
     grid-template-rows: min-content;
     column-gap: $pad * 10;
     row-gap: $pad * 20;
@@ -473,18 +472,21 @@
     display: grid;
     max-width: $pad * 210;
     grid-template-rows: min-content min-content;
-    grid-template-columns: $pad * 20 repeat(4, 1fr) $pad * 20;
+    grid-template-columns: repeat(4, 1fr);
     margin-left: auto;
     margin-right: auto;
     row-gap: $pad * 5;
+    column-gap: $pad * 5;
+    padding: $pad * 5;
 
     & .nextTitle {
       grid-column: 1 / -1;
       justify-self: center;
+      width: 100%;
     }
 
     & .OR {
-      grid-column: -4 / -2;
+      grid-column: -3 / -1;
       align-self: center;
       justify-self: center;
       margin: 0;
@@ -514,7 +516,7 @@
   }
 
   .contactLink {
-    grid-column: 2 / 4;
+    grid-column: 1 / 3;
     justify-self: flex-start;
     max-width: $pad * 80;
 
@@ -527,11 +529,12 @@
   .workDetailNextMove .nextProjectSection {
     grid-column: 1 / -1;
     display: grid;
-    grid-template-columns: $pad * 20 repeat(4, 1fr) $pad * 20;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: $pad * 5;
   }
 
   .nextProjectPanel {
-    grid-column: 4 / -2;
+    grid-column: -3 / -1;
     margin-bottom: -$pad * 10;
     margin-top: -$pad * 10;
   }
