@@ -1,8 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { props } from "./types";
 import { getWork } from "../work/api";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { motion } from "framer-motion";
+import { panelAnim } from "../anim/animationPresets";
 
 const WorkDetails = (props: props) => {
   const work = useSelector((state: any) => state.workReducer.workItems);
@@ -28,16 +30,24 @@ const WorkDetails = (props: props) => {
       <article className="workDetailArticle">
         <header className="projectPage">
           <div className="project accentBarAfter">
-            <div className="projectTitle panel">
-              <div>
-                <h2>
-                  <span>{currentProject.title}</span>
-                </h2>
-                <p>Sub title</p>
-                <div
-                  className={`panel categoryDeco categoryDeco${currentProject.roll}`}
-                ></div>
-              </div>
+            <div className="projectTitle">
+              <motion.div className="panel" {...panelAnim}>
+                <div>
+                  <h2>
+                    <span>{currentProject.title}</span>
+                  </h2>
+                  <p>Sub title</p>
+                  <div
+                    className={`categoryDeco categoryDeco${currentProject.roll}`}
+                  >
+                    <motion.div
+                      className="panel"
+                      {...panelAnim}
+                      transition={{ ...panelAnim.transition, delay: 0.4 }}
+                    ></motion.div>
+                  </div>
+                </div>
+              </motion.div>
             </div>
             <div className="projectImage">
               <div className="image">
@@ -53,18 +63,30 @@ const WorkDetails = (props: props) => {
                 <h4>client and roll</h4>
               </header>
               <dl className="rollInformation accentBarAfter">
-                <div className="panel">
+                <motion.div
+                  className="panel"
+                  {...panelAnim}
+                  transition={{ ...panelAnim.transition, delay: 0.4 }}
+                >
                   <dt>Roll</dt>
                   <dd>{currentProject.roll}</dd>
-                </div>
-                <div className="panel">
+                </motion.div>
+                <motion.div
+                  className="panel"
+                  {...panelAnim}
+                  transition={{ ...panelAnim.transition, delay: 0.5 }}
+                >
                   <dt>Client</dt>
                   <dd>{currentProject.client}</dd>
-                </div>
-                <div className="panel">
+                </motion.div>
+                <motion.div
+                  className="panel"
+                  {...panelAnim}
+                  transition={{ ...panelAnim.transition, delay: 0.6 }}
+                >
                   <dt>Created</dt>
                   <dd>{currentProject.client}</dd>
-                </div>
+                </motion.div>
               </dl>
             </section>
 

@@ -3,6 +3,17 @@
   position: relative;
   overflow-x: hidden;
   background-color: $accentTextColor;
+  animation: fadeIn 300ms ease forwards;
+  opacity: 0;
+
+  & .projectImage {
+    animation: fadeIn 300ms 400ms ease forwards;
+    opacity: 0;
+  }
+
+  & .project.accentBarAfter::after {
+    transform: none;
+  }
 
   &::before,
   &::after {
@@ -80,6 +91,9 @@
     width: 70%;
     max-width: 70%;
     bottom: $pad * 2;
+    animation: barVertical 300ms 300ms cubic-bezier(0.57, 0.35, 0.79, 1.08)
+      forwards;
+    transform: scaleY(0);
   }
 }
 
@@ -310,8 +324,9 @@
         right: auto;
         bottom: -$pad * 17;
         width: 100%;
-        transform: none;
-        animation: none;
+        animation: barVertical 300ms 500ms cubic-bezier(0.57, 0.35, 0.79, 1.08)
+          forwards;
+        transform: scaleY(0);
       }
 
       & .projectImage {
@@ -332,6 +347,10 @@
         top: 50%;
         left: $pad * 2;
         transform: translate(-100%, -50%);
+
+        & .panel {
+          height: 100%;
+        }
       }
     }
   }
@@ -482,14 +501,12 @@
   }
 
   .workDetailNextMove {
-    margin-top: $pad * 10;
     justify-content: center;
     max-width: $pad * 210;
-    margin-left: auto;
-    margin-right: auto;
+    margin: $pad * 10 auto 0;
     row-gap: $pad * 5;
     column-gap: $pad * 5;
-    padding: $pad * 5;
+    padding: $pad * 5 $pad * 5 0;
 
     & .nextTitle {
       align-self: center;
@@ -584,6 +601,7 @@
     color: $textColor;
     text-align: left;
     grid-column: 1 / -1;
+    margin-bottom: 0;
 
     & .projectTitle {
       left: 0;

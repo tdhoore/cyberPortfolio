@@ -78,8 +78,6 @@
   left: -$pad * 2 + $line/2;
   right: -$pad * 2 + $line/2;
   bottom: $pad * 3 + $line/2;
-  background-color: $accentTextColor;
-  padding: $pad * 2 $pad + $line * 0.5 $pad * 3;
 
   &.panel {
     position: absolute;
