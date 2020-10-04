@@ -7,3 +7,25 @@ export interface projectDetailCounterProps {
   pageIndex: number;
   setPageIndex: any;
 }
+
+export interface RollPanelProps {
+  title: string;
+  value: string;
+}
+
+export interface screenshotAccentProps {
+  title: string;
+  image: string;
+  index: number;
+}
+
+export interface workDetailSectionProps {
+  title: string;
+  description: string;
+  image: string;
+  index: number;
+}
+
+export interface nextProjectSectionProps {
+  lastIndex: number;
+}

@@ -5,6 +5,11 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { motion } from "framer-motion";
 import { panelAnim } from "../anim/animationPresets";
+import RollPanel from "./RollPanel";
+import ScreenshotAccent from "./ScreenshotAccent";
+import WorkDetailSection from "./WorkDetailSection";
+import ContactLink from "./ContactLink";
+import NextProjectSection from "./NextProjectSection";
 
 const WorkDetails = (props: props) => {
   const work = useSelector((state: any) => state.workReducer.workItems);
@@ -63,33 +68,11 @@ const WorkDetails = (props: props) => {
                 <h4>client and roll</h4>
               </header>
               <dl className="rollInformation accentBarAfter">
-                <motion.div
-                  className="panel"
-                  {...panelAnim}
-                  transition={{ ...panelAnim.transition, delay: 0.4 }}
-                >
-                  <dt>Roll</dt>
-                  <dd>{currentProject.roll}</dd>
-                </motion.div>
-                <motion.div
-                  className="panel"
-                  {...panelAnim}
-                  transition={{ ...panelAnim.transition, delay: 0.5 }}
-                >
-                  <dt>Client</dt>
-                  <dd>{currentProject.client}</dd>
-                </motion.div>
-                <motion.div
-                  className="panel"
-                  {...panelAnim}
-                  transition={{ ...panelAnim.transition, delay: 0.6 }}
-                >
-                  <dt>Created</dt>
-                  <dd>{currentProject.client}</dd>
-                </motion.div>
+                <RollPanel title="roll" value={currentProject.roll} />
+                <RollPanel title="Client" value={currentProject.client} />
+                <RollPanel title="Created" value={currentProject.created} />
               </dl>
             </section>
-
             <section className="workDetailSection projectInfo">
               <header>
                 <h3>Project info</h3>
@@ -103,36 +86,20 @@ const WorkDetails = (props: props) => {
           <div className="screenshotMain">
             {currentProject.sliderimages.map((item: any, index: number) => {
               return !item.description ? (
-                <div className="screenshotSectionaccent accentBarAfter">
-                  <section
-                    className="workDetailSection screenshotSection panel"
-                    key={item.title + index}
-                  >
-                    <header className="hide">
-                      <h3>screenshot - {item.title}</h3>
-                    </header>
-                    <div className="imageHolder " key={`screenshot${index}`}>
-                      <img src={item.image} alt={item.title} />
-                    </div>
-                  </section>
-                </div>
-              ) : (
-                <section
-                  className="workDetailSection projectInfoImage"
+                <ScreenshotAccent
+                  title={item.title}
+                  image={item.image}
+                  index={index}
                   key={item.title + index}
-                >
-                  <div className="accentBarAfter">
-                    <div className="info">
-                      <header>
-                        <h3>{item.title}</h3>
-                      </header>
-                      <p>{item.description}</p>
-                    </div>
-                  </div>
-                  <div className="imageHolder panel">
-                    <img src={item.image} alt={item.title} />
-                  </div>
-                </section>
+                />
+              ) : (
+                <WorkDetailSection
+                  title={item.title}
+                  description={item.description}
+                  image={item.image}
+                  index={index}
+                  key={item.title + index}
+                />
               );
             })}
           </div>
@@ -147,49 +114,12 @@ const WorkDetails = (props: props) => {
             </h3>
           </header>
           <div className="contactLinkAndOr">
-            <section className="contactLink panel">
-              <header>
-                <h4>Want to chat?</h4>
-              </header>
-              <Link to="/contact" className="defaultButton">
-                Let's talk
-              </Link>
-            </section>
+            <ContactLink />
             <div className="orWrapper pixFont">
               <p className="panel OR pixFont">OR</p>
             </div>
           </div>
-          <section className="nextProjectSection">
-            <header className="panel nextProjectPanel">
-              <h4>Next project</h4>
-            </header>
-            <Link to="/work" className="nextProject">
-              <article className="projectPage">
-                <div className="project accentBarAfter">
-                  <header className="projectTitle panel">
-                    <h5>
-                      <span>{currentProject.title}</span>
-                    </h5>
-                    <p>Sub title</p>
-                    <div
-                      className={`panel categoryDeco categoryDeco${currentProject.roll}`}
-                    ></div>
-                    <div className="defaultButtonHolder">
-                      <button className="defaultButton">See more</button>
-                    </div>
-                  </header>
-                  <div className="projectImage">
-                    <div className="image">
-                      <img
-                        src={currentProject.image}
-                        alt={currentProject.title}
-                      />
-                    </div>
-                  </div>
-                </div>
-              </article>
-            </Link>
-          </section>
+          <NextProjectSection lastIndex={0} />
         </article>
       </div>
     </div>
