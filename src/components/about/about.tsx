@@ -1,9 +1,9 @@
 import React from "react";
-import { props } from "./types";
 import { motion } from "framer-motion";
 import { panelAnim } from "../anim/animationPresets";
+import { Link } from "react-router-dom";
 
-const About = (props: props) => {
+const About = () => {
   return (
     <article className="aboutArticle">
       <div className="wrapper">
@@ -22,6 +22,9 @@ const About = (props: props) => {
             numquam cupiditate vel, aliquid suscipit error itaque culpa quo.
             Vitae est perferendis tempore.
           </p>
+          <Link to="/contact" className="defaultButton">
+            Let's have a chat
+          </Link>
         </motion.div>
         <motion.div
           className="imageHolder panel"

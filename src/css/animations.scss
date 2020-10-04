@@ -189,3 +189,13 @@
     opacity: 1;
   }
 }
+
+@keyframes moveIn {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}

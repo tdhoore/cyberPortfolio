@@ -72,6 +72,10 @@ nav {
     justify-content: flex-end;
     background: none;
 
+    &::after {
+      display: none;
+    }
+
     & li {
       margin: 0;
     }

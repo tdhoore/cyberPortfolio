@@ -13,6 +13,10 @@
       order: -1;
     }
   }
+
+  & .projectPage {
+    margin-bottom: $pad * 8;
+  }
 }
 
 .projectCounter {
@@ -150,6 +154,12 @@
 }
 
 @media only screen and (min-width: 1024px) {
+  .workSection {
+    & .projectPage {
+      margin-bottom: $pad * 8;
+    }
+  }
+
   .projectCounter {
     padding: $pad * 4 0;
   }

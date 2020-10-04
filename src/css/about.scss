@@ -73,7 +73,7 @@
   }
 
   & p:last-of-type {
-    margin-bottom: 0;
+    margin-bottom: $pad * 2;
   }
 
   & .aboutInfo {
@@ -173,6 +173,10 @@
     & .accentBarAfter {
       margin-top: $pad * 5;
       width: $pad * 80;
+    }
+
+    & .defaultButton {
+      display: inline-block;
     }
   }
 }
