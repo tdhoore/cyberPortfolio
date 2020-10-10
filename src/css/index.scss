@@ -251,11 +251,11 @@ main {
   &::before {
     content: "";
     position: absolute;
-    top: 0;
-    left: 0;
+    top: -$line;
+    left: -$line;
+    right: -$line;
     display: block;
     height: $pad * 3;
-    width: 100%;
     background-color: $accentColor;
     pointer-events: none;
   }
@@ -284,6 +284,7 @@ main {
 }
 
 .linkButton {
+  position: relative;
   display: flex;
   align-items: center;
   width: auto;
@@ -296,15 +297,19 @@ main {
 
   &::before {
     content: "";
+    position: absolute;
+    left: -$line;
+    top: -$line;
+    bottom: -$line;
     display: block;
-    height: 100%;
-    width: $pad * 6;
+    width: $pad * 6 + $line;
     background-color: $textColor;
   }
 
   & span {
     display: block;
     margin: 0 $pad * 2;
+    margin-left: $pad * 8;
     text-transform: uppercase;
     font-weight: bold;
   }
