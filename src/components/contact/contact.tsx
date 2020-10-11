@@ -3,7 +3,7 @@ import { props } from "./types";
 import { motion } from "framer-motion";
 import { panelAnim } from "../anim/animationPresets";
 
-const Contact = (props: props) => {
+const Contact = () => {
   return (
     <article className="contactArticle accentBarAfter">
       <motion.div className="contactMain panel" {...panelAnim}>

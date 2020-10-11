@@ -162,6 +162,7 @@ main {
   overflow: hidden;
   transition: all 150ms;
   cursor: pointer;
+  animation: glitchFadeIn 300ms 300ms forwards;
 
   &::after {
     content: "";
