@@ -39,7 +39,7 @@ const WorkDetailSection = (props: workDetailSectionProps) => {
         </div>
       </div>
       <motion.div
-        className="imageHolder panel"
+        className="imageHolder"
         ref={ref}
         {...panelAnim}
         animate={inView ? "view" : "start"}

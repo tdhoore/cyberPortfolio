@@ -38,7 +38,7 @@ const ScreenshotAccent = (props: screenshotAccentProps) => {
         damping: 60,
       }}
     >
-      <section className="workDetailSection screenshotSection panel">
+      <section className="workDetailSection screenshotSection">
         <header className="hide">
           <h3>screenshot - {props.title}</h3>
         </header>
