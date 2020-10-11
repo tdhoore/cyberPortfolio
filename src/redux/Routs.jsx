@@ -16,7 +16,9 @@ export default function () {
   return (
     <div className="mainPage">
       <header>
-        <h1 className="hide">Tim D'hoore</h1>
+        <h1>
+          <span>Tim D'hoore</span>
+        </h1>
         <NavMain links={navMainLinks} activeLink={location.pathname} />
       </header>
       <main>
