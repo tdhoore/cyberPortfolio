@@ -89,18 +89,3 @@ const Home = (props: props) => {
 };
 
 export default Home;
-/*  <motion.div
-            className="decoPanel homeDeco1"
-            {...panelAnim}
-            transition={{ ...panelAnim.transition, delay: 0.4 }}
-          ></motion.div>
-          <motion.div
-            className="decoPanel homeDeco2"
-            {...panelAnim}
-            transition={{ ...panelAnim.transition, delay: 0.5 }}
-          ></motion.div>
-          <motion.div
-            className="decoPanel homeDeco3"
-            {...panelAnim}
-            transition={{ ...panelAnim.transition, delay: 0.6 }}
-          ></motion.div>*/

@@ -5,9 +5,11 @@ import { motion } from "framer-motion";
 import { panelAnim } from "../anim/animationPresets";
 
 const Project = (props: ProjectProps) => {
+  const createLink = (title:string) => `/work/${title.replace(" ", "").toLowerCase()}`; 
+
   return props.data !== undefined ? (
     <div className={`projectPage ${props.isActive}`}>
-      <Link to={`/work/${props.data.title}`} className="projectLink">
+      <Link to={createLink(props.data.title)} className="projectLink">
         <article className="project accentBarAfter">
           <motion.div
             className="projectTitle panel"
@@ -18,7 +20,7 @@ const Project = (props: ProjectProps) => {
               <h3>
                 <span>{props.data.title}</span>
               </h3>
-              <p>Sub title</p>
+              <p>{props.data.categorie}</p>
               <motion.div
                 className={`panel categoryDeco categoryDeco${props.data.title}`}
                 {...panelAnim}

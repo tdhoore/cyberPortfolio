@@ -27,5 +27,5 @@ export interface workDetailSectionProps {
 }
 
 export interface nextProjectSectionProps {
-  lastIndex: number;
+  nextProject: any;
 }

@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import { props } from "./types";
 import { getWork } from "../work/api";
-import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { motion } from "framer-motion";
 import { panelAnim } from "../anim/animationPresets";
@@ -16,12 +15,23 @@ const WorkDetails = (props: props) => {
 
   //get current project
   let currentProject: any = undefined;
+  let currentIndex: number = 0;
+  let nextProject: any = undefined;
 
-  work.forEach((item: any) => {
+  work.forEach((item: any, index: number) => {
     if (props.title === item.title) {
       currentProject = item;
+      currentIndex = index;
     }
   });
+
+  if (work.length > 0) {
+    if(currentIndex >= work.length - 1) {
+      nextProject = work[0];
+    } else {
+      nextProject = work[currentIndex + 1];
+    }
+  }
 
   useEffect(() => {
     //if there is no work here get it
@@ -41,7 +51,7 @@ const WorkDetails = (props: props) => {
                   <h2>
                     <span>{currentProject.title}</span>
                   </h2>
-                  <p>Sub title</p>
+                  <p>{currentProject.categorie}</p>
                   <div
                     className={`categoryDeco categoryDeco${currentProject.roll}`}
                   >
@@ -119,7 +129,7 @@ const WorkDetails = (props: props) => {
               <p className="panel OR pixFont">OR</p>
             </div>
           </div>
-          <NextProjectSection lastIndex={0} />
+          <NextProjectSection nextProject={nextProject} />
         </article>
       </div>
     </div>
