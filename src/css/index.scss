@@ -294,6 +294,7 @@ main {
   text-decoration: none;
   background: none;
   border: solid $line $textColor;
+  transition: all 150ms;
 
   &::before {
     content: "";
@@ -304,6 +305,24 @@ main {
     display: block;
     width: $pad * 6 + $line;
     background-color: $textColor;
+    transition: all 150ms;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    display: block;
+    width: $pad * 6 - $line;
+    border: solid $line $accentTextColor;
+    background-color: $textColor;
+    opacity: 0;
+  }
+
+  &:hover::after {
+    animation: glitchFadeIn 150ms forwards;
   }
 
   & span {
@@ -312,6 +331,32 @@ main {
     margin-left: $pad * 8;
     text-transform: uppercase;
     font-weight: bold;
+  }
+
+  &:hover span {
+    color: $accentTextColor;
+  }
+
+  & span::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: $accentColor;
+    transform: scaleX(0);
+    transform-origin: center left;
+    transition: all 300ms;
+  }
+
+  &:hover span::before {
+    transform: scaleX(1);
+  }
+
+  &:active {
+    transform: scale(0.95);
   }
 }
 
