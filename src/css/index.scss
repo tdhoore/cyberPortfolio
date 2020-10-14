@@ -93,6 +93,20 @@ body {
   font-family: "Roboto Mono", Arial, Helvetica, sans-serif;
 }
 
+.mainHeader {
+  position: fixed;
+  z-index: 999;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-top: $line solid $textColor;
+
+  & a {
+    color: $textColor;
+    text-decoration: none;
+  }
+}
+
 .mainPage {
   position: relative;
   display: flex;
@@ -394,6 +408,33 @@ h1 {
 
   h2 {
     font-size: $pad * 5;
+  }
+
+  .mainHeader {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    & h1 {
+      display: flex;
+      align-items: center;
+    }
+
+    & h1::before {
+      content: "";
+      display: block;
+      width: $pad * 5;
+      height: $pad * 5;
+      background-image: url(../assets/img/logo.svg);
+      background-repeat: no-repeat;
+      background-size: contain;
+      margin-left: $pad * 3;
+      margin-right: $pad;
+    }
+
+    & nav {
+      flex: 2;
+    }
   }
 }
 

@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Switch, useLocation } from "react-router-dom";
+import { Route, Switch, useLocation, Link } from "react-router-dom";
 import NavMain from "../components/navMain/navMain";
 import PageBase from "../components/_core/PageBase";
 import { AnimatePresence } from "framer-motion";
@@ -15,10 +15,12 @@ export default function () {
 
   return (
     <div className="mainPage">
-      <header>
-        <h1>
-          <span>Tim D'hoore</span>
-        </h1>
+      <header className="mainHeader">
+        <Link to="/">
+          <h1>
+            <span>Tim D'hoore</span>
+          </h1>
+        </Link>
         <NavMain links={navMainLinks} activeLink={location.pathname} />
       </header>
       <main>

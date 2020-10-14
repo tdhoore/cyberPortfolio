@@ -1,10 +1,4 @@
 nav {
-  position: fixed;
-  z-index: 999;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  border-top: $line solid $textColor;
   background-color: $accentTextColor;
 
   &::after {
@@ -70,7 +64,6 @@ nav {
 
 @media only screen and (min-width: 1070px) {
   nav {
-    position: relative;
     display: flex;
     justify-content: flex-end;
     background: none;
