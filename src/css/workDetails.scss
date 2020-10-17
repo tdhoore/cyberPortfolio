@@ -42,6 +42,7 @@
 
   & .wrapper {
     margin: 0 auto;
+    max-width: $pad * 80;
   }
 }
 
@@ -80,6 +81,8 @@
 
   & .panel {
     margin-bottom: $pad * 3;
+    max-width: $pad * 70;
+    margin: 0 auto $pad * 3;
   }
 
   & .panel:last-of-type {
@@ -164,7 +167,7 @@
 }
 
 .screenshotSectionaccent {
-  max-width: $pad * 160;
+  max-width: $pad * 70;
   margin: 0 auto;
 }
 
@@ -354,6 +357,10 @@
           height: 100%;
         }
       }
+    }
+
+    & .wrapper {
+      max-width: 100vw;
     }
   }
 
