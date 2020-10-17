@@ -12,17 +12,15 @@ const ProjectCounter = (props: any) => {
 
   return (
     <div className="projectCounter">
-      <div className="rorator">
         <button
-          className="diamondButton hide"
+          className={props.hasButtons ? "defaultButton" : "hide"}
           onClick={(e) => handleNextProject(e, -1)}
-        ></button>
+        >&lt;&lt;&lt;&lt;&lt;</button>
         <div className="pixFont counter">{props.counter}</div>
         <button
-          className="diamondButton hide"
+          className={props.hasButtons ? "defaultButton second" : "hide"}
           onClick={(e) => handleNextProject(e, 1)}
-        ></button>
-      </div>
+        >&lt;&lt;&lt;&lt;&lt;</button>
     </div>
   );
 };

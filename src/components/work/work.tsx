@@ -118,7 +118,7 @@ const Work = () => {
             );
           })}
         </motion.div>
-        <ProjectCounter counter={setCounter()} />
+        <ProjectCounter counter={setCounter()} hasButtons/>
         <ProjectCounter counter={setCounter()} />
       </div>
     </section>

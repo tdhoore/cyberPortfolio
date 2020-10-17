@@ -26,6 +26,10 @@
   justify-content: center;
   font-size: $pad * 2;
   padding: $pad $pad * 2;
+
+  .defaultButton {
+    display: none;
+  }
 }
 
 .projectSlider {
@@ -162,6 +166,17 @@
 
   .projectCounter {
     padding: $pad * 4 0;
+
+    & .defaultButton {
+      display: block;
+      margin: 0 $pad * 3;
+      padding-left: $pad * 3;
+      padding-right: $pad * 3;
+    }
+
+    & .defaultButton.second {
+      transform: scaleX(-1);
+    }
   }
 
   .project {
