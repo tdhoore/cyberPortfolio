@@ -16,7 +16,12 @@ export default function () {
   return (
     <div className="mainPage">
       <header className="mainHeader">
-        <Link to="/">
+        <Link
+          to="/"
+          className={
+            location.pathname.includes("/work/") ? "hide title" : "title"
+          }
+        >
           <h1>
             <span>Tim D'hoore</span>
           </h1>
