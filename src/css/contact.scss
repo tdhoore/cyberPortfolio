@@ -122,6 +122,9 @@
     grid-template-columns: 1fr min-content min-content 1fr;
     grid-template-rows: 1fr min-content min-content 1fr;
     gap: $pad * 4;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: -$pad * 4;
 
     & .letter {
       left: auto;
