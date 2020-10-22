@@ -66,7 +66,14 @@ const WorkDetails = (props: props) => {
             </div>
             <div className="projectImage">
               <div className="image">
-                <img src={currentProject.image} alt={currentProject.title} />
+                <picture>
+                  
+                  <img 
+                    srcSet="/assets/img/mainShot_mobile.jpg 580w, 
+                    /assets/img/mainShot_desktop.jpg 1600w"
+                    src="/assets/img/mainShot_mobile.jpg" 
+                    alt={currentProject.title}/>
+                </picture>
               </div>
             </div>
           </div>
@@ -139,3 +146,6 @@ const WorkDetails = (props: props) => {
 };
 
 export default WorkDetails;
+//<img src={currentProject.image} alt={currentProject.title} /></header>
+//<source media="(max-width:380px)" srcSet="/assets/img/mainShot_mobile.jpg"/>
+//<source media="(min-width:580px)" srcSet="/assets/img/mainShot_desktop.jpg"/>
