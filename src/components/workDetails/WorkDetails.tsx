@@ -19,7 +19,7 @@ const WorkDetails = (props: props) => {
   let nextProject: any = undefined;
 
   work.forEach((item: any, index: number) => {
-    if (props.title === item.title) {
+    if (props.title === item.title.replace(" ", "").toLowerCase()) {
       currentProject = item;
       currentIndex = index;
     }
@@ -67,11 +67,10 @@ const WorkDetails = (props: props) => {
             <div className="projectImage">
               <div className="image">
                 <picture>
-                  
                   <img 
-                    srcSet="/assets/img/mainShot_mobile.jpg 580w, 
-                    /assets/img/mainShot_desktop.jpg 1600w"
-                    src="/assets/img/mainShot_mobile.jpg" 
+                    srcSet={`/assets/img/${currentProject.image}_mobile.jpg 580w, 
+                    /assets/img/${currentProject.image}_desktop.jpg 1600w`}
+                    src={`/assets/img/${currentProject.image}_mobile.jpg`}
                     alt={currentProject.title}/>
                 </picture>
               </div>
@@ -94,7 +93,7 @@ const WorkDetails = (props: props) => {
               <header>
                 <h3>Project info</h3>
               </header>
-              <p>{currentProject.projectInfo}</p>
+              <p dangerouslySetInnerHTML={{__html: currentProject.projectInfo}}></p>
               <a href="#" target="_blank" className="linkButton">
                 <span>test</span>
               </a>

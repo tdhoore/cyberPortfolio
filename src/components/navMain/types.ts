@@ -11,7 +11,3 @@ export interface link {
   title: string;
   link: string;
 }
-
-export enum ActionTypes {
-  example = "nav_EXAMPLE",
-}

@@ -1,16 +1,17 @@
 [
   {
-    "title": "tester1",
+    "title": "Oreo cake",
     "categorie": "design",
-    "image": "https://picsum.photos/441/200",
-    "roll": "roll1",
-    "client": "Awsome corp",
-    "projectInfo": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit maiores aliquam quam voluptate sapiente mollitia corrupti quas aut tempora nesciunt? Qui ullam voluptatem molestias alias officiis sit pariatur culpa animi.",
+    "image": "oreoCakeMainShot",
+    "roll": "designer",
+    "client": "Devine",
+    "created": 2016,
+    "projectInfo": "<blockquote>&quot;Let’s make something cute and delicious&quot;</blockquote> The catchphrase of the oreo cake recipe and this infographic based upon it. This lovely infographic was made as a school assignment with the simple task create an infographic based on a food recipe. That’s all I got, and I went full kawaii with the concept.",
     "sliderimages": [
       {
-        "title": "tester1",
-        "image": "https://picsum.photos/441/200",
-        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit maiores aliquam quam voluptate sapiente mollitia corrupti quas aut tempora nesciunt? Qui ullam voluptatem molestias alias officiis sit pariatur culpa animi."
+        "title": "Concept development",
+        "image": "oreoCakeScreenshot6_1600.jpg",
+        "description": "The feel was very quickly decided.<br/> The next concept that needed to be explored was a look that would bring it all together. This search started with a simple mood board that would show everybody what I wanted to create. I mean look a the image attached here.<br/> Even if I just showed you this gallery of pictures, you would exactly understand what you are going to get."
       },
       {
         "title": "tester1",

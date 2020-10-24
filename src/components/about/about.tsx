@@ -14,13 +14,13 @@ const About = () => {
               <br />
               Tim D'hoore
             </h2>
-            <p>sub title</p>
+            <p>creative developer</p>
           </header>
           <p className="aboutInfo">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Consectetur labore inventore ex quas aliquam nesciunt saepe in
-            numquam cupiditate vel, aliquid suscipit error itaque culpa quo.
-            Vitae est perferendis tempore.
+          I’m a <strong>front-end developer</strong> with a passion for new web technologies. All in the name of making beautiful websites that amazes and interacts with users. Which I like to do with a combination of <strong>3d elements</strong>, <strong>animation</strong> and <strong>handcrafted images</strong>. 
+          <br/>
+          <br/>
+          The internet is a beautiful place and I would like to help you stand out as the majestic unicorn you are. If you’re interested in hiring me for a small <strong>part time freelance job</strong>, then just click the button below and let's have a chat.
           </p>
           <Link to="/contact" className="defaultButton">
             Let's have a chat

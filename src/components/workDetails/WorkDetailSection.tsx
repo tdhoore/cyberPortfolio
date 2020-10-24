@@ -13,11 +13,11 @@ const WorkDetailSection = (props: workDetailSectionProps) => {
           <header>
             <h3>{props.title}</h3>
           </header>
-          <p>{props.description}</p>
+          <p dangerouslySetInnerHTML={{__html: props.description}}></p>
         </div>
       </div>
       <div className="imageHolder">
-        <img src={props.image} alt={props.title} />
+        <img src={`/assets/img/${props.image}`} alt={props.title} />
       </div>
     </section>
   );
