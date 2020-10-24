@@ -36,4 +36,3 @@ const WorkDetailSection = (props: workDetailSectionProps) => {
 };
 
 export default WorkDetailSection;
-/* <img src={`/assets/img/${props.image}`} alt={props.title} />*/

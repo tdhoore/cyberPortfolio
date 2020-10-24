@@ -17,6 +17,7 @@ export interface screenshotAccentProps {
   title: string;
   image: string;
   index: number;
+  isFullWidth?: boolean;
 }
 
 export interface workDetailSectionProps {

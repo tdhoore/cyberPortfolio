@@ -15,19 +15,31 @@
       },
       {
         "title": "tester1",
-        "image": "https://via.placeholder.com/236x438"
+        "isFullWidth": true,
+        "image": "oreoCakeScreenshot1.jpg"
       },
       {
         "title": "tester1",
-        "image": "https://via.placeholder.com/236x438"
+        "image": "oreoCakeScreenshot2.jpg"
       },
       {
         "title": "tester1",
-        "image": "https://via.placeholder.com/236x438"
+        "image": "oreoCakeScreenshot3.jpg"
       },
       {
         "title": "tester1",
-        "image": "https://via.placeholder.com/236x438"
+        "image": "oreoCakeScreenshot4.jpg"
+      },
+      {
+        "title": "tester1",
+        "isFullWidth": true,
+        "image": "oreoCakeScreenshot5.jpg"
+      }
+      ,
+      {
+        "title": "tester1",
+        "isFullWidth": true,
+        "image": "oreoCakeScreenshot6.jpg"
       }
     ]
   },

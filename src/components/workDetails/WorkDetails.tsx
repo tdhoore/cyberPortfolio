@@ -109,6 +109,7 @@ const WorkDetails = (props: props) => {
                   title={item.title}
                   image={item.image}
                   index={index}
+                  isFullWidth={item.isFullWidth}
                   key={item.title + index}
                 />
               ) : (
