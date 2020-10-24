@@ -1,8 +1,5 @@
 import React from "react";
 import { RollPanelProps } from "./types";
-import { motion } from "framer-motion";
-import { panelAnim } from "../anim/animationPresets";
-import { useInView } from "react-intersection-observer";
 
 const RollPanel = (props: RollPanelProps) => {
 

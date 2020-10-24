@@ -1,5 +1,4 @@
 import React from "react";
-import { props } from "./types";
 import { motion } from "framer-motion";
 import { panelAnim } from "../anim/animationPresets";
 
@@ -25,22 +24,22 @@ const Contact = () => {
         </header>
         <ul className="socialLinks">
           <li>
-            <a href="" target="_blank" className="linkButton">
+            <a href="#" target="_blank" className="linkButton">
               <span>Link</span>
             </a>
           </li>
           <li>
-            <a href="" target="_blank" className="linkButton">
+            <a href="#" target="_blank" className="linkButton">
               <span>Link</span>
             </a>
           </li>
           <li>
-            <a href="" target="_blank" className="linkButton">
+            <a href="#" target="_blank" className="linkButton">
               <span>Link</span>
             </a>
           </li>
           <li>
-            <a href="" target="_blank" className="linkButton">
+            <a href="#" target="_blank" className="linkButton">
               <span>Link</span>
             </a>
           </li>

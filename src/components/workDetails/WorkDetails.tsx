@@ -147,5 +147,3 @@ const WorkDetails = (props: props) => {
 
 export default WorkDetails;
 //<img src={currentProject.image} alt={currentProject.title} /></header>
-//<source media="(max-width:380px)" srcSet="/assets/img/mainShot_mobile.jpg"/>
-//<source media="(min-width:580px)" srcSet="/assets/img/mainShot_desktop.jpg"/>

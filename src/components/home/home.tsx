@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import { props } from "./types";
 import logo from "../../assets/img/logo.svg";
 import { Link } from "react-router-dom";
 import ScrollDetector from "../_core/ScrollDetector";
@@ -7,7 +6,7 @@ import { useHistory } from "react-router-dom";
 import { motion } from "framer-motion";
 import { panelAnim } from "../anim/animationPresets";
 
-const Home = (props: props) => {
+const Home = () => {
   const history = useHistory();
 
   useEffect(() => {

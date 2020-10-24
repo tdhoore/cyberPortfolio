@@ -1,7 +1,5 @@
 export interface workState {}
 
-export interface props {}
-
 export interface ProjectProps {
   data: any;
   counter?: string;

@@ -1,7 +1,5 @@
 import React from "react";
 import { getNextProject } from "./api";
-import { motion } from "framer-motion";
-import { fadeInFlickerHalf, fadeInFlicker } from "../anim/animationPresets";
 
 const ProjectCounter = (props: any) => {
   //gebruik push url
