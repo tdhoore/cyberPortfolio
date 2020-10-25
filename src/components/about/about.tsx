@@ -36,13 +36,13 @@ const About = () => {
             className="decoPanel aboutDeco2"
             {...panelAnim}
             transition={{ ...panelAnim.transition, delay: 0.5 }}
-          ></motion.div>
+          ><div></div></motion.div>
         </motion.div>
         <motion.div
           className="panel aboutDeco1"
           {...panelAnim}
           transition={{ ...panelAnim.transition, delay: 0.6 }}
-        ></motion.div>
+        ><div></div></motion.div>
         <div className="accentBarAfter"></div>
       </div>
     </article>

@@ -160,6 +160,24 @@
       height: $pad * 42;
       align-self: center;
       transform: translateY($pad * 8);
+
+      & div {
+        height: 100%;
+        background-image: url("../assets/img/crossPaternFade.png");
+
+        &::after {
+          content: "";
+          position: absolute;
+          display: block;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-image: url("../assets/img/foText.svg");
+          background-size: 100% auto;
+          margin: $pad * 7 $pad * 5 $pad * 5;
+        }
+      }
     }
 
     & .aboutDeco2 {
@@ -168,6 +186,11 @@
       right: $line;
       width: 100%;
       height: $pad * 22;
+
+      & div {
+        height: 100%;
+        background-image: url("../assets/img/crossPaternFade.png");
+      }
     }
 
     & .accentBarAfter {

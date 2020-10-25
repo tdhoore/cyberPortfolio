@@ -134,8 +134,22 @@
     margin-left: -$pad * 6;
 
     & div {
+      position: relative;
       height: 100%;
       background-image: url("../assets/img/crossPaternFade.png");
+
+      &::after {
+        content: "";
+        position: absolute;
+        display: block;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: url("../assets/img/foText.svg");
+        background-size: 100% auto;
+        margin: $pad * 5;
+      }
     }
   }
 }
