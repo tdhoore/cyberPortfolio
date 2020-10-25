@@ -97,6 +97,7 @@ blockquote {
 
 strong {
   position: relative;
+  display: inline-block;
 
   &::after {
     content: "";
@@ -462,7 +463,8 @@ h1 {
   }
 
   .mainHeader {
-    position: relative;
+    bottom: auto;
+    top: 0;
     display: flex;
     align-items: center;
     background: none;

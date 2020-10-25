@@ -67,6 +67,7 @@ nav {
     display: flex;
     justify-content: flex-end;
     background: none;
+    padding-right: $pad * 3;
 
     &::after {
       display: none;

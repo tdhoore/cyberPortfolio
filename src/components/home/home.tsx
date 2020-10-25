@@ -1,33 +1,10 @@
-import React, { useEffect } from "react";
+import React from "react";
 import logo from "../../assets/img/logo.svg";
 import { Link } from "react-router-dom";
-import ScrollDetector from "../_core/ScrollDetector";
-import { useHistory } from "react-router-dom";
 import { motion } from "framer-motion";
 import { panelAnim } from "../anim/animationPresets";
 
 const Home = () => {
-  const history = useHistory();
-
-  useEffect(() => {
-    //setup scroll support
-    const scrollDetector = new ScrollDetector();
-
-    const handleScroll = (e: Event) => {
-      if (scrollDetector.dir > 0) {
-        history.push("/work");
-      }
-    };
-
-    //listen for updates
-    window.addEventListener("updateScroll", handleScroll);
-
-    return () => {
-      scrollDetector.remove();
-      window.removeEventListener("updateScroll", handleScroll);
-    };
-  });
-
   return (
     <article className="homeArticle">
       <div className="wrapper">
@@ -49,13 +26,15 @@ const Home = () => {
               </Link>
             </div>
           </motion.div>
-          <motion.div
-            className="decoPanel homeDeco1"
-            {...panelAnim}
-            transition={{ ...panelAnim.transition, delay: 0.55 }}
-          >
-            <div></div>
-          </motion.div>
+          <div className="homeDeco1">
+            <motion.div
+              className="decoPanel"
+              {...panelAnim}
+              transition={{ ...panelAnim.transition, delay: 0.55 }}
+            >
+              <div></div>
+            </motion.div>
+          </div>
         </div>
         <motion.div
           className="panel skills pixFont"

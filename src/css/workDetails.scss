@@ -292,6 +292,8 @@
 
 @media only screen and (min-width: 1024px) {
   .workDetail {
+    padding-top: 7.1rem;
+
     & .panel,
     &.panel {
       padding: $pad * 8 $pad * 5 $pad * 5;
