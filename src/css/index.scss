@@ -75,6 +75,40 @@ li {
   margin: 0;
 }
 
+blockquote {
+  position: relative;
+  margin: $pad 0 $pad * 2;
+  font-weight: bold;
+  display: inline-block;
+
+  &::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: -$pad;
+    left: -$pad;
+    right: -$pad;
+    bottom: -$pad;
+    background-color: $accentTextColor;
+    box-shadow: $line $line 0 $accentBar;
+    border: $line solid $accentColor;
+  }
+}
+
+strong {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: -$pad/2;
+    left: 0;
+    right: 0;
+    border-bottom: solid $line rgba($color: $accentColor, $alpha: 0.5);
+  }
+}
+
 button {
   display: block;
   cursor: pointer;
