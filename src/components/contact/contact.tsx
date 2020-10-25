@@ -25,17 +25,17 @@ const Contact = () => {
         </header>
         <ul className="socialLinks">
           <li>
-            <a href="https://www.behance.net/tdhgraphics" target="_blank" className="linkButton behance">
+            <a href="https://www.behance.net/tdhgraphics" rel="noopener noreferrer" target="_blank" className="linkButton behance">
               <span>Behance</span>
             </a>
           </li>
           <li>
-            <a href="https://www.linkedin.com/in/timdhoore/" target="_blank" className="linkButton linkedIn">
+            <a href="https://www.linkedin.com/in/timdhoore/" rel="noopener noreferrer" target="_blank" className="linkButton linkedIn">
               <span>linkedin</span>
             </a>
           </li>
           <li>
-            <a href="https://www.artstation.com/tdhgraphics" target="_blank" className="linkButton artstation">
+            <a href="https://www.artstation.com/tdhgraphics" rel="noopener noreferrer" target="_blank" className="linkButton artstation">
               <span>Artstation</span>
             </a>
           </li>

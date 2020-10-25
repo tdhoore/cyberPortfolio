@@ -3,12 +3,9 @@ import { Link } from "react-router-dom";
 import { ProjectProps } from "./types";
 import { motion } from "framer-motion";
 import { panelAnim } from "../anim/animationPresets";
-import { genImageName } from "../_core/functions";
 
 const Project = (props: ProjectProps) => {
   const createLink = (title:string) => `/work/${title.replace(" ", "").toLowerCase()}`; 
-
-  const baseName = genImageName(props.data.image);
 
   return props.data !== undefined ? (
     <div className={`projectPage ${props.isActive}`}>
