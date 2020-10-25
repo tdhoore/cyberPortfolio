@@ -330,11 +330,6 @@ h1 {
     background-repeat: no-repeat;
   }
 
-  &.email::before {
-    background-image: url(/assets/img/emailLogo.svg);
-    background-size: 40%;
-  }
-
   &.behance::before {
     background-image: url(/assets/img/behanceLogo.svg);
     background-size: 90%;

@@ -3,9 +3,12 @@ import { Link } from "react-router-dom";
 import { ProjectProps } from "./types";
 import { motion } from "framer-motion";
 import { panelAnim } from "../anim/animationPresets";
+import { genImageName } from "../_core/functions";
 
 const Project = (props: ProjectProps) => {
   const createLink = (title:string) => `/work/${title.replace(" ", "").toLowerCase()}`; 
+
+  const baseName = genImageName(props.data.image);
 
   return props.data !== undefined ? (
     <div className={`projectPage ${props.isActive}`}>
@@ -33,7 +36,16 @@ const Project = (props: ProjectProps) => {
           </motion.div>
           <motion.div className="projectImage panel" {...panelAnim}>
             <div className="image">
-              <img src={props.data.image} alt={props.data.title} />
+              <picture>
+                  <source srcSet={`/assets/img/${props.data.image}_mobile.webp 580w, 
+                    /assets/img/${props.data.image}_desktop.webp 1600w`}
+                    src={`/assets/img/${props.data.image}_mobile.webp`}/>
+                  <img 
+                    srcSet={`/assets/img/${props.data.image}_mobile.jpg 580w, 
+                    /assets/img/${props.data.image}_desktop.jpg 1600w`}
+                    src={`/assets/img/${props.data.image}_mobile.jpg`}
+                    alt={props.data.title}/>
+                </picture>
             </div>
           </motion.div>
         </article>

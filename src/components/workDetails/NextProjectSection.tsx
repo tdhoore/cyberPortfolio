@@ -27,7 +27,16 @@ const NextProjectSection = (props: nextProjectSectionProps) => {
             </header>
             <div className="projectImage">
               <div className="image">
-                <img src={props.nextProject.image} alt={props.nextProject.title} />
+                <picture>
+                  <source srcSet={`/assets/img/${props.nextProject.image}_mobile.webp 580w, 
+                    /assets/img/${props.nextProject.image}_desktop.webp 1600w`}
+                    src={`/assets/img/${props.nextProject.image}_mobile.webp`}/>
+                  <img 
+                    srcSet={`/assets/img/${props.nextProject.image}_mobile.jpg 580w, 
+                    /assets/img/${props.nextProject.image}_desktop.jpg 1600w`}
+                    src={`/assets/img/${props.nextProject.image}_mobile.jpg`}
+                    alt={props.nextProject.title}/>
+                </picture>
               </div>
             </div>
           </div>
