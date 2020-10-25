@@ -169,6 +169,10 @@
 .screenshotSectionaccent {
   max-width: $pad * 70;
   margin: 0 auto;
+
+  &.fullWidth {
+    max-width: 100vh;
+  }
 }
 
 .screenshotSectionaccent.accentBarAfter::after {
@@ -420,8 +424,9 @@
     column-gap: $pad * 10;
     row-gap: $pad * 20;
     width: 100%;
+    max-width: $pad * 210;
     padding: 0 $pad * 5;
-    margin: $pad * 20 0 0;
+    margin: $pad * 20 auto 0;
 
     .workDetailSection {
       margin: 0;
@@ -460,10 +465,17 @@
 
   .screenshotSectionaccent {
     width: 100%;
-    align-self: flex-start;
+    align-self: center;
+    //align-self: flex-start;
     justify-self: flex-end;
     max-width: $pad * 100;
     margin: 0;
+
+    &.fullWidth {
+      margin: 0 auto;
+      max-width: $pad * 210;
+      grid-column: 1 / -1;
+    }
   }
 
   .screenshotSection {
@@ -500,9 +512,9 @@
   }
 
   .screenshotSectionaccent:nth-of-type(2n) {
-    margin-top: $pad * 10;
-    margin-bottom: -$pad * 10;
-    margin-right: auto;
+    //margin-top: $pad * 10;
+    //margin-bottom: -$pad * 10;
+    //margin-right: auto;
   }
 
   .screenshotSectionaccent:last-of-type {
