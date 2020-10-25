@@ -326,6 +326,28 @@ h1 {
     width: $pad * 6 + $line;
     background-color: $textColor;
     transition: all 150ms;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+
+  &.email::before {
+    background-image: url(/assets/img/emailLogo.svg);
+    background-size: 40%;
+  }
+
+  &.behance::before {
+    background-image: url(/assets/img/behanceLogo.svg);
+    background-size: 90%;
+  }
+
+  &.artstation::before {
+    background-image: url(/assets/img/artstationLogo.svg);
+    background-size: 60%;
+  }
+
+  &.linkedIn::before {
+    background-image: url(/assets/img/linkedinLogo.svg);
+    background-size: 60%;
   }
 
   &::after {
@@ -337,7 +359,7 @@ h1 {
     display: block;
     width: $pad * 6 - $line;
     border: solid $line $accentTextColor;
-    background-color: $textColor;
+    //background-color: $textColor;
     opacity: 0;
   }
 
