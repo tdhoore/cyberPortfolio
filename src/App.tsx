@@ -9,7 +9,7 @@ const App = () => {
   configureStore();
 
   useEffect(() => {
-    ReactGA.initialize("G-716RP6CB21");
+    ReactGA.initialize("G-R5WJSV9Y0N");
   
     ReactGA.pageview(window.location.pathname + window.location.search);
   });
