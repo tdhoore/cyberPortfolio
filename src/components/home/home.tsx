@@ -21,7 +21,7 @@ const Home = () => {
             </p>
             <div className="scrollNextPage">
               <Link to="/work" className="defaultButton">
-                Scroll for more
+                Start exploring
               </Link>
             </div>
           </motion.div>

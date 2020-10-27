@@ -10,8 +10,8 @@ const Contact = () => {
           <h2>I'm still looking for work</h2>
           <p>Have anything?</p>
         </header>
-        <p>mail@mail.com</p>
-        <a href="mailto:" className="defaultButton">
+        <p>info@timdhoore.com</p>
+        <a href="mailto:info@timdhoore.com?subject=Let's%20make%20something%20awsome!!!" className="defaultButton">
           Leave a message
         </a>
       </motion.div>
