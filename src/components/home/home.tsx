@@ -17,8 +17,7 @@ const Home = () => {
               <p>Creative developer</p>
             </header>
             <p className="shortInfo">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. quos
-              quibusdam quo?
+            Let’s create something digital together, that really tells how awesome you are.
             </p>
             <div className="scrollNextPage">
               <Link to="/work" className="defaultButton">
