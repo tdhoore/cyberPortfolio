@@ -39,33 +39,12 @@
     ]
   },
   {
-    "title": "tester2",
-    "categorie": "design",
+    "title": "Shake yo hands",
+    "categorie": "3D",
     "image": "https://picsum.photos/441/200",
-    "roll": "roll1",
-    "client": "Awsome corp",
-    "projectInfo": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit maiores aliquam quam voluptate sapiente mollitia corrupti quas aut tempora nesciunt? Qui ullam voluptatem molestias alias officiis sit pariatur culpa animi.",
-    "sliderimages": [
-      {
-        "title": "tester1",
-        "image": "https://via.placeholder.com/236x438"
-      },
-      {
-        "title": "tester1",
-        "image": "https://via.placeholder.com/236x438"
-      },
-      {
-        "title": "tester1",
-        "image": "https://via.placeholder.com/236x438"
-      }
-    ]
-  },
-  {
-    "title": "tester3",    
-    "categorie": "design",
-    "image": "https://picsum.photos/441/200",
-    "roll": "roll1",
-    "client": "Awsome corp",
+    "roll": "developer",
+    "client": "J.E.F",
+    "created": 2018,
     "projectInfo": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit maiores aliquam quam voluptate sapiente mollitia corrupti quas aut tempora nesciunt? Qui ullam voluptatem molestias alias officiis sit pariatur culpa animi.",
     "sliderimages": [
       {
