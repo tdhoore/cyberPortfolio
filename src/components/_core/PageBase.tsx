@@ -5,6 +5,7 @@ import Work from "../work/Work";
 import About from "../about/About";
 import Contact from "../contact/Contact";
 import WorkDetails from "../workDetails/WorkDetails";
+import Page404 from "./Page404";
 import { motion } from "framer-motion";
 import { fade } from "../anim/animationPresets";
 
@@ -29,7 +30,7 @@ const PageBase = (props: pageBase) => {
         document.title = `${title}${props.match.params.id}`;
         return <WorkDetails title={props.match.params.id} />;
       default:
-        return <Home />;
+        return <Page404 />;
     }
   };
 

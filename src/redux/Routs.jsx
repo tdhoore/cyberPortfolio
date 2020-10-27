@@ -50,6 +50,9 @@ export default function () {
             <Route exact path="/contact">
               <PageBase pageCompName="Contact" />
             </Route>
+            <Route>
+              <PageBase pageCompName="404" />
+            </Route>
           </Switch>
         </AnimatePresence>
       </main>
