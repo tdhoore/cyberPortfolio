@@ -12,6 +12,8 @@ const Header = (props:headerProps) => {
         <meta property="og:url" content={props.url}/>
         <meta property="og:description" content="I’m Tim D'hoore, a front-end developer with a passion for creating unique interactive websites by using 3d elements, animation and handcrafted images."/>
         <meta property="twitter:card" content="summary_large_image"/>
+        <meta name="twitter:creator" content="@helptosh"/>
+        <meta name="twitter:image" content={props.image ? props.image : "/assets/img/socialImage.jpg"}/>
       </Helmet>
   );
 };
