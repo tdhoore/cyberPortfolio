@@ -31,7 +31,7 @@ const About = () => {
           {...panelAnim}
           transition={{ ...panelAnim.transition, delay: 0.4 }}
         >
-          <img src="https://via.placeholder.com/236x353" alt="" />
+          <img src="/assets/img/profilePic_360.jpg" alt="Tim D'hoore" />
           <motion.div
             className="decoPanel aboutDeco2"
             {...panelAnim}
