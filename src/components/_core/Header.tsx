@@ -14,6 +14,7 @@ const Header = (props:headerProps) => {
         <meta property="twitter:card" content="summary_large_image"/>
         <meta name="twitter:creator" content="@helptosh"/>
         <meta name="twitter:image" content={props.image ? props.image : "/assets/img/socialImage.jpg"}/>
+        <meta property="twitter:title" content={props.title}/>
       </Helmet>
   );
 };
