@@ -9,6 +9,7 @@ import ScreenshotAccent from "./ScreenshotAccent";
 import WorkDetailSection from "./WorkDetailSection";
 import ContactLink from "./ContactLink";
 import NextProjectSection from "./NextProjectSection";
+import Header from "../_core/Header";
 
 const WorkDetails = (props: props) => {
   const work = useSelector((state: any) => state.workReducer.workItems);
@@ -39,9 +40,10 @@ const WorkDetails = (props: props) => {
       getWork();
     }
   });
-
+  
   return currentProject ? (
     <div className="workDetail">
+      <Header title={`Tim D'hoore - ${currentProject.title}`} url={`https://www.timdhoore.com/work/${currentProject.title}`} image={currentProject.socialImage ? `/assets/img/${currentProject.socialImage}.jpg` : ""}/>
       <article className="workDetailArticle">
         <header className="projectPage">
           <div className="project accentBarAfter">
@@ -97,9 +99,10 @@ const WorkDetails = (props: props) => {
                 <h3>Project info</h3>
               </header>
               <p dangerouslySetInnerHTML={{__html: currentProject.projectInfo}}></p>
-              <a href="#" target="_blank" className="linkButton">
-                <span>test</span>
-              </a>
+              {
+                currentProject.link ? <a href={currentProject.link} target="_blank" className="linkButton"><span>{currentProject.linkTitle}</span></a> : <></>
+              }
+              
             </section>
           </div>
           <div className="screenshotMain">

@@ -2,10 +2,12 @@ import React from "react";
 import { motion } from "framer-motion";
 import { panelAnim } from "../anim/animationPresets";
 import { Link } from "react-router-dom";
+import Header from "../_core/Header";
 
 const About = () => {
   return (
     <article className="aboutArticle">
+     <Header title="Tim D'hoore - about" url="https://www.timdhoore.com/about"/>
       <div className="wrapper">
         <motion.div className="titleAndInfo panel" {...panelAnim}>
           <header>

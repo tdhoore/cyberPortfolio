@@ -1,10 +1,12 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { panelAnim } from "../anim/animationPresets";
+import Header from "../_core/Header";
 
 const Contact = () => {
   return (
     <article className="contactArticle accentBarAfter">
+      <Header title="Tim D'hoore - contact" url="https://www.timdhoore.com/contact"/>
       <motion.div className="contactMain panel" {...panelAnim}>
         <header>
           <h2>I'm still looking for work</h2>

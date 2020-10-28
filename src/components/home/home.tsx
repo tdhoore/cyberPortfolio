@@ -3,10 +3,12 @@ import logo from "../../assets/img/logo.svg";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { panelAnim } from "../anim/animationPresets";
+import Header from "../_core/Header";
 
 const Home = () => {
   return (
     <article className="homeArticle">
+      <Header title="Tim D'hoore - home" url="https://www.timdhoore.com/"/>
       <div className="wrapper">
         <div className="accentBarAfter">
           <motion.div className="intro panel" {...panelAnim}>

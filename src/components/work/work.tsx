@@ -6,6 +6,7 @@ import { useSelector } from "react-redux";
 import ScrollDetector from "../_core/ScrollDetector";
 import { getNextProject } from "./api";
 import { motion } from "framer-motion";
+import Header from "../_core/Header";
 
 const Work = () => {
   const work = useSelector((state: any) => state.workReducer.workItems);
@@ -71,6 +72,7 @@ const Work = () => {
   const swipeConfidenceThreshold = 0;
   return (
     <section className="workSection">
+      <Header title="Tim D'hoore - work" url="https://www.timdhoore.com/work"/>
       <div className="wrapper">
         <header className="hide">
           <h2>Work</h2>
