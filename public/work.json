@@ -16,9 +16,9 @@
         "description": "The feel was very quickly decided.<br/> The next concept that needed to be explored was a look that would bring it all together. This search started with a simple mood board that would show everybody what I wanted to create. I mean look a the image attached here.<br/> Even if I just showed you this gallery of pictures, you would exactly understand what you are going to get."
       },
       {
-        "title": "the end",
+        "title": "timers",
         "isFullWidth": true,
-        "image": "oreoCakeScreenshot1.jpg"
+        "image": "oreoCakeScreenshot5.jpg"
       },
       {
         "title": "layout",
@@ -29,38 +29,26 @@
         "image": "oreoCakeScreenshot4.jpg"
       },
       {
-        "title": "timers",
-        "isFullWidth": true,
-        "image": "oreoCakeScreenshot5.jpg"
-      },
-      {
         "title": "title of the recipe",
         "isFullWidth": true,
         "image": "oreoCakeScreenshot6.jpg"
+      },
+      {
+        "title": "the end",
+        "isFullWidth": true,
+        "image": "oreoCakeScreenshot1.jpg"
       }
     ]
   },
   {
     "title": "Shake yo hands",
     "categorie": "3D",
-    "image": "https://picsum.photos/441/200",
+    "image": "commingsoon",
     "roll": "developer",
     "client": "J.E.F",
     "created": 2018,
     "projectInfo": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit maiores aliquam quam voluptate sapiente mollitia corrupti quas aut tempora nesciunt? Qui ullam voluptatem molestias alias officiis sit pariatur culpa animi.",
     "sliderimages": [
-      {
-        "title": "tester1",
-        "image": "https://via.placeholder.com/236x438"
-      },
-      {
-        "title": "tester1",
-        "image": "https://via.placeholder.com/236x438"
-      },
-      {
-        "title": "tester1",
-        "image": "https://via.placeholder.com/236x438"
-      }
     ]
   }
 ]

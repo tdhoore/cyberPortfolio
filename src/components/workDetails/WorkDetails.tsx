@@ -100,9 +100,8 @@ const WorkDetails = (props: props) => {
               </header>
               <p dangerouslySetInnerHTML={{__html: currentProject.projectInfo}}></p>
               {
-                currentProject.link ? <a href={currentProject.link} target="_blank" className="linkButton"><span>{currentProject.linkTitle}</span></a> : <></>
-              }
-              
+                currentProject.link &&  currentProject.link !== "#" ? <a href={currentProject.link} target="_blank" className="linkButton"><span>{currentProject.linkTitle}</span></a> : <></>
+              } 
             </section>
           </div>
           <div className="screenshotMain">
