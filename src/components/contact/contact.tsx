@@ -13,7 +13,7 @@ const Contact = () => {
           <p>Have anything?</p>
         </header>
         <p>info@timdhoore.com</p>
-        <a href="mailto:info@timdhoore.com?subject=Let's%20make%20something%20awsome!!!" className="defaultButton">
+        <a href="mailto:info@timdhoore.com?subject=Let's%20make%20something%20awsome!!!" className="defaultButton" target="_blank">
           Leave a message
         </a>
       </motion.div>
