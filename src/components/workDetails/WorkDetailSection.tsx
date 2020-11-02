@@ -21,12 +21,12 @@ const WorkDetailSection = (props: workDetailSectionProps) => {
       <picture>
         <source srcSet={`/assets/img/${baseName.baseName}_380.webp 380w, 
                   /assets/img/${baseName.baseName}_580.webp 580w, 
-                  /assets/img/${baseName.baseName}_1600.webp 1600w`}
+                  /assets/img/${baseName.baseName}_876.webp 1600w`}
                 src={`/assets/img/${baseName.baseName}_380.webp`}/>
         <img 
           srcSet={`/assets/img/${baseName.baseName}_380${baseName.extention} 380w, 
                   /assets/img/${baseName.baseName}_580${baseName.extention} 580w, 
-                  /assets/img/${baseName.baseName}_1600${baseName.extention} 1600w`}
+                  /assets/img/${baseName.baseName}_876${baseName.extention} 1600w`}
           src={`/assets/img/${baseName.baseName}_380${baseName.extention}`}
           alt={props.title}/>
       </picture>

@@ -12,7 +12,7 @@
     "sliderimages": [
       {
         "title": "Concept development",
-        "image": "oreoCakeScreenshot6.jpg",
+        "image": "moodboard.jpg",
         "description": "The feel was very quickly decided.<br/> The next concept that needed to be explored was a look that would bring it all together. This search started with a simple mood board that would show everybody what I wanted to create. I mean look a the image attached here.<br/> Even if I just showed you this gallery of pictures, you would exactly understand what you are going to get."
       },
       {
@@ -50,14 +50,32 @@
     "projectInfo": "<blockquote>&quot;Build us an installation worthy of Mordor.&quot;</blockquote><br/> Essentially what J.E.F festivals asked everybody of our class. But in all seriousness they wanted a digital installation that would inspire children to take an interest in science, art and movies.<br/>The installation itself had a few rules that it needed to adhere to. Namely it needed to fit in the warehouse with the other installations, it needed to be fun for children 8-12 years old and multiplayer would be nice but was not recommended.<br/><br/>The result was shake yo hands which in production was named fingerdance. I’ll let you figure out why we changed the name and yes I said we because this was a two person job. So great thanks to <a href=\"https://www.behance.net/depourcqaf999\" target=\"_blank\">Annabel De Pourcq</a> <3 for the construction and poster design.",
     "sliderimages": [
       {
+        "title": "devine interview",
+        "image": "shakeYoHandsScreenshot1.jpg"
+      },
+      {
+        "title": "shake yo hands in real life",
+        "image": "shakeYoHandsScreenshot2.jpg"
+      },
+      {
         "title": "How to play the game",
-        "image": "oreoCakeScreenshot6.jpg",
+        "image": "shakeYoHandsScreenshot3.jpg",
         "description": "The concept of the game was a <strong>mixed reality game</strong> of dance dance revolution. You do this by placing your hands in the great science box which scans them into the game. Then using a screen on top you can see your new hands in a <strong>3d computer world</strong>. From here on out you get hand gestures you need to perform before the other player does. You keep doing this until a winner is announced and the loser loses their hand to the machine.<br/>Okay, just kidding, no hands were lost in the making of this game."
       },
       {
+        "title": "shake yo hands in game screenshot",
+        "isFullWidth": true,
+        "image": "shakeYoHandsScreenshot6.jpg"
+      },
+      {
         "title": "Mixed reality 3d hands",
-        "image": "oreoCakeScreenshot6.jpg",
+        "image": "shakeYoHandsScreenshot5.jpg",
         "description": "As wonderful it would have been to have a box to create 3d hands would have been, I didn't have one. So we had to do some coding and tinkering. The game itself was built using the <strong>unity 3d</strong> game engine combined with a leap motion to create the 3d hands visuals. You place your hands in the box and the leap motion tracks the position of your hands and fingers, to then use this information to position and stage the 3d hands in the game itself.<br/>Which you can then see on the monitor above which gives you the illusion that the 3d hands are actually yours.<br/><br/>It was a simple idea, use the mystery of a feeler box and combine it with digital interaction which can be seen in interactive projections. yet nobody (to my knowledge) had come up with this concept and now that I’m bragging about myself this was also my first <strong>unity 3d</strong> project. #humbleBrag"
+      },
+      {
+        "title": "shake yo hands in real life  in game screenshot",
+        "isFullWidth": true,
+        "image": "shakeYoHandsScreenshot4.jpg"
       }
     ]
   }
