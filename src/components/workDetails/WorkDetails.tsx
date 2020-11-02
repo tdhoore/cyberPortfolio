@@ -55,13 +55,15 @@ const WorkDetails = (props: props) => {
                   </h2>
                   <p>{currentProject.categorie}</p>
                   <div
-                    className={`categoryDeco categoryDeco${currentProject.roll}`}
+                    className="categoryDeco"
                   >
                     <motion.div
-                      className="panel"
+                      className={`panel categoryDeco${currentProject.categorie}`}
                       {...panelAnim}
                       transition={{ ...panelAnim.transition, delay: 0.4 }}
-                    ></motion.div>
+                    >
+                      <div></div>
+                    </motion.div>
                   </div>
                 </div>
               </motion.div>

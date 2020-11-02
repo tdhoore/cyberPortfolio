@@ -104,6 +104,7 @@
     margin-bottom: $pad;
     animation: glitchFadeIn 300ms 500ms ease forwards;
     opacity: 0;
+    font-weight: normal;
   }
 
   & header h3,
@@ -255,5 +256,28 @@
     &.panel {
       position: absolute;
     }
+
+    & div {
+      height: 100%;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: 100%;
+    }
+  }
+
+  .categoryDecodesign div {
+    background-image: url(/assets/img/designIcon.svg);
+  }
+
+  .categoryDeco3D div {
+    background-image: url(/assets/img/3dIcon.svg);
+  }
+
+  .categoryDecodev div {
+    background-image: url(/assets/img/codeIcon.svg);
+  }
+
+  .categoryDecomotion div {
+    background-image: url(/assets/img/motionIcon.svg);
   }
 }

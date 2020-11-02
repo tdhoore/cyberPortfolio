@@ -22,10 +22,12 @@ const Project = (props: ProjectProps) => {
               </h3>
               <p>{props.data.categorie}</p>
               <motion.div
-                className={`panel categoryDeco categoryDeco${props.data.title}`}
+                className={`panel categoryDeco categoryDeco${props.data.categorie}`}
                 {...panelAnim}
                 transition={{ ...panelAnim.transition, delay: 0.5 }}
-              ></motion.div>
+              >
+                <div></div>
+              </motion.div>
             </header>
             <div className="defaultButtonHolder">
               <button className="defaultButton">See more</button>
