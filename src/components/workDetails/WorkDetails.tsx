@@ -20,7 +20,7 @@ const WorkDetails = (props: props) => {
   let nextProject: any = undefined;
 
   work.forEach((item: any, index: number) => {
-    if (props.title === item.title.replace(" ", "").toLowerCase()) {
+    if (props.url === item.url) {
       currentProject = item;
       currentIndex = index;
     }
@@ -43,7 +43,7 @@ const WorkDetails = (props: props) => {
   
   return currentProject ? (
     <div className="workDetail">
-      <Header title={`Tim D'hoore - ${currentProject.title}`} url={`https://www.timdhoore.com/work/${currentProject.title}`} image={currentProject.socialImage ? `/assets/img/${currentProject.socialImage}.jpg` : ""}/>
+      <Header title={`Tim D'hoore - ${currentProject.url}`} url={`https://www.timdhoore.com/work/${currentProject.url}`} image={currentProject.socialImage ? `/assets/img/${currentProject.socialImage}.jpg` : ""}/>
       <article className="workDetailArticle">
         <header className="projectPage">
           <div className="project accentBarAfter">
@@ -153,4 +153,3 @@ const WorkDetails = (props: props) => {
 };
 
 export default WorkDetails;
-//<img src={currentProject.image} alt={currentProject.title} /></header>

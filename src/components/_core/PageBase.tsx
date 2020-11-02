@@ -44,7 +44,7 @@ const PageBase = (props: pageBase) => {
         url += `/work/${props.match.params.id}`;
         
         document.title = title;
-        return <WorkDetails title={props.match.params.id} />;
+        return <WorkDetails url={props.match.params.id} />;
       default:
         return <Page404 />;
     }

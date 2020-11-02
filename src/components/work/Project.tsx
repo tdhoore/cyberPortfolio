@@ -9,7 +9,7 @@ const Project = (props: ProjectProps) => {
 
   return props.data !== undefined ? (
     <div className={`projectPage ${props.isActive}`}>
-      <Link to={createLink(props.data.title)} className="projectLink">
+      <Link to={createLink(props.data.url)} className="projectLink">
         <article className="project accentBarAfter">
           <motion.div
             className="projectTitle panel"

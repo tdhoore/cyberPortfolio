@@ -3,14 +3,14 @@ import { nextProjectSectionProps } from "./types";
 import { Link } from "react-router-dom";
 
 const NextProjectSection = (props: nextProjectSectionProps) => {
-  const createLink = (title:string) => `/work/${title.replace(" ", "").toLowerCase()}`; 
+  const createLink = (url:string) => `/work/${url}`; 
 
   return (
     <section className="nextProjectSection">
       <header className="panel nextProjectPanel">
         <h4>Next project</h4>
       </header>
-      <Link to={createLink(props.nextProject.title)} className="nextProject">
+      <Link to={createLink(props.nextProject.url)} className="nextProject">
         <article className="projectPage">
           <div className="project accentBarAfter">
             <header className="projectTitle panel">

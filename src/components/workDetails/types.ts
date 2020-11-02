@@ -1,5 +1,5 @@
 export interface props {
-  title: string;
+  url: string;
 }
 
 export interface projectDetailCounterProps {
