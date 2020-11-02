@@ -109,7 +109,7 @@ strong {
     content: "";
     position: absolute;
     top: 0;
-    bottom: -$pad/2;
+    bottom: 0;
     left: 0;
     right: 0;
     border-bottom: solid $line rgba($color: $accentColor, $alpha: 0.5);
