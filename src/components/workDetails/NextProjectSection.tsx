@@ -19,8 +19,10 @@ const NextProjectSection = (props: nextProjectSectionProps) => {
               </h5>
               <p>{props.nextProject.categorie}</p>
               <div
-                className={`panel categoryDeco categoryDeco${props.nextProject.roll}`}
-              ></div>
+                className={`panel categoryDeco categoryDeco${props.nextProject.categorie}`}
+              >
+                <div></div>
+              </div>
               <div className="defaultButtonHolder">
                 <button className="defaultButton">See more</button>
               </div>

@@ -283,6 +283,7 @@
 
   & p {
     margin-bottom: $pad;
+    font-weight: normal;
   }
 
   & .defaultButtonHolder {
@@ -473,7 +474,6 @@
   .screenshotSectionaccent {
     width: 100%;
     align-self: center;
-    //align-self: flex-start;
     justify-self: flex-end;
     max-width: $pad * 100;
     margin: 0;
@@ -652,6 +652,10 @@
 
     & .defaultButtonHolder {
       left: $pad * 4 + $line / 2;
+    }
+
+    .categoryDeco {
+      padding: $pad * 5 $pad * 2 $pad * 2;
     }
   }
 }
