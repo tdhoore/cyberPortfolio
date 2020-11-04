@@ -145,6 +145,7 @@ body {
   & .title {
     color: $textColor;
     text-decoration: none;
+    display: none;
   }
 }
 
@@ -492,6 +493,10 @@ h1 {
     display: flex;
     align-items: center;
     background: none;
+
+    & .title {
+      display: block;
+    }
 
     & h1 {
       display: flex;

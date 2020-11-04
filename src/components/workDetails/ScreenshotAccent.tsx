@@ -45,7 +45,9 @@ const ScreenshotAccent = (props: screenshotAccentProps) => {
         <div className="imageHolder " key={`screenshot${props.index}`}>
           <picture>
             <source srcSet={getImage(true).srcSet}
-                    src={getImage(true).src}/>
+                    src={getImage(true).src}
+                    type="image/webp"
+            />
             <img 
               srcSet={getImage(false).srcSet}
               src={getImage(false).src}

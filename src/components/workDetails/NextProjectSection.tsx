@@ -32,7 +32,9 @@ const NextProjectSection = (props: nextProjectSectionProps) => {
                 <picture>
                   <source srcSet={`/assets/img/${props.nextProject.image}_mobile.webp 580w, 
                     /assets/img/${props.nextProject.image}_desktop.webp 1600w`}
-                    src={`/assets/img/${props.nextProject.image}_mobile.webp`}/>
+                    src={`/assets/img/${props.nextProject.image}_mobile.webp`}
+                    type="image/webp"
+                    />
                   <img 
                     srcSet={`/assets/img/${props.nextProject.image}_mobile.jpg 580w, 
                     /assets/img/${props.nextProject.image}_desktop.jpg 1600w`}
