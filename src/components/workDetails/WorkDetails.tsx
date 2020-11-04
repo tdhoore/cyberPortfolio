@@ -73,7 +73,7 @@ const WorkDetails = (props: props) => {
                 <picture>
                   <source srcSet={`/assets/img/${currentProject.image}_mobile.webp 580w, 
                     /assets/img/${currentProject.image}_desktop.webp 1600w`}
-                    src={`/assets/img/${currentProject.image}_mobile.webp`}/>
+                    src={`/assets/img/${currentProject.image}_mobile.webp`} type="image/webp"/>
                   <img 
                     srcSet={`/assets/img/${currentProject.image}_mobile.jpg 580w, 
                     /assets/img/${currentProject.image}_desktop.jpg 1600w`}

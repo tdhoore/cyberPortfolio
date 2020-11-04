@@ -22,7 +22,9 @@ const WorkDetailSection = (props: workDetailSectionProps) => {
         <source srcSet={`/assets/img/${baseName.baseName}_380.webp 380w, 
                   /assets/img/${baseName.baseName}_580.webp 580w, 
                   /assets/img/${baseName.baseName}_876.webp 1600w`}
-                src={`/assets/img/${baseName.baseName}_380.webp`}/>
+                src={`/assets/img/${baseName.baseName}_380.webp`} 
+                type="image/webp"
+                />
         <img 
           srcSet={`/assets/img/${baseName.baseName}_380${baseName.extention} 380w, 
                   /assets/img/${baseName.baseName}_580${baseName.extention} 580w, 

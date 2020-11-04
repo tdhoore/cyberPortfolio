@@ -38,7 +38,7 @@ const Project = (props: ProjectProps) => {
               <picture>
                   <source srcSet={`/assets/img/${props.data.image}_mobile.webp 580w, 
                     /assets/img/${props.data.image}_desktop.webp 1600w`}
-                    src={`/assets/img/${props.data.image}_mobile.webp`}/>
+                    src={`/assets/img/${props.data.image}_mobile.webp`} type="image/webp"/>
                   <img 
                     srcSet={`/assets/img/${props.data.image}_mobile.jpg 580w, 
                     /assets/img/${props.data.image}_desktop.jpg 1600w`}
