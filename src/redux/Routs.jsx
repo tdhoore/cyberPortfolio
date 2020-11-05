@@ -18,9 +18,7 @@ export default function () {
       <header className="mainHeader">
         <Link
           to="/"
-          className={
-            location.pathname.includes("/work/") ? "hide title" : "title"
-          }
+          className={location.pathname.includes("/work/") ? "hide" : "title"}
         >
           <h1>
             <span>Tim D'hoore</span>

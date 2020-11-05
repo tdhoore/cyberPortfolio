@@ -68,7 +68,10 @@ nav {
     display: flex;
     justify-content: flex-end;
     background: none;
-    padding-right: $pad * 3;
+
+    & ul {
+      padding-right: $pad * 3;
+    }
 
     &::after {
       display: none;
@@ -86,6 +89,7 @@ nav {
 
   .returnToWork {
     width: 100%;
+    padding: 0;
   }
 }
 
