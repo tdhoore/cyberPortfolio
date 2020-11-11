@@ -39,8 +39,8 @@ export const panelAnim = {
     },
   },
   transition: {
-    duration: 0.3,
-    delay: 0.3,
+    //duration: 0.3,
+   // delay: 0.3,
     type: "spring",
     stiffness: 700,
     damping: 60,
