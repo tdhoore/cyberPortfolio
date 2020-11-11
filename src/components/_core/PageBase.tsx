@@ -1,6 +1,6 @@
 import React from "react";
 import { pageBase } from "./types";
-import Home from "../home/Home";
+import Home from "../home/home";
 import Work from "../work/Work";
 import About from "../about/About";
 import Contact from "../contact/Contact";
