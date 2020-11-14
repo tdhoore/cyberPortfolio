@@ -6,8 +6,6 @@ import About from "../about/About";
 import Contact from "../contact/Contact";
 import WorkDetails from "../workDetails/WorkDetails";
 import Page404 from "./Page404";
-import { motion } from "framer-motion";
-import { fade } from "../anim/animationPresets";
 
 const PageBase = (props: pageBase) => {
   let title = "Tim D'hoore - ";
@@ -20,7 +18,7 @@ const PageBase = (props: pageBase) => {
         url += "/";
         
         document.title = title;
-        return <Home key="Home"/>;
+        return <Home key="Home" test={props.test} routeAnimating={props.routeAnimating}/>;
       case "Work":
         title = `${title}Work`;
         url += "/work";
@@ -50,11 +48,7 @@ const PageBase = (props: pageBase) => {
     }
   };
 
-  return (
-    <motion.div className="mainHolder" {...fade}>
-      {getActivePage()}
-    </motion.div>
-  );
+  return getActivePage();
 };
 
 export default PageBase;

@@ -18,6 +18,11 @@
     padding: $pad * 11 $pad * 3 $pad * 5;
   }
 
+  & .intro .defaultButton {
+    opacity: 0;
+    animation-delay: 400ms;
+  }
+
   & .accentBarAfter::after {
     z-index: -2;
     top: -$pad * 3;

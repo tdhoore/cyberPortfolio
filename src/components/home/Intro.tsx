@@ -2,16 +2,17 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useTransition, animated as a } from 'react-spring'
 
-const Intro = () => {
+const Intro = ({routeAnimating}:any) => {
   const trans = (x:number, y:number, z:number) => `perspective(600px) translate3d(${x}px, ${y}px, ${z}px)`;
 
     const transitions = useTransition(true, null, {
-        from: { opacity: 0, transform: trans(0, 0, -200) },
-        enter: { opacity: 1, transform: trans(0, 0, 0) },
-        leave: { opacity: 0, transform: trans(0, 0, -200) },
-        config: { mass: 1, tension: 350, friction: 25 }
+        from: { transform: trans(0, 0, -200) },
+        enter: { transform: trans(0, 0, 0) },
+        leave: { transform: trans(0, 0, 100) },
+        config: { mass: 1, tension: 350, friction: 25 },
+     
     });
-   
+  
 return <>{
     transitions.map(({item, key, props})=>
     item && 
