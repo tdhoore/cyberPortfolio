@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Logo from "./Logo";
 import HomeDeco from "./HomeDeco";
 import Skills from "./Skills";
@@ -7,21 +7,8 @@ import Intro from "./Intro";
 import { useTransition, animated as a } from "react-spring";
 
 const Home = ({routeAnimating, test}:any) => {
-  const transitions = useTransition(true, null, {
-    from: { opacity: 0,backgroundColor: "red" },
-    enter: { opacity: 1,backgroundColor: "blue" },
-    leave: { opacity: 1,backgroundColor: "pink" },
-    update: {
-      opacity: 1,
-      backgroundColor: "green",
-    },
-    config: { mass: 1, tension: 350, friction: 25 }
-  });
-
-  console.log(test)
-
   return <>
-    <a.article  className="homeArticle">
+    <article  className="homeArticle" style={{opacity: routeAnimating}}>
       <Header title="Tim D'hoore - home" url="https://www.timdhoore.com/"/>
       <div className="wrapper">
         <div className="accentBarAfter">
@@ -33,7 +20,7 @@ const Home = ({routeAnimating, test}:any) => {
         <Skills delay={200}/>
         <Logo delay={300}/>
       </div>
-    </a.article>
+    </article>
   </>;
 };
 

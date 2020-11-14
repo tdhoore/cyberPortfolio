@@ -4,12 +4,12 @@ import NavMain from "../components/navMain/navMain";
 import PageBase from "../components/_core/PageBase";
 import { useSelector } from "react-redux";
 import Forground from "../components/_core/Forground";
-import { useTransition, animated as a } from "react-spring";
+import { useTransition, animated as a, interpolate } from "react-spring";
 
 export default function () {
   const navMainLinks = useSelector((state) => state.navMainReducer.navLinks);
 
-  const [routeAnimating, setRouteAnimating] = useState(true);
+  //const [routeAnimating, setRouteAnimating] = useState(true);
   const trans = (x, y, z) =>
     `perspective(600px) translate3d(${x}px, ${y}px, ${z}px)`;
   //date
@@ -17,21 +17,18 @@ export default function () {
   const location = useLocation();
 
   const transition = useTransition(location, location.pathname, {
-    from: { opacity: 0, transform: trans(0, 0, -200) },
-    enter: { opacity: 1, transform: trans(0, 0, 0) },
-    leave: {
-      opacity: 0,
-      transform: trans(0, 0, 100),
-    },
+    from: { o: 0 },
+    enter: { o: 1 },
+    leave: { o: 2 },
     config: { mass: 1, tension: 350, friction: 25 },
     onRest: () => {
-      //setRouteAnimating(true);
+      // setRouteAnimating(true);
     },
   });
 
   useEffect(() => {
-    console.log(location);
-    // setRouteAnimating(false);
+    //console.log(location);
+    //setRouteAnimating(false);
   }, [location]);
 
   return (
@@ -49,17 +46,27 @@ export default function () {
       </header>
       <main>
         {transition.map(({ item, props, key }) => (
-          <a.div key={key} style={props} className="mainHolder">
+          <a.div
+            key={key}
+            style={{
+              position: "absolute",
+              opacity: props.o.interpolate((o) => {
+                console.log(o);
+                return o;
+              }),
+            }}
+            className="mainHolder"
+          >
             <Switch location={item}>
               <Route exact path="/">
                 <PageBase
                   pageCompName="Home"
                   test={item}
-                  routeAnimating={routeAnimating}
+                  routeAnimating={props.o}
                 />
               </Route>
               <Route exact path="/work">
-                <PageBase pageCompName="Work" routeAnimating={routeAnimating} />
+                <PageBase pageCompName="Work" />
               </Route>
               <Route
                 exact

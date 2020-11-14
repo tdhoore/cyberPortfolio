@@ -1,26 +1,19 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useTransition, animated as a } from 'react-spring'
+import { useTransition, animated as a, interpolate } from 'react-spring'
 
 const Intro = ({routeAnimating}:any) => {
   const trans = (x:number, y:number, z:number) => `perspective(600px) translate3d(${x}px, ${y}px, ${z}px)`;
 
-    const transitions = useTransition(true, null, {
-        from: { transform: trans(0, 0, -200) },
-        enter: { transform: trans(0, 0, 0) },
-        leave: { transform: trans(0, 0, 100) },
-        config: { mass: 1, tension: 350, friction: 25 },
-     
-    });
+    const calcAnim = () => {
+        return {
+            transform: routeAnimating.interpolate([0, 1, 2], [trans(0, 0, -200), trans(0, 0, 0), trans(0, 0, 100)]),
+            opacity: routeAnimating.interpolate([0, 1, 2], [0, 1, 0])
+        }
+    }
   
-return <>{
-    transitions.map(({item, key, props})=>
-    item && 
-    <a.div 
-        key={key}
-        className="intro panel" 
-        style={props}
-    >
+return <>
+    <a.div className="intro panel" style={calcAnim()}>
         <header>
             <h2>
             <span>Tim D'hoore</span>
@@ -35,8 +28,8 @@ return <>{
             Start exploring
             </Link>
         </div>
-    </a.div>)
-}</>;
+    </a.div>
+</>;
 };
 
 export default Intro;
