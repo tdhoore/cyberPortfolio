@@ -1,12 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import Project from "./Project";
 import ProjectCounter from "./ProjectCounter";
 import { getWork } from "./api";
 import { useSelector } from "react-redux";
 import ScrollDetector from "../_core/ScrollDetector";
 import { getNextProject } from "./api";
-import { motion } from "framer-motion";
 import Header from "../_core/Header";
+import { useDrag } from "react-use-gesture";
+import { useSprings, animated as a }from "react-spring";
 
 const Work = () => {
   const work = useSelector((state: any) => state.workReducer.workItems);
@@ -69,7 +70,24 @@ const Work = () => {
     return Math.abs(offset) * velocity;
   };
 
-  const swipeConfidenceThreshold = 0;
+  const [props, set] = useSprings(work.length, i => ({
+    x: `translateX(${i * window.innerWidth}px)`,
+  }));
+
+  const bind = useDrag(({down, movement: [mx], direction: [xDir], distance, cancel}:any) => {
+    if (down && distance > window.innerWidth / 2) {
+      console.log(xDir);
+      cancel(getNextProject(xDir));
+    }
+
+    //@ts-ignore
+    set((i:any) => {
+
+      const x = (i - currentItem) * window.innerWidth + (down ? mx : 0)
+      return { x: `translateX(${x}px)` };
+    });
+  });
+
   return (
     <section className="workSection">
       <Header title="Tim D'hoore - work" url="https://www.timdhoore.com/work"/>
@@ -77,49 +95,26 @@ const Work = () => {
         <header className="hide">
           <h2>Work</h2>
         </header>
-        <motion.div
-          className="projectSlider"
-          animate={{
-            x: -currentPageWidth * currentItem,
-          }}
-          transition={{
-            x: { type: "spring", stiffness: 300, damping: 200 },
-          }}
-          dragConstraints={{
-            left: 0,
-            right: 0,
-          }}
-          dragElastic={1}
-          drag="x"
-          dragMomentum={false}
-          dragTransition={{ bounceDamping: 10000, bounceStiffness: 0 }}
-          onDragEnd={(event, { offset, velocity }) => {
-            const swipe = swipePower(offset.x, velocity.x);
-
-            if (swipe <= -swipeConfidenceThreshold) {
-              getNextProject(1);
-            } else if (swipe >= swipeConfidenceThreshold) {
-              getNextProject(-1);
-            }
-          }}
-        >
-          {work.map((data: any, index: number) => {
-            return (
-              <Project
-                key={`workProject${index}`}
-                data={data}
-                counter={setCounter()}
-                isActive={
-                  index > currentItem
-                    ? "rightProject"
-                    : index < currentItem
-                    ? "leftProject"
-                    : ""
-                }
-              />
-            );
-          })}
-        </motion.div>
+        <div className="projectSlider">
+          {
+            props.map(({ x }, i) => (
+              <a.div className="projectAnimHolder" {...bind()} key={i} style={{ transform: x }}>
+                <Project
+                  data={work[i]}
+                  counter={setCounter()}
+                  isActive={
+                    i > currentItem
+                      ? "rightProject"
+                      : i < currentItem
+                      ? "leftProject"
+                      : ""
+                  }
+                  pos={{x}}
+                />
+              </a.div>
+            ))
+          }
+        </div> 
         <ProjectCounter counter={setCounter()} hasButtons/>
         <ProjectCounter counter={setCounter()} />
       </div>

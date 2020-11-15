@@ -8,10 +8,6 @@ import { useTransition, animated as a, interpolate } from "react-spring";
 
 export default function () {
   const navMainLinks = useSelector((state) => state.navMainReducer.navLinks);
-
-  //const [routeAnimating, setRouteAnimating] = useState(true);
-  const trans = (x, y, z) =>
-    `perspective(600px) translate3d(${x}px, ${y}px, ${z}px)`;
   //date
   const date = new Date();
   const location = useLocation();
@@ -21,21 +17,8 @@ export default function () {
     enter: { o: 1 },
     leave: { o: 2 },
     config: { mass: 1, tension: 350, friction: 25 },
-<<<<<<< newAnimations
-    onRest: () => {
-      // setRouteAnimating(true);
-    },
   });
 
-  useEffect(() => {
-    //console.log(location);
-    //setRouteAnimating(false);
-  }, [location]);
-
-=======
-  });
-
->>>>>>> revert
   return (
     <div className="mainPage">
       <header className="mainHeader">
@@ -56,7 +39,7 @@ export default function () {
             style={{
               position: "absolute",
               opacity: props.o.interpolate((o) => {
-                console.log(o);
+                //console.log(o);
                 return o;
               }),
             }}

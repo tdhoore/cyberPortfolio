@@ -4,6 +4,7 @@ export interface ProjectProps {
   data: any;
   counter?: string;
   isActive?: string;
+  pos?: any;
 }
 export interface ProjectCounterProps {
   counter?: string;

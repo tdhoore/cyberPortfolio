@@ -3,13 +3,15 @@ import { Link } from "react-router-dom";
 import { ProjectProps } from "./types";
 import { motion } from "framer-motion";
 import { panelAnim } from "../anim/animationPresets";
+import { animated as a }from "react-spring";
 
 const Project = (props: ProjectProps) => {
   const createLink = (title:string) => `/work/${title.replace(" ", "").toLowerCase()}`; 
-
+//to={createLink(props.data.url)}
+//style={{transform: props.pos.interpolate((val:any) => `translateX(${val}%)`)}}
   return props.data !== undefined ? (
-    <div className={`projectPage ${props.isActive}`}>
-      <Link to={createLink(props.data.url)} className="projectLink">
+    <a.div className={`projectPage ${props.isActive}`}  >
+      <div className="projectLink">
         <article className="project accentBarAfter">
           <motion.div
             className="projectTitle panel"
@@ -48,8 +50,8 @@ const Project = (props: ProjectProps) => {
             </div>
           </motion.div>
         </article>
-      </Link>
-    </div>
+      </div>
+    </a.div>
   ) : (
     <div></div>
   );
