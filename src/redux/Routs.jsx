@@ -21,6 +21,7 @@ export default function () {
     enter: { o: 1 },
     leave: { o: 2 },
     config: { mass: 1, tension: 350, friction: 25 },
+<<<<<<< newAnimations
     onRest: () => {
       // setRouteAnimating(true);
     },
@@ -31,6 +32,10 @@ export default function () {
     //setRouteAnimating(false);
   }, [location]);
 
+=======
+  });
+
+>>>>>>> revert
   return (
     <div className="mainPage">
       <header className="mainHeader">
