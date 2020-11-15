@@ -10,8 +10,8 @@ const Project = (props: ProjectProps) => {
 //to={createLink(props.data.url)}
 //style={{transform: props.pos.interpolate((val:any) => `translateX(${val}%)`)}}
   return props.data !== undefined ? (
-    <a.div className={`projectPage ${props.isActive}`}  >
-      <div className="projectLink">
+    <a.div className={`projectPage ${props.isActive}`}>
+      <div draggable="false" className="projectLink">
         <article className="project accentBarAfter">
           <motion.div
             className="projectTitle panel"
@@ -45,7 +45,7 @@ const Project = (props: ProjectProps) => {
                     srcSet={`/assets/img/${props.data.image}_mobile.jpg 580w, 
                     /assets/img/${props.data.image}_desktop.jpg 1600w`}
                     src={`/assets/img/${props.data.image}_mobile.jpg`}
-                    alt={props.data.title}/>
+                    alt={props.data.title} draggable="false"/>
                 </picture>
             </div>
           </motion.div>

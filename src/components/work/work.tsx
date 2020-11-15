@@ -23,6 +23,11 @@ const Work = () => {
   const handleWindowResize = () => {
     if (currentPageWidth !== window.innerWidth) {
       setCurrentPageWidth(window.innerWidth);
+      //@ts-ignore
+      set((i:any) => {
+        const x = (i - currentItem) * window.innerWidth
+        return { x: `translateX(${x}px)` };
+      });
     }
   };
 
@@ -37,6 +42,12 @@ const Work = () => {
 
     const handleScroll = (e: Event) => {
       getNextProject(scrollDetector.dir);
+
+      //@ts-ignore
+      /*set((i:any) => {
+        const x = (i - currentItem) * window.innerWidth
+        return { x: `translateX(${x}px)` };
+      });*/
     };
 
     //listen for updates
@@ -76,13 +87,11 @@ const Work = () => {
 
   const bind = useDrag(({down, movement: [mx], direction: [xDir], distance, cancel}:any) => {
     if (down && distance > window.innerWidth / 2) {
-      console.log(xDir);
       cancel(getNextProject(xDir));
     }
 
     //@ts-ignore
     set((i:any) => {
-
       const x = (i - currentItem) * window.innerWidth + (down ? mx : 0)
       return { x: `translateX(${x}px)` };
     });
