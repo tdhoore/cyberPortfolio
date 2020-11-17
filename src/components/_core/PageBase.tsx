@@ -18,7 +18,7 @@ const PageBase = (props: pageBase) => {
         url += "/";
         
         document.title = title;
-        return <Home key="Home" test={props.test} routeAnimating={props.routeAnimating}/>;
+        return <Home key="Home"/>;
       case "Work":
         title = `${title}Work`;
         url += "/work";

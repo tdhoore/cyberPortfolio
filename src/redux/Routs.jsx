@@ -4,7 +4,7 @@ import NavMain from "../components/navMain/navMain";
 import PageBase from "../components/_core/PageBase";
 import { useSelector } from "react-redux";
 import Forground from "../components/_core/Forground";
-import { useTransition, animated as a, interpolate } from "react-spring";
+import { useTransition, animated as a } from "react-spring";
 
 export default function () {
   const navMainLinks = useSelector((state) => state.navMainReducer.navLinks);
@@ -12,10 +12,13 @@ export default function () {
   const date = new Date();
   const location = useLocation();
 
+  const trans = (x, y, z) =>
+    `perspective(600px) translate3d(${x}px, ${y}px, ${z}px)`;
+
   const transition = useTransition(location, location.pathname, {
-    from: { o: 0 },
-    enter: { o: 1 },
-    leave: { o: 2 },
+    from: { opacity: 0, transform: trans(0, 0, -200) },
+    enter: { opacity: 1, transform: trans(0, 0, 0) },
+    leave: { opacity: 0, transform: trans(0, 0, 100) },
     config: { mass: 1, tension: 350, friction: 25 },
   });
 
@@ -34,24 +37,10 @@ export default function () {
       </header>
       <main>
         {transition.map(({ item, props, key }) => (
-          <a.div
-            key={key}
-            style={{
-              position: "absolute",
-              opacity: props.o.interpolate((o) => {
-                //console.log(o);
-                return o;
-              }),
-            }}
-            className="mainHolder"
-          >
+          <a.div key={key} style={props} className="mainHolder">
             <Switch location={item}>
               <Route exact path="/">
-                <PageBase
-                  pageCompName="Home"
-                  test={item}
-                  routeAnimating={props.o}
-                />
+                <PageBase pageCompName="Home" />
               </Route>
               <Route exact path="/work">
                 <PageBase pageCompName="Work" />
