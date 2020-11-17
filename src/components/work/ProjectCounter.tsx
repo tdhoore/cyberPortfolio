@@ -5,7 +5,8 @@ const ProjectCounter = (props: any) => {
   //gebruik push url
 
   const handleNextProject = (e: any, dir: number) => {
-    getNextProject(dir);
+    //getNextProject(dir);
+    props.updateCounter(dir);
   };
 
   return (

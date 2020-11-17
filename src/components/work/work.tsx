@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import Project from "./Project";
 import ProjectCounter from "./ProjectCounter";
 import { getWork } from "./api";
@@ -7,7 +7,9 @@ import ScrollDetector from "../_core/ScrollDetector";
 import { getNextProject } from "./api";
 import Header from "../_core/Header";
 import { useDrag } from "react-use-gesture";
-import { useSprings, animated as a }from "react-spring";
+import { useSpring, animated as a }from "react-spring";
+
+
 
 const Work = () => {
   const work = useSelector((state: any) => state.workReducer.workItems);
@@ -24,7 +26,7 @@ const Work = () => {
     if (currentPageWidth !== window.innerWidth) {
       setCurrentPageWidth(window.innerWidth);
       //@ts-ignore
-      set((i:any) => {
+      setAnim((i:any) => {
         const x = (i - currentItem) * window.innerWidth
         return { x: `translateX(${x}px)` };
       });
@@ -44,10 +46,23 @@ const Work = () => {
       getNextProject(scrollDetector.dir);
 
       //@ts-ignore
-      /*set((i:any) => {
-        const x = (i - currentItem) * window.innerWidth
+      setAnim(() => {
+        let newCurrentItem = currentItem + scrollDetector.dir;
+        const maxIndex = work.length - 1; 
+
+        //check if to small
+        if (newCurrentItem < 0) {
+          newCurrentItem = maxIndex;
+        }
+
+        //check if to big
+        if (newCurrentItem > maxIndex) {
+          newCurrentItem = 0;
+        }
+
+        const x = -newCurrentItem * window.innerWidth;
         return { x: `translateX(${x}px)` };
-      });*/
+      });
     };
 
     //listen for updates
@@ -77,12 +92,8 @@ const Work = () => {
     return counter;
   };
 
-  const swipePower = (offset: number, velocity: number) => {
-    return Math.abs(offset) * velocity;
-  };
-
-  const [props, set] = useSprings(work.length, i => ({
-    x: `translateX(${i * window.innerWidth}px)`,
+  const [anim, setAnim] = useSpring(() => ({
+    x: `translateX(-${(currentItem) * window.innerWidth}px)`,
   }));
 
   const bind = useDrag(({down, movement: [mx], direction: [xDir], distance, cancel}:any) => {
@@ -91,11 +102,33 @@ const Work = () => {
     }
 
     //@ts-ignore
-    set((i:any) => {
-      const x = (i - currentItem) * window.innerWidth + (down ? mx : 0)
+    setAnim(() => {
+      const x = currentItem * window.innerWidth + (down ? mx : 0)
       return { x: `translateX(${x}px)` };
     });
   });
+
+  const updateCounter = (dir:number) => {
+    getNextProject(dir)
+    //@ts-ignore
+    setAnim(() => {
+      let newCurrentItem = currentItem + dir;
+      const maxIndex = work.length - 1; 
+
+      //check if to small
+      if (newCurrentItem < 0) {
+        newCurrentItem = maxIndex;
+      }
+
+      //check if to big
+      if (newCurrentItem > maxIndex) {
+        newCurrentItem = 0;
+      }
+
+      const x = -newCurrentItem * window.innerWidth;
+      return { x: `translateX(${x}px)` };
+    });
+  };
 
   return (
     <section className="workSection">
@@ -104,27 +137,22 @@ const Work = () => {
         <header className="hide">
           <h2>Work</h2>
         </header>
-        <div className="projectSlider">
+        <a.div className="projectSlider" style={{transform: anim.x}} {...bind()}>
           {
-            props.map(({ x }, i) => (
-              <a.div className="projectAnimHolder" {...bind()} key={i} style={{ transform: x }}>
+            work.map((data:any) => (
                 <Project
-                  data={work[i]}
+                  data={data}
                   counter={setCounter()}
                   isActive={
-                    i > currentItem
-                      ? "rightProject"
-                      : i < currentItem
-                      ? "leftProject"
-                      : ""
+                    ""
                   }
-                  pos={{x}}
+                  key={`workItem${data.title}`}
+                  //pos={{x}}
                 />
-              </a.div>
             ))
           }
-        </div> 
-        <ProjectCounter counter={setCounter()} hasButtons/>
+        </a.div> 
+        <ProjectCounter counter={setCounter()} updateCounter={updateCounter} hasButtons/>
         <ProjectCounter counter={setCounter()} />
       </div>
     </section>
@@ -132,3 +160,8 @@ const Work = () => {
 };
 
 export default Work;
+/*i > currentItem
+                      ? "rightProject"
+                      : i < currentItem
+                      ? "leftProject"
+                      : ""*/
