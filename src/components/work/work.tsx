@@ -139,15 +139,18 @@ const Work = () => {
         </header>
         <a.div className="projectSlider" style={{transform: anim.x}} {...bind()}>
           {
-            work.map((data:any) => (
+            work.map((data:any, index:number) => (
                 <Project
                   data={data}
                   counter={setCounter()}
                   isActive={
-                    ""
+                    index > currentItem
+                      ? "rightProject"
+                      : index < currentItem
+                      ? "leftProject"
+                      : ""
                   }
                   key={`workItem${data.title}`}
-                  //pos={{x}}
                 />
             ))
           }
@@ -160,8 +163,4 @@ const Work = () => {
 };
 
 export default Work;
-/*i > currentItem
-                      ? "rightProject"
-                      : i < currentItem
-                      ? "leftProject"
-                      : ""*/
+/**/

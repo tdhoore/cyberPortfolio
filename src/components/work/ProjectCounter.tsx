@@ -1,11 +1,8 @@
 import React from "react";
-import { getNextProject } from "./api";
 
 const ProjectCounter = (props: any) => {
   //gebruik push url
-
   const handleNextProject = (e: any, dir: number) => {
-    //getNextProject(dir);
     props.updateCounter(dir);
   };
 
