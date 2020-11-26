@@ -1,5 +1,4 @@
 import { createStore, compose, applyMiddleware } from "redux";
-import { routerMiddleware } from "connected-react-router";
 import { createBrowserHistory } from "history";
 import createRootReducer from "./rootReducer";
 import { ReduxState } from "./types";
@@ -17,7 +16,6 @@ export const configureStore = (rootReducer?: ReduxState) => {
     rootReducer,
 
     compose(
-      applyMiddleware(routerMiddleware(history)),
       applyMiddleware(sagaMiddleware)
     )
   );

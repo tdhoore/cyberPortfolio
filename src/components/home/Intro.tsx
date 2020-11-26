@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { useTransition, animated as a, interpolate } from 'react-spring'
+import { animated as a } from 'react-spring'
 
+<<<<<<< Updated upstream
 const Intro = () => {
     const trans = (x:number, y:number, z:number) => `perspective(600px) translate3d(${x}px, ${y}px, ${z}px)`;
 
@@ -11,6 +12,17 @@ const Intro = () => {
         leave: { opacity: 0, transform: trans(0, 0, 0) },
         config: { mass: 1, tension: 350, friction: 25 }
     });
+=======
+const Intro = ({inroAnim}:any) => {
+  const trans = (x:number, y:number, z:number) => `perspective(600px) translate3d(${x}px, ${y}px, ${z}px)`;
+
+    const calcAnim = () => {
+        return {
+            transform: inroAnim.interpolate([0, 1, 2], [trans(0, 0, -200), trans(0, 0, 0), trans(0, 0, 100)]),
+            opacity: inroAnim.interpolate([0, 1, 2], [0, 1, 0])
+        }
+    }
+>>>>>>> Stashed changes
   
 return <>
     {
