@@ -1,16 +1,22 @@
-import React from "react";
+import React, { Fragment, useRef } from "react";
 import { Route, Switch, useLocation, Link } from "react-router-dom";
 import NavMain from "../components/navMain/navMain";
 import PageBase from "../components/_core/PageBase";
 import { useSelector } from "react-redux";
 import Forground from "../components/_core/Forground";
 import { useTransition, animated as a } from "react-spring";
+import { Canvas, Dom } from "react-three-fiber"
+import DOMObject from "../components/_core/DOMObject";
+import Portal from "../components/_core/Portal";
+import { Html } from "@react-three/drei"
 
 export default function () {
   const navMainLinks = useSelector((state) => state.navMainReducer.navLinks);
   //date
   const date = new Date();
   const location = useLocation();
+
+  const ref = useRef(null)
 
   const trans = (x, y, z) =>
     `perspective(600px) translate3d(${x}px, ${y}px, ${z}px)`;
@@ -36,34 +42,47 @@ export default function () {
         <NavMain links={navMainLinks} activeLink={location.pathname} />
       </header>
       <main>
-        {transition.map(({ item, props, key }) => (
-          <a.div key={key} style={props} className="mainHolder">
-            <Switch location={item}>
-              <Route exact path="/">
-                <PageBase pageCompName="Home" />
-              </Route>
-              <Route exact path="/work">
-                <PageBase pageCompName="Work" />
-              </Route>
-              <Route
-                exact
-                path="/work/:id"
-                component={(props) => (
-                  <PageBase pageCompName="WorkDetail" {...props} />
-                )}
-              ></Route>
-              <Route exact path="/about">
-                <PageBase pageCompName="About" />
-              </Route>
-              <Route exact path="/contact">
-                <PageBase pageCompName="Contact" />
-              </Route>
-              <Route>
-                <PageBase pageCompName="404" />
-              </Route>
-            </Switch>
-          </a.div>
-        ))}
+        <Fragment>
+        <Canvas>
+          {
+            //<DOMObject dom={ref} />
+          }
+          <Html style={{ transform: `rotateX(${0}deg) rotateY(${0}deg) rotateZ(${45}deg)` }}>
+            tester
+          </Html>
+          {/*transition.map(({ item, props, key }) => (
+            <a.div key={key} style={props} className="mainHolder">
+              <Switch location={item}>
+                <Route exact path="/">
+                  <PageBase pageCompName="Home" />
+                </Route>
+                <Route exact path="/work">
+                  <PageBase pageCompName="Work" />
+                </Route>
+                <Route
+                  exact
+                  path="/work/:id"
+                  component={(props) => (
+                    <PageBase pageCompName="WorkDetail" {...props} />
+                  )}
+                ></Route>
+                <Route exact path="/about">
+                  <PageBase pageCompName="About" />
+                </Route>
+                <Route exact path="/contact">
+                  <PageBase pageCompName="Contact" />
+                </Route>
+                <Route>
+                  <PageBase pageCompName="404" />
+                </Route>
+              </Switch>
+            </a.div>
+                  ))*/}
+        </Canvas>
+          <Portal>
+          <div ref={ref}>hello</div>
+        </Portal>
+        </Fragment>
       </main>
       <Forground />
       <footer className="hide"> &copy; {date.getFullYear()}</footer>

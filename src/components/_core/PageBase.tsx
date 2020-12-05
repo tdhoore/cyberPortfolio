@@ -1,7 +1,7 @@
 import React from "react";
 import { pageBase } from "./types";
 import Home from "../home/home";
-import Work from "../work/Work";
+import Work from "../work/work";
 import About from "../about/About";
 import Contact from "../contact/Contact";
 import WorkDetails from "../workDetails/WorkDetails";

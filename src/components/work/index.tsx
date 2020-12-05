@@ -1,4 +1,4 @@
-import Work from "./Work";
+import Work from "./work";
 import workReducer from "./workReducer";
 import * as types from "./types";
 
