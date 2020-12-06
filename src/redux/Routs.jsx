@@ -5,10 +5,10 @@ import PageBase from "../components/_core/PageBase";
 import { useSelector } from "react-redux";
 import Forground from "../components/_core/Forground";
 import { useTransition, animated as a } from "react-spring";
-import { Canvas, Dom } from "react-three-fiber"
+import { Canvas, Dom } from "react-three-fiber/css3d";
 import DOMObject from "../components/_core/DOMObject";
 import Portal from "../components/_core/Portal";
-import { Html } from "@react-three/drei"
+import { Html } from "@react-three/drei";
 
 export default function () {
   const navMainLinks = useSelector((state) => state.navMainReducer.navLinks);
@@ -16,7 +16,7 @@ export default function () {
   const date = new Date();
   const location = useLocation();
 
-  const ref = useRef(null)
+  const ref = useRef(null);
 
   const trans = (x, y, z) =>
     `perspective(600px) translate3d(${x}px, ${y}px, ${z}px)`;
@@ -43,14 +43,10 @@ export default function () {
       </header>
       <main>
         <Fragment>
-        <Canvas>
-          {
-            //<DOMObject dom={ref} />
-          }
-          <Html style={{ transform: `rotateX(${0}deg) rotateY(${0}deg) rotateZ(${45}deg)` }}>
-            tester
-          </Html>
-          {/*transition.map(({ item, props, key }) => (
+          <Canvas>
+            <DOMObject dom={ref} position={[0, 0, -20]} />
+
+            {/*transition.map(({ item, props, key }) => (
             <a.div key={key} style={props} className="mainHolder">
               <Switch location={item}>
                 <Route exact path="/">
@@ -78,10 +74,10 @@ export default function () {
               </Switch>
             </a.div>
                   ))*/}
-        </Canvas>
+          </Canvas>
           <Portal>
-          <div ref={ref}>hello</div>
-        </Portal>
+            <div ref={ref}>hello</div>
+          </Portal>
         </Fragment>
       </main>
       <Forground />
