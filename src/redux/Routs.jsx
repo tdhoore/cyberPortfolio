@@ -5,8 +5,7 @@ import PageBase from "../components/_core/PageBase";
 import { useSelector } from "react-redux";
 import Forground from "../components/_core/Forground";
 import { useTransition, animated as a } from "react-spring";
-import { Canvas, Dom } from "react-three-fiber/css3d";
-import DOMObject from "../components/_core/DOMObject";
+import { Canvas, Dom } from "react-three-fiber";
 import Portal from "../components/_core/Portal";
 import { Html } from "@react-three/drei";
 
@@ -42,11 +41,9 @@ export default function () {
         <NavMain links={navMainLinks} activeLink={location.pathname} />
       </header>
       <main>
-        <Fragment>
-          <Canvas>
-            <DOMObject dom={ref} position={[0, 0, -20]} />
-
-            {/*transition.map(({ item, props, key }) => (
+        <Canvas>
+          <Html center>tester</Html>
+          {/*transition.map(({ item, props, key }) => (
             <a.div key={key} style={props} className="mainHolder">
               <Switch location={item}>
                 <Route exact path="/">
@@ -74,11 +71,7 @@ export default function () {
               </Switch>
             </a.div>
                   ))*/}
-          </Canvas>
-          <Portal>
-            <div ref={ref}>hello</div>
-          </Portal>
-        </Fragment>
+        </Canvas>
       </main>
       <Forground />
       <footer className="hide"> &copy; {date.getFullYear()}</footer>
